@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ─── Slopes custom font ──────────────────────────────────── */
+/* ── Slopes custom font ─────────────────────────── */
 @font-face {
   font-family: 'Slopes';
   src: url('/Slopes.ttf') format('truetype');
@@ -9,7 +9,7 @@
   font-display: swap;
 }
 
-/* ─── Reset ───────────────────────────────────────────────── */
+/* ── Reset ──────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -19,9 +19,9 @@ body {
   background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* Slopes bold on all headings */
 h1, h2, h3, h4, h5, h6, .slopes {
   font-family: 'Slopes', 'Outfit', system-ui, sans-serif;
   font-weight: bold;
@@ -29,50 +29,50 @@ h1, h2, h3, h4, h5, h6, .slopes {
 
 #root { width: 100%; min-height: 100vh; }
 
-/* ─── Scroll reveal ───────────────────────────────────────── */
+/* ── Scroll reveal ──────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(36px);
-  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(-48px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
-.reveal-left.revealed {
-  opacity: 1;
-  transform: translateX(0);
-}
+.reveal-left.revealed { opacity: 1; transform: translateX(0); }
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(48px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
-.reveal-right.revealed {
-  opacity: 1;
-  transform: translateX(0);
-}
+.reveal-right.revealed { opacity: 1; transform: translateX(0); }
 
-/* ─── Hero number counter animation ──────────────────────── */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
-.animate-count { animation: countUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.reveal-scale.revealed { opacity: 1; transform: scale(1); }
 
-/* ─── Floating badge pulse ────────────────────────────────── */
+/* ── Pulse dot ──────────────────────────────────── */
 @keyframes softPulse {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.5; }
+  50%       { opacity: 0.4; }
 }
-.pulse-dot { animation: softPulse 2s ease-in-out infinite; }
+.pulse-dot { animation: softPulse 2.2s ease-in-out infinite; }
+
+/* ── Image hover zoom ───────────────────────────── */
+.img-zoom { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.img-zoom:hover { transform: scale(1.06); }
