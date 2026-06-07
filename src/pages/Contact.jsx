@@ -27,14 +27,12 @@ export default function Contact() {
   })
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [error, setError] = useState('')
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
 
   const handleSubmit = async e => {
     e.preventDefault()
     setLoading(true)
-    setError('')
     try {
       const res = await fetch('/api/inquiries', {
         method: 'POST',
@@ -44,64 +42,76 @@ export default function Contact() {
       if (res.ok) {
         setSuccess(true)
         setForm({ name: '', email: '', phone: '', country: '', message: '', product: 'General Inquiry' })
-      } else {
-        throw new Error('Failed to submit')
-      }
+      } else throw new Error()
     } catch {
-      // During development without backend, show success anyway
-      setSuccess(true)
+      setSuccess(true) // dev fallback
     } finally {
       setLoading(false)
     }
   }
 
+  const inputCls = "w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-[#39962c] focus:bg-white text-gray-800 text-[15px] transition-colors"
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ fontFamily: "'Outfit', sans-serif", background: '#f8f6f1' }}>
       <Navbar />
 
-      {/* Header */}
-      <div
-        className="pt-32 pb-16 text-white text-center"
-        style={{ background: 'linear-gradient(135deg, #37593b 0%, #39962c 100%)' }}
+      {/* Hero — sloped */}
+      <section
+        className="text-white text-center relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #0f2012 0%, #1e3d22 45%, #39962c 100%)',
+          clipPath: 'polygon(0 0, 100% 0, 100% 88%, 0 100%)',
+          paddingTop: '10rem',
+          paddingBottom: '8rem',
+        }}
       >
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
-          <p className="text-green-100 text-lg">
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        />
+        <div className="relative z-10 max-w-2xl mx-auto px-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">Get in Touch</h1>
+          <p className="text-green-100/70 text-lg font-light">
             Request samples, bulk pricing, or any inquiries about our premium banana fiber.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 py-16" style={{ marginTop: '-2rem' }}>
         <div className="grid md:grid-cols-3 gap-10">
 
-          {/* Contact Info */}
+          {/* Contact sidebar */}
           <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Contact Information</h2>
-              <p className="text-gray-600">We respond to all inquiries within 24 hours.</p>
+            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+              <h2 className="text-xl font-extrabold text-gray-900 mb-2">Contact Information</h2>
+              <p className="text-gray-400 text-sm mb-7">We respond to all inquiries within 24 hours.</p>
+
+              <div className="space-y-5">
+                {[
+                  { icon: MapPin, label: 'Address', value: 'Dhaka, Bangladesh' },
+                  { icon: Mail, label: 'Email', value: 'makin@ecofiberbd.com' },
+                  { icon: Phone, label: 'Phone', value: '+880 1XXX-XXXXXX' },
+                ].map(item => (
+                  <div key={item.label} className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0" style={{ background: 'rgba(57,150,44,0.10)' }}>
+                      <item.icon size={18} color="#39962c" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">{item.label}</div>
+                      <div className="font-semibold text-gray-800 text-[15px]">{item.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {[
-              { icon: MapPin, label: 'Address', value: 'Dhaka, Bangladesh' },
-              { icon: Mail, label: 'Email', value: 'info@ecofiberbd.com' },
-              { icon: Phone, label: 'Phone', value: '+880 1XXX-XXXXXX' },
-            ].map(item => (
-              <div key={item.label} className="flex items-start gap-4">
-                <div className="bg-[#39962c]/10 rounded-xl p-3 shrink-0">
-                  <item.icon size={20} className="text-[#39962c]" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500">{item.label}</div>
-                  <div className="font-semibold text-gray-800">{item.value}</div>
-                </div>
-              </div>
-            ))}
-
-            {/* Packaging note */}
-            <div className="bg-[#f5f0e8] rounded-2xl p-6 border border-[#39962c]/20">
-              <h4 className="font-semibold text-gray-900 mb-2">📦 Packaging & Storage</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
+            <div className="rounded-3xl p-7 border border-[#39962c]/20" style={{ background: 'rgba(57,150,44,0.06)' }}>
+              <h4 className="font-bold text-gray-900 mb-3 text-[15px]">📦 Packaging & Storage</h4>
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Compressed bales wrapped in jute or PP bags, or loose bundles as per buyer requirement.
                 Stored in cool, dry, and well-ventilated conditions.
               </p>
@@ -111,79 +121,58 @@ export default function Contact() {
           {/* Form */}
           <div className="md:col-span-2">
             {success ? (
-              <div className="bg-white rounded-2xl p-12 text-center shadow-sm border border-gray-100">
-                <CheckCircle size={60} className="text-[#39962c] mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Inquiry Sent!</h3>
-                <p className="text-gray-600 mb-6">
+              <div className="bg-white rounded-3xl p-14 text-center shadow-sm border border-gray-100">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'rgba(57,150,44,0.10)' }}>
+                  <CheckCircle size={40} color="#39962c" />
+                </div>
+                <h3 className="text-2xl font-extrabold text-gray-900 mb-3 tracking-tight">Inquiry Sent!</h3>
+                <p className="text-gray-400 mb-8 max-w-sm mx-auto">
                   Thank you for reaching out. Our team will respond within 24 hours.
                 </p>
                 <button
                   onClick={() => setSuccess(false)}
-                  className="bg-[#39962c] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#2d7a22] transition-colors"
+                  className="text-white font-semibold px-8 py-3.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                  style={{ background: '#39962c' }}
                 >
                   Send Another Inquiry
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Send an Inquiry</h2>
-
-                {error && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-6 text-sm">
-                    {error}
-                  </div>
-                )}
+              <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-8 tracking-tight">Send an Inquiry</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
-                    <input
-                      name="name" value={form.name} onChange={handleChange} required
-                      placeholder="Your name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c] text-gray-800"
-                    />
+                    <label className="block text-sm font-semibold text-gray-600 mb-2">Full Name *</label>
+                    <input name="name" value={form.name} onChange={handleChange} required placeholder="Your name" className={inputCls} />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Email Address *</label>
-                    <input
-                      name="email" type="email" value={form.email} onChange={handleChange} required
-                      placeholder="your@email.com"
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c] text-gray-800"
-                    />
+                    <label className="block text-sm font-semibold text-gray-600 mb-2">Email Address *</label>
+                    <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="your@email.com" className={inputCls} />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
-                    <input
-                      name="phone" value={form.phone} onChange={handleChange}
-                      placeholder="+1 234 567 8900"
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c] text-gray-800"
-                    />
+                    <label className="block text-sm font-semibold text-gray-600 mb-2">Phone Number</label>
+                    <input name="phone" value={form.phone} onChange={handleChange} placeholder="+1 234 567 8900" className={inputCls} />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Country *</label>
-                    <select
-                      name="country" value={form.country} onChange={handleChange} required
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c] text-gray-800 bg-white"
-                    >
+                    <label className="block text-sm font-semibold text-gray-600 mb-2">Country *</label>
+                    <select name="country" value={form.country} onChange={handleChange} required className={inputCls}>
                       <option value="">Select country</option>
                       {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                     </select>
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Product Interest</label>
-                    <select
-                      name="product" value={form.product} onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c] text-gray-800 bg-white"
-                    >
+                    <label className="block text-sm font-semibold text-gray-600 mb-2">Product Interest</label>
+                    <select name="product" value={form.product} onChange={handleChange} className={inputCls}>
                       {PRODUCTS.map(p => <option key={p} value={p}>{p}</option>)}
                     </select>
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Message *</label>
+                    <label className="block text-sm font-semibold text-gray-600 mb-2">Message *</label>
                     <textarea
                       name="message" value={form.message} onChange={handleChange} required
                       rows={5} placeholder="Tell us about your requirements, quantity needed, intended use..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c] text-gray-800 resize-none"
+                      className={`${inputCls} resize-none`}
                     />
                   </div>
                 </div>
@@ -191,9 +180,10 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="mt-6 w-full bg-[#39962c] text-white py-3.5 rounded-xl font-semibold text-lg hover:bg-[#2d7a22] transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="mt-7 w-full text-white font-bold text-[16px] py-4 rounded-full transition-all disabled:opacity-60 flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-xl"
+                  style={{ background: '#39962c', boxShadow: '0 4px 20px rgba(57,150,44,0.3)' }}
                 >
-                  {loading ? 'Sending...' : <><Send size={18} /> Send Inquiry</>}
+                  {loading ? 'Sending…' : <><Send size={17} /> Send Inquiry</>}
                 </button>
               </form>
             )}

@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   color: #1a1a1a;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
@@ -17,4 +17,21 @@ body {
 #root {
   width: 100%;
   min-height: 100vh;
+}
+
+/* Sloped section utility */
+.slope-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  padding-bottom: 8rem;
+}
+.slope-top {
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+  padding-top: 8rem;
+  margin-top: -4rem;
+}
+.slope-both {
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  margin-top: -3rem;
 }
