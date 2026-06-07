@@ -6,9 +6,9 @@ import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 
 const GRADE_IMG = {
-  'Grade A': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
-  'Grade B': 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
-  'Grade C': 'https://images.unsplash.com/photo-1519752327041-5a77f2a92e3d?auto=format&fit=crop&w=800&q=80',
+  'Grade A': '/Images/Banana_fiber_Grade A.jpg',
+  'Grade B': '/Images/Banana_fiber_Grade B.jpeg',
+  'Grade C': '/Images/Banana_fiber_Grade C.jpeg',
 }
 const gradeAccent = { 'Grade A': '#39962c', 'Grade B': '#8dc63f', 'Grade C': '#37593b' }
 
