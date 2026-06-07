@@ -99,10 +99,6 @@ export default function Products() {
         <div className="absolute inset-0 pointer-events-none"
           style={{ opacity: 0.25, backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px)', backgroundSize: '64px 64px' }} />
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem', fontWeight: 500, padding: '0.75rem 1.5rem', borderRadius: '9999px', marginBottom: '2.25rem' }}>
-            <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#8dc63f', display: 'inline-block' }} />
-            100% Natural & Biodegradable
-          </div>
           <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Our Products</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
             Premium raw banana fiber in three grades — sourced from banana pseudostems across Bangladesh.
