@@ -55,52 +55,50 @@ export default function ProductDetail() {
   ]
 
   return (
-    <div className="min-h-screen overflow-x-hidden" style={{ background: '#f8f6f1' }}>
+    <div style={{ minHeight: '100vh', overflowX: 'hidden', background: '#f8f6f1' }}>
       <Navbar />
 
       {/* Hero */}
-      <section style={{ position: 'relative', color: '#fff', overflow: 'hidden', paddingTop: '8rem', paddingBottom: '4rem' }}>
+      <section style={{ position: 'relative', color: '#fff', overflow: 'hidden', paddingTop: '9rem', paddingBottom: '5rem' }}>
         <div className="absolute inset-0">
           <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
-          <div className="absolute inset-0"
-            style={{ background: `linear-gradient(135deg, rgba(11,26,13,0.92) 0%, ${product.accent}bb 100%)` }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, rgba(11,26,13,0.92) 0%, ${product.accent}bb 100%)` }} />
         </div>
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: '72rem', margin: '0 auto', padding: '0 1.5rem' }}>
-          <Link to="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.65)', fontWeight: 500, marginBottom: '2rem', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.2s' }}>
-            <ArrowLeft size={15} /> Back to Products
+        <div style={{ position: 'relative', zIndex: 10, maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
+          <Link to="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.65)', fontWeight: 500, marginBottom: '2.25rem', textDecoration: 'none', fontSize: '0.9375rem', transition: 'color 0.2s' }}>
+            <ArrowLeft size={16} /> Back to Products
           </Link>
-          <span style={{ display: 'inline-block', color: '#fff', fontSize: '0.75rem', fontWeight: 700, padding: '0.5rem 1rem', borderRadius: '9999px', marginBottom: '1.25rem', background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.3)' }}>
+          <span style={{ display: 'inline-block', color: '#fff', fontSize: '0.8125rem', fontWeight: 700, padding: '0.625rem 1.25rem', borderRadius: '9999px', marginBottom: '1.5rem', background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.3)' }}>
             {product.grade}
           </span>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', maxWidth: '36rem', lineHeight: 1.2 }}>{product.name}</h1>
+          <h1 style={{ fontSize: 'clamp(2.25rem, 5vw, 3.25rem)', maxWidth: '40rem', lineHeight: 1.15 }}>{product.name}</h1>
         </div>
       </section>
 
       {/* Slope */}
       <div style={{ background: '#f8f6f1', lineHeight: 0 }}>
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-          style={{ display: 'block', width: '100%', height: 80 }}>
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: 80 }}>
           <polygon points="0,0 1440,0 1440,80 0,0" fill={product.accent + 'aa'} />
         </svg>
       </div>
 
-      <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '0 1.5rem 7rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3.5rem', marginBottom: '4rem' }} className="md:grid-cols-2">
+      <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 8rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', marginBottom: '5rem' }} className="md:grid-cols-2">
 
           {/* Left — image + tags */}
           <div ref={leftRef} className="reveal-left">
-            <div style={{ borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)', height: '20rem' }}>
+            <div style={{ borderRadius: '1.25rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.12)', height: '22rem' }}>
               <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
             </div>
-            <div style={{ marginTop: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+            <div style={{ marginTop: '1.75rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.125rem' }}>
               {[
                 { label: 'Packaging',  value: 'Jute / PP Bags' },
                 { label: 'Shipping',   value: 'Export Ready' },
                 { label: 'Processing', value: 'Sun-Dried' },
               ].map(item => (
-                <div key={item.label} style={{ background: '#fff', borderRadius: '1rem', padding: '1.25rem', textAlign: 'center', border: '1px solid #f3f4f6', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 500, marginBottom: '0.25rem' }}>{item.label}</div>
-                  <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#1f2937' }}>{item.value}</div>
+                <div key={item.label} style={{ background: '#fff', borderRadius: '1rem', padding: '1.5rem 1rem', textAlign: 'center', border: '1px solid #f3f4f6', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                  <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 500, marginBottom: '0.375rem' }}>{item.label}</div>
+                  <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#1f2937' }}>{item.value}</div>
                 </div>
               ))}
             </div>
@@ -108,28 +106,27 @@ export default function ProductDetail() {
 
           {/* Right — details */}
           <div ref={rightRef} className="reveal-right">
-            <p style={{ color: '#6b7280', lineHeight: 1.9, marginBottom: '2rem', fontSize: '1rem' }}>{product.description}</p>
+            <p style={{ color: '#6b7280', lineHeight: 1.95, marginBottom: '2.25rem', fontSize: '1.0625rem' }}>{product.description}</p>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '2.5rem' }}>
-              <div style={{ borderRadius: '1rem', padding: '1.25rem 1.75rem', flex: 1, textAlign: 'center', border: '1px solid #e5e7eb', background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.375rem' }}>Price</div>
-                <div style={{ fontSize: '1.875rem', fontWeight: 800, color: product.accent }}>
-                  ${product.price_per_kg}<span style={{ fontSize: '1rem', fontWeight: 500, color: '#9ca3af' }}>/kg</span>
+            <div style={{ display: 'flex', alignItems: 'stretch', gap: '1.25rem', marginBottom: '2.75rem' }}>
+              {[
+                { label: 'Price', value: `$${product.price_per_kg}`, unit: '/kg', color: product.accent },
+                { label: 'Min. Order', value: `${product.moq_kg}`, unit: ' kg', color: '#1f2937' },
+              ].map(item => (
+                <div key={item.label} style={{ borderRadius: '1.125rem', padding: '1.75rem', flex: 1, textAlign: 'center', border: '1px solid #e5e7eb', background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                  <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.625rem' }}>{item.label}</div>
+                  <div style={{ fontSize: '2.25rem', fontWeight: 800, color: item.color, lineHeight: 1 }}>
+                    {item.value}<span style={{ fontSize: '1rem', fontWeight: 500, color: '#9ca3af' }}>{item.unit}</span>
+                  </div>
                 </div>
-              </div>
-              <div style={{ borderRadius: '1rem', padding: '1.25rem 1.75rem', flex: 1, textAlign: 'center', border: '1px solid #e5e7eb', background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.375rem' }}>Min. Order</div>
-                <div style={{ fontSize: '1.875rem', fontWeight: 800, color: '#1f2937' }}>
-                  {product.moq_kg}<span style={{ fontSize: '1rem', fontWeight: 500, color: '#9ca3af' }}> kg</span>
-                </div>
-              </div>
+              ))}
             </div>
 
-            <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.75rem' }}>Key Applications</h3>
-            <ul style={{ marginBottom: '2.5rem' }}>
+            <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.8125rem' }}>Key Applications</h3>
+            <ul style={{ marginBottom: '2.75rem', display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
               {product.applications.map(a => (
-                <li key={a} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#4b5563', fontSize: '0.875rem', marginBottom: '0.75rem' }}>
-                  <CheckCircle size={15} color={product.accent} style={{ flexShrink: 0 }} />
+                <li key={a} style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', color: '#4b5563', fontSize: '0.9375rem' }}>
+                  <CheckCircle size={16} color={product.accent} style={{ flexShrink: 0 }} />
                   {a}
                 </li>
               ))}
@@ -138,12 +135,12 @@ export default function ProductDetail() {
             <div style={{ display: 'flex', gap: '1rem' }}>
               <Link to={`/contact?product=${product.name}`}
                 className="flex-1 text-center font-bold transition-all hover:-translate-y-0.5 hover:shadow-xl"
-                style={{ display: 'block', padding: '1rem', borderRadius: '9999px', color: '#fff', background: product.accent, textDecoration: 'none' }}>
+                style={{ display: 'block', padding: '1.125rem', borderRadius: '9999px', color: '#fff', background: product.accent, textDecoration: 'none', fontSize: '1rem' }}>
                 Request Quote
               </Link>
               <Link to="/contact"
                 className="flex-1 text-center font-bold transition-all hover:-translate-y-0.5"
-                style={{ display: 'block', padding: '1rem', borderRadius: '9999px', border: `2px solid ${product.accent}`, color: product.accent, textDecoration: 'none' }}
+                style={{ display: 'block', padding: '1.125rem', borderRadius: '9999px', border: `2px solid ${product.accent}`, color: product.accent, textDecoration: 'none', fontSize: '1rem' }}
                 onMouseEnter={e => { e.currentTarget.style.background = product.accent; e.currentTarget.style.color = '#fff' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = product.accent }}>
                 Request Sample
@@ -153,20 +150,21 @@ export default function ProductDetail() {
         </div>
 
         {/* Specs table */}
-        <div ref={specsRef} className="reveal" style={{ background: '#fff', borderRadius: '1rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', border: '1px solid #f3f4f6', overflow: 'hidden' }}>
-          <div style={{ position: 'relative', height: '6rem', overflow: 'hidden' }}>
+        <div ref={specsRef} className="reveal" style={{ background: '#fff', borderRadius: '1.25rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', height: '7rem', overflow: 'hidden' }}>
             <img src={product.img} alt="" className="w-full h-full object-cover" />
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 2rem', background: `linear-gradient(135deg,rgba(11,26,13,0.90),${product.accent}cc)` }}>
-              <h2 style={{ fontSize: '1.25rem', color: '#fff' }}>Full Technical Specifications</h2>
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 2.5rem', background: `linear-gradient(135deg,rgba(11,26,13,0.90),${product.accent}cc)` }}>
+              <h2 style={{ fontSize: '1.5rem', color: '#fff' }}>Full Technical Specifications</h2>
             </div>
           </div>
           <div>
             {specRows.map(([label, value]) => (
-              <div key={label} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: '1.25rem 2rem', gap: '2rem', borderBottom: '1px solid #f9fafb', transition: 'background 0.2s' }}
+              <div key={label}
+                style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: '1.375rem 2.5rem', gap: '2rem', borderBottom: '1px solid #f9fafb', transition: 'background 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.background = '#f9fafb'}
                 onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
-                <div style={{ color: '#9ca3af', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', width: '13rem', flexShrink: 0 }}>{label}</div>
-                <div style={{ fontWeight: 500, color: '#1f2937', fontSize: '0.875rem' }}>{value}</div>
+                <div style={{ color: '#9ca3af', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', width: '14rem', flexShrink: 0 }}>{label}</div>
+                <div style={{ fontWeight: 500, color: '#1f2937', fontSize: '0.9375rem' }}>{value}</div>
               </div>
             ))}
           </div>

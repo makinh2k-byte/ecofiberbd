@@ -14,8 +14,8 @@ export default function Footer() {
       </div>
 
       <div style={{ background: 'linear-gradient(150deg,#0b1a0d 0%,#1e3d22 60%,#37593b 100%)' }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-14 pt-6 pb-14">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+        <div className="max-w-6xl mx-auto px-6 lg:px-14 pt-16 pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-16">
 
             {/* Brand */}
             <div className="md:col-span-5">
