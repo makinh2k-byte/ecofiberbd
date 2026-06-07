@@ -10,8 +10,8 @@ binding = "ASSETS"
 [build]
 command = "npm run build"
 
-# D1 Database binding
-[[d1_databases]]
-binding = "DB"
-database_name = "ecofiberbd"
-database_id = "ecofiberbd"
+# D1 Database binding (configure after creating database)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "ecofiberbd"
+# database_id = "YOUR_DATABASE_ID_HERE"
