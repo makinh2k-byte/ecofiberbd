@@ -238,8 +238,9 @@ export default function Home() {
       <Slope dir="up" from="#0d2010" to="#ffffff" />
 
       {/* ══════════ FEATURES ══════════ */}
-      <section style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', paddingTop: '8rem', paddingBottom: '8rem' }}>
-        <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
+      <section style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg,rgba(13,32,16,0.92) 0%,rgba(26,56,32,0.92) 55%,rgba(46,85,53,0.92) 100%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
           <div ref={featHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Why Choose Us</span>
             <h2 style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)', color: '#fff', marginTop: '1.25rem', textAlign: 'center' }}>Key Features & Benefits</h2>
@@ -292,8 +293,9 @@ export default function Home() {
       <Slope dir="up" from="#1a3820" to="#ffffff" />
 
       {/* ══════════ CTA ══════════ */}
-      <section style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', paddingTop: '8rem', paddingBottom: '8rem' }}>
-        <div ref={ctaRef} className="reveal" style={{ maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+      <section style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.94) 0%,rgba(57,150,44,0.94) 100%)', pointerEvents: 'none' }} />
+        <div ref={ctaRef} className="reveal" style={{ maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center', position: 'relative', zIndex: 10 }}>
           <h2 style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)', color: '#fff', marginBottom: '1.75rem', lineHeight: 1.15, textAlign: 'center' }}>
             Ready to Source<br />Sustainable Fiber?
           </h2>

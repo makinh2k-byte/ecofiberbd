@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Download } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
@@ -112,6 +112,13 @@ export default function Contact() {
               style={{ background: '#25D366', color: '#fff', fontSize: '1rem', boxShadow: '0 4px 16px rgba(37,211,102,0.3)' }}>
               <MessageCircle size={20} />
               Chat on WhatsApp
+            </a>
+
+            <a href="/Business Profile.pdf" download
+              className="inline-flex items-center justify-center gap-2 font-semibold px-7 py-3 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg w-full"
+              style={{ background: '#39962c', color: '#fff', fontSize: '1rem', boxShadow: '0 4px 16px rgba(57,150,44,0.3)', textDecoration: 'none' }}>
+              <Download size={20} />
+              Download Profile
             </a>
 
             <div style={{ borderRadius: '1.25rem', padding: '2rem', border: '1px solid rgba(57,150,44,0.2)', background: 'rgba(57,150,44,0.06)' }}>
