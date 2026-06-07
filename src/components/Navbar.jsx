@@ -39,7 +39,7 @@ export default function Navbar() {
       }>
       <div className="max-w-6xl mx-auto px-6 lg:px-14">
         <div className="flex items-center justify-between h-20 px-4">
-          <Link to="/">
+          <Link to="/" className="transition-transform duration-300 hover:scale-105">
             <img src={logo} alt="EcoFiber BD" className="h-20 w-auto" />
           </Link>
 
@@ -47,50 +47,52 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6">
             {links.map(l => (
               <Link key={l.to} to={l.to}
-                className={`font-semibold text-[15px] transition-colors duration-200 ${
+                className={`font-semibold text-[15px] transition-all duration-200 relative group ${
                   location.pathname === l.to
                     ? 'text-[#39962c]'
                     : transparent ? 'text-white/85 hover:text-white' : 'text-gray-700 hover:text-[#39962c]'
                 }`}>
                 {l.label}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-[#39962c] transition-all duration-300 ${location.pathname === l.to ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </Link>
             ))}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 font-semibold text-[16px] text-white px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="flex items-center gap-2 font-semibold text-[16px] text-white px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg transform hover:scale-105"
               style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)' }}
               title="Chat with us on WhatsApp">
-              <MessageCircle size={20} />
+              <MessageCircle size={20} className="transition-transform group-hover:rotate-12" />
               WhatsApp
             </a>
           </div>
 
           {/* Mobile toggle */}
-          <button className={`md:hidden p-2 transition-colors ${transparent ? 'text-white' : 'text-gray-700'}`}
+          <button className={`md:hidden p-2 transition-all duration-300 transform ${open ? 'rotate-90' : 'rotate-0'} ${transparent ? 'text-white' : 'text-gray-700'}`}
             onClick={() => setOpen(!open)}>
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile menu */}
-        {open && (
-          <div className="md:hidden bg-white rounded-2xl shadow-xl border border-gray-100 py-4 mb-3">
-            {links.map(l => (
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 py-4 mb-3 animate-in slide-in-from-top-2">
+            {links.map((l, i) => (
               <Link key={l.to} to={l.to}
                 onClick={() => setOpen(false)}
-                className="block px-6 py-3.5 font-semibold text-gray-800 hover:text-[#39962c] hover:bg-green-50 transition-colors">
+                className="block px-6 py-3.5 font-semibold text-gray-800 hover:text-[#39962c] hover:bg-green-50 transition-all duration-200"
+                style={{ animationDelay: `${i * 50}ms` }}>
                 {l.label}
               </Link>
             ))}
             <div className="px-6 pt-3">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 text-center text-white font-semibold py-4 px-6 rounded-full transition-all duration-300 text-[16px]"
-                style={{ background: '#25D366' }}>
+                className="flex items-center justify-center gap-2 text-center text-white font-semibold py-4 px-6 rounded-full transition-all duration-300 text-[16px] hover:scale-105"
+                style={{ background: '#25D366', boxShadow: '0 4px 15px rgba(37,211,102,0.4)' }}>
                 <MessageCircle size={20} />
                 Chat on WhatsApp
               </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   )
