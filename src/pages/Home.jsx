@@ -244,7 +244,7 @@ export default function Home() {
             <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Why Choose Us</span>
             <h2 style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)', color: '#fff', marginTop: '1.25rem', textAlign: 'center' }}>Key Features & Benefits</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.75rem' }} className="md:grid-cols-6">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.75rem' }} className="sm:grid-cols-3 lg:grid-cols-3">
             {features.map((f, i) => <FeatureCard key={i} f={f} index={i} />)}
           </div>
         </div>
