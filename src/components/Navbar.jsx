@@ -56,7 +56,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 font-semibold text-[16px] text-white px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="flex items-center gap-2 font-semibold text-[16px] text-white px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)' }}
               title="Chat with us on WhatsApp">
               <MessageCircle size={20} />
