@@ -262,7 +262,7 @@ export default function Home() {
               Three grades to match your exact application — from premium textile-grade to industrial fiber.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '2.25rem' }} className="md:grid-cols-3">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2.25rem' }}>
             {grades.map((g, i) => <GradeCard key={i} g={g} index={i} />)}
           </div>
           <div style={{ textAlign: 'center', marginTop: '4rem' }}>
