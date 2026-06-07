@@ -191,7 +191,7 @@ export default function Home() {
       {/* ══════════ ABOUT ══════════ */}
       <section style={{ background: '#fff', paddingTop: '8rem', paddingBottom: '8rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '5rem', alignItems: 'center' }} className="md:grid-cols-2">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'center' }}>
 
             <div ref={aboutTextRef} className="reveal-left">
               <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>About EcoFiber BD</span>
@@ -226,8 +226,8 @@ export default function Home() {
               </Link>
             </div>
 
-            <div ref={aboutImgRef} className="reveal-right">
-              <div style={{ borderRadius: '1.75rem', overflow: 'hidden', boxShadow: '0 32px 64px -12px rgba(0,0,0,0.25)', aspectRatio: '4/5', width: '100%', maxWidth: '20rem' }} className="md:max-w-none">
+            <div ref={aboutImgRef} className="reveal-right" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <div style={{ borderRadius: '1.75rem', overflow: 'hidden', boxShadow: '0 32px 64px -12px rgba(0,0,0,0.25)', aspectRatio: '4/5', width: '100%', height: '100%' }}>
                 <img src={IMG.about} alt="Natural banana fiber" className="w-full h-full object-cover img-zoom" />
               </div>
             </div>
