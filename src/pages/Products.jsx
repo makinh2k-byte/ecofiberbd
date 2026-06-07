@@ -1,14 +1,21 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, Package, ArrowRight } from 'lucide-react'
+import { Search, ArrowRight } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 
+/* ── Images ─────────────────────────────────────────────── */
+const GRADE_IMG = {
+  'Grade A': 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=700&q=80',
+  'Grade B': 'https://images.unsplash.com/photo-1612690669207-fed642192c40?auto=format&fit=crop&w=700&q=80',
+  'Grade C': 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=700&q=80',
+}
+
 const MOCK_PRODUCTS = [
   { id: 1, name: 'Grade A Premium Banana Fiber', grade: 'Grade A', fiber_length_cm: '90–120', moisture_content_percent: 13, moq_kg: 100,  price_per_kg: 8.5, stock_kg: 2000, description: 'Premium long-staple banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production.', is_active: true },
-  { id: 2, name: 'Grade B Standard Banana Fiber', grade: 'Grade B', fiber_length_cm: '60–90',  moisture_content_percent: 13, moq_kg: 150,  price_per_kg: 6.0, stock_kg: 3500, description: 'Mid-grade fiber perfect for home furnishings, handicrafts, blended textiles, and general manufacturing.', is_active: true },
-  { id: 3, name: 'Grade C Industrial Banana Fiber',grade: 'Grade C', fiber_length_cm: '30–60',  moisture_content_percent: 13, moq_kg: 200,  price_per_kg: 4.0, stock_kg: 5000, description: 'Coarser industrial-grade fiber best suited for marine ropes, shipping cables, and biocomposite reinforcements.', is_active: true },
+  { id: 2, name: 'Grade B Standard Banana Fiber', grade: 'Grade B', fiber_length_cm: '60–90',  moisture_content_percent: 13, moq_kg: 150,  price_per_kg: 6.0, stock_kg: 3500, description: 'Mid-grade fiber perfect for home furnishings, handicrafts, blended textiles, and general manufacturing.',          is_active: true },
+  { id: 3, name: 'Grade C Industrial Banana Fiber',grade: 'Grade C', fiber_length_cm: '30–60',  moisture_content_percent: 13, moq_kg: 200,  price_per_kg: 4.0, stock_kg: 5000, description: 'Coarser industrial-grade fiber best suited for marine ropes, shipping cables, and biocomposite reinforcements.',   is_active: true },
 ]
 
 const gradeAccent = { 'Grade A': '#39962c', 'Grade B': '#8dc63f', 'Grade C': '#37593b' }
@@ -27,29 +34,24 @@ function SlopeDown({ from, to }) {
 function ProductCard({ p, index }) {
   const ref = useReveal(index)
   const accent = gradeAccent[p.grade] || '#39962c'
+  const img    = GRADE_IMG[p.grade]
   return (
-    <div ref={ref} className="reveal bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
-      {/* Grade header */}
-      <div className="h-32 flex items-center justify-center relative overflow-hidden"
-        style={{ background: `linear-gradient(135deg, ${accent}ee, ${accent}88)` }}>
-        <span className="absolute text-white/15 font-bold" style={{ fontSize: 100, lineHeight: 1, bottom: -18 }}>
-          {p.grade.replace('Grade ', '')}
-        </span>
-        <div className="relative z-10 text-center">
-          <span className="text-white text-2xl font-bold">{p.grade}</span>
-          <div className="text-white/70 text-sm mt-1 font-medium">{p.fiber_length_cm} cm fiber</div>
+    <div ref={ref} className="reveal bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col group">
+      {/* Photo header */}
+      <div className="h-52 overflow-hidden relative">
+        <img src={img} alt={p.grade} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${accent}dd 0%, transparent 55%)` }} />
+        <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
+          <span className="text-white text-xl font-bold">{p.grade}</span>
+          <span className="text-white text-2xl font-extrabold">${p.price_per_kg}<span className="text-sm font-normal opacity-80">/kg</span></span>
         </div>
       </div>
 
       <div className="p-8 flex flex-col flex-1">
-        <div className="flex items-start justify-between mb-4">
-          <h3 className="text-base font-bold text-gray-900 flex-1 pr-3 leading-snug">{p.name}</h3>
-          <span className="text-2xl font-extrabold shrink-0" style={{ color: accent }}>${p.price_per_kg}</span>
-        </div>
-        <p className="text-xs text-gray-400 -mt-3 mb-1" style={{ color: accent }}>per kg</p>
-        <p className="text-gray-400 text-sm leading-[1.8] mb-7 flex-1">{p.description}</p>
+        <h3 className="text-base font-bold text-gray-900 mb-3 leading-snug">{p.name}</h3>
+        <p className="text-gray-400 text-sm leading-[1.85] mb-7 flex-1">{p.description}</p>
 
-        <div className="space-y-3 mb-8 border-t border-gray-100 pt-6">
+        <div className="space-y-3 border-t border-gray-100 pt-6 mb-7">
           {[
             ['Fiber Length',  `${p.fiber_length_cm} cm`],
             ['Moisture',      `~${p.moisture_content_percent}%`],
@@ -65,7 +67,7 @@ function ProductCard({ p, index }) {
 
         <div className="flex gap-3">
           <Link to={`/products/${p.id}`}
-            className="flex-1 text-center border-2 font-semibold py-3 rounded-full text-sm transition-all hover:text-white"
+            className="flex-1 text-center border-2 font-semibold py-3 rounded-full text-sm transition-all"
             style={{ borderColor: accent, color: accent }}
             onMouseEnter={e => { e.currentTarget.style.background = accent; e.currentTarget.style.color = '#fff' }}
             onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = accent }}>
@@ -83,10 +85,11 @@ function ProductCard({ p, index }) {
 }
 
 export default function Products() {
-  const [search, setSearch] = useState('')
+  const [search, setSearch]           = useState('')
   const [gradeFilter, setGradeFilter] = useState('All')
-  const headRef = useReveal(0)
-  const grades = ['All', 'Grade A', 'Grade B', 'Grade C']
+  const headRef  = useReveal(0)
+  const specsRef = useReveal(0)
+  const grades   = ['All', 'Grade A', 'Grade B', 'Grade C']
 
   const filtered = MOCK_PRODUCTS.filter(p =>
     p.name.toLowerCase().includes(search.toLowerCase()) &&
@@ -100,20 +103,24 @@ export default function Products() {
 
       {/* Hero */}
       <section className="text-white text-center relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg,#0b1a0d 0%,#1a3d1e 50%,#2d7a22 100%)', paddingTop: '9rem', paddingBottom: '5rem' }}>
+        style={{ paddingTop: '9rem', paddingBottom: '5rem' }}>
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1920&q=85"
+            alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0"
+            style={{ background: 'linear-gradient(135deg,rgba(11,26,13,0.93) 0%,rgba(26,61,30,0.88) 50%,rgba(45,122,34,0.82) 100%)' }} />
+        </div>
         <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)',
           backgroundSize: '72px 72px',
         }} />
-        <div className="absolute -top-10 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle,rgba(141,198,63,0.15),transparent 65%)' }} />
         <div className="relative z-10 max-w-3xl mx-auto px-6">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-sm font-medium px-5 py-2.5 rounded-full mb-8">
             <span className="w-2.5 h-2.5 rounded-full bg-[#8dc63f]" />
             100% Natural & Biodegradable
           </div>
           <h1 className="text-5xl md:text-6xl mb-5">Our Products</h1>
-          <p className="text-green-100/65 text-lg font-light max-w-xl mx-auto leading-[1.8]">
+          <p className="text-green-100/65 text-lg font-light max-w-xl mx-auto leading-[1.85]">
             Premium raw banana fiber in three grades — sourced from banana pseudostems across Bangladesh.
           </p>
         </div>
@@ -145,7 +152,6 @@ export default function Products() {
         {/* Grid */}
         {filtered.length === 0 ? (
           <div className="text-center py-28 text-gray-400">
-            <Package size={48} className="mx-auto mb-5 opacity-30" />
             <p className="text-lg font-medium">No products found.</p>
           </div>
         ) : (
@@ -155,17 +161,24 @@ export default function Products() {
         )}
 
         {/* Tech specs */}
-        <div ref={headRef} className="reveal mt-20 rounded-2xl overflow-hidden shadow-xl"
-          style={{ background: 'linear-gradient(135deg,#0b1a0d 0%,#1e3d22 60%,#37593b 100%)' }}>
-          <div className="px-10 py-12 md:py-14 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-[#8dc63f] font-bold uppercase tracking-[0.22em] text-xs">Technical Data</span>
-              <h3 className="text-3xl text-white mt-4 mb-5">Technical Specifications</h3>
-              <p className="text-green-200/55 leading-[1.9] text-sm">
-                All fiber is raw, decorticated and sun-dried. Composition: Cellulose (~65%),
-                Hemicellulose (~15%), Lignin (~10%). Available in Natural Off-White / Cream / Pale Brown — fully dyeable.
-              </p>
+        <div ref={specsRef} className="reveal mt-20 rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80"
+              alt="Fiber texture" className="w-full h-full object-cover" />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg,rgba(11,26,13,0.92),rgba(55,89,59,0.88))' }} />
+            <div className="absolute inset-0 flex items-center px-10">
+              <div>
+                <span className="text-[#8dc63f] font-bold uppercase tracking-[0.22em] text-xs">Technical Data</span>
+                <h3 className="text-3xl text-white mt-3">Technical Specifications</h3>
+              </div>
             </div>
+          </div>
+          <div className="p-10 grid md:grid-cols-2 gap-10 items-center"
+            style={{ background: 'linear-gradient(135deg,#0b1a0d,#1e3d22)' }}>
+            <p className="text-green-200/55 leading-[1.9] text-sm">
+              All fiber is raw, decorticated and sun-dried. Composition: Cellulose (~65%),
+              Hemicellulose (~15%), Lignin (~10%). Available in Natural Off-White / Cream / Pale Brown — fully dyeable.
+            </p>
             <div className="grid grid-cols-2 gap-4">
               {[
                 ['Material',         '100% Banana Pseudostem'],
