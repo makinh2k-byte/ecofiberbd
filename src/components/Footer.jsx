@@ -15,7 +15,7 @@ export default function Footer() {
 
       <div style={{ background: 'linear-gradient(150deg,#0b1a0d 0%,#1e3d22 60%,#37593b 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(150deg,rgba(11,26,13,0.93) 0%,rgba(30,61,34,0.93) 60%,rgba(55,89,59,0.93) 100%)', pointerEvents: 'none' }} />
-        <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 pt-24 pb-28" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="max-w-6xl mx-auto pl-8 pr-6 md:pl-16 md:pr-12 lg:pl-24 lg:pr-20 pt-24 pb-28" style={{ position: 'relative', zIndex: 10 }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mb-24">
 
             {/* Brand */}
