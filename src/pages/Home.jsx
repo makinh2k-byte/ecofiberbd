@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 
 const IMG = {
-  hero:       'https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1920&q=85',
+  hero:       '/Images/Hero Section Background.jpeg',
   about:      'https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=900&q=80',
   gradeA:     'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
   gradeB:     'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
