@@ -86,15 +86,18 @@ export default function Home() {
       {/* Hero Section */}
       <section
         className="relative min-h-screen flex items-center justify-center text-white overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1a3d1e 0%, #37593b 40%, #39962c 100%)' }}
+        style={{ background: 'radial-gradient(circle at 70% 20%, #4aa838 0%, transparent 45%), linear-gradient(135deg, #16331a 0%, #2c4a30 35%, #39962c 100%)' }}
       >
-        {/* Background pattern overlay */}
-        <div className="absolute inset-0 opacity-10"
+        {/* Botanical line texture */}
+        <div className="absolute inset-0 opacity-[0.07]"
           style={{
-            backgroundImage: `radial-gradient(circle at 25px 25px, white 2%, transparent 0%), radial-gradient(circle at 75px 75px, white 2%, transparent 0%)`,
-            backgroundSize: '100px 100px'
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0C30 16 16 30 0 30c16 0 30 14 30 30 0-16 14-30 30-30-16 0-30-14-30-30z' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E")`,
+            backgroundSize: '70px 70px'
           }}
         />
+        {/* Soft glow orbs for organic depth */}
+        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#8dc63f]/20 blur-3xl" />
+        <div className="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-[#39962c]/30 blur-3xl" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-white/30">
             🌿 Premium Natural Fiber from Bangladesh
