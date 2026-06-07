@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, MessageCircle } from 'lucide-react'
 import logoLight from '../assets/logo-light.svg'
 import logoDark from '../assets/logo-dark.svg'
+
+const WHATSAPP_NUMBER = '8801672268121'
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20EcoFiber%20BD%2C%20I%20would%20like%20to%20inquire%20about%20your%20banana%20fiber%20products.`
 
 export default function Navbar() {
   const [open, setOpen]       = useState(false)
@@ -41,7 +44,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {links.map(l => (
               <Link key={l.to} to={l.to}
                 className={`font-semibold text-[15px] transition-colors duration-200 ${
@@ -52,6 +55,13 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 font-semibold text-[15px] text-white px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)' }}
+              title="Chat with us on WhatsApp">
+              <MessageCircle size={18} />
+              WhatsApp
+            </a>
             <Link to="/contact"
               className="font-semibold text-[15px] text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: '#39962c', boxShadow: '0 2px 12px rgba(57,150,44,0.3)' }}>
@@ -76,7 +86,13 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <div className="px-6 pt-3">
+            <div className="px-6 pt-3 flex flex-col gap-2">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-2 text-center text-white font-semibold py-3 rounded-full transition-all duration-300"
+                style={{ background: '#25D366' }}>
+                <MessageCircle size={18} />
+                WhatsApp
+              </a>
               <Link to="/contact" onClick={() => setOpen(false)}
                 className="block text-center text-white font-semibold py-3 rounded-full"
                 style={{ background: '#39962c' }}>

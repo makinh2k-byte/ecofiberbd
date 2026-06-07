@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 
 const PRODUCTS  = ['Grade A Premium Banana Fiber', 'Grade B Standard Banana Fiber', 'Grade C Industrial Banana Fiber', 'General Inquiry']
 const COUNTRIES = ['Bangladesh','India','China','Japan','South Korea','Germany','United Kingdom','United States','Australia','Canada','France','Netherlands','Italy','Spain','Other']
+const WHATSAPP_NUMBER = '8801672268121'
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20EcoFiber%20BD%2C%20I%20would%20like%20to%20inquire%20about%20your%20banana%20fiber%20products.`
 
 const Slope = ({ dir = 'down', from, to }) => (
   <div style={{ background: to, lineHeight: 0, fontSize: 0 }}>
@@ -104,6 +106,13 @@ export default function Contact() {
                 ))}
               </div>
             </div>
+
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 font-semibold py-3 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ background: '#25D366', color: '#fff', fontSize: '1rem', boxShadow: '0 4px 16px rgba(37,211,102,0.3)' }}>
+              <MessageCircle size={20} />
+              Chat on WhatsApp
+            </a>
 
             <div style={{ borderRadius: '1.25rem', padding: '2rem', border: '1px solid rgba(57,150,44,0.2)', background: 'rgba(57,150,44,0.06)' }}>
               <h4 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: '1.0625rem' }}>Packaging & Storage</h4>
