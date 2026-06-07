@@ -283,7 +283,7 @@ export default function Home() {
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Use Cases</span>
             <h2 style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Applications & Usage</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.5rem' }} className="sm:grid-cols-2 lg:grid-cols-5">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.5rem' }} className="sm:grid-cols-2 lg:grid-cols-3">
             {applications.map((a, i) => <AppCard key={i} a={a} index={i} />)}
           </div>
         </div>

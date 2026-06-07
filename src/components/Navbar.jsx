@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
           <Link to="/">
-            <img src={logo} alt="EcoFiber BD" className="h-12 w-auto" />
+            <img src={logo} alt="EcoFiber BD" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop */}
@@ -56,10 +56,10 @@ export default function Navbar() {
               </Link>
             ))}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 font-semibold text-[15px] text-white px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="flex items-center gap-2 font-semibold text-[16px] text-white px-6 py-3 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)' }}
               title="Chat with us on WhatsApp">
-              <MessageCircle size={18} />
+              <MessageCircle size={20} />
               WhatsApp
             </a>
           </div>
@@ -83,9 +83,9 @@ export default function Navbar() {
             ))}
             <div className="px-6 pt-3">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 text-center text-white font-semibold py-3 rounded-full transition-all duration-300"
+                className="flex items-center justify-center gap-2 text-center text-white font-semibold py-3.5 rounded-full transition-all duration-300 text-[16px]"
                 style={{ background: '#25D366' }}>
-                <MessageCircle size={18} />
+                <MessageCircle size={20} />
                 Chat on WhatsApp
               </a>
             </div>

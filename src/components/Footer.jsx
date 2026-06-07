@@ -14,17 +14,17 @@ export default function Footer() {
       </div>
 
       <div style={{ background: 'linear-gradient(150deg,#0b1a0d 0%,#1e3d22 60%,#37593b 100%)' }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-14 pt-16 pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-16">
+        <div className="max-w-6xl mx-auto px-6 lg:px-14 pt-20 pb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
 
             {/* Brand */}
-            <div className="md:col-span-5">
-              <img src={logoLight} alt="EcoFiber BD" className="h-12 w-auto mb-6" />
-              <p className="text-green-200/60 leading-[1.9] text-sm max-w-xs">
+            <div>
+              <img src={logoLight} alt="EcoFiber BD" className="h-16 w-auto mb-8" />
+              <p className="text-green-200/60 leading-[1.85] text-sm max-w-xs">
                 Transforming Waste into Sustainable Solutions. Premium raw banana fiber
                 sourced from Bangladesh's finest banana plantations.
               </p>
-              <div className="flex gap-3 mt-8">
+              <div className="flex gap-3 mt-10">
                 {['Facebook', 'LinkedIn'].map(name => (
                   <a key={name} href="#"
                     className="bg-white/10 hover:bg-[#39962c] px-5 py-2.5 rounded-full transition-all text-sm font-semibold text-white hover:-translate-y-0.5 hover:shadow-lg">
@@ -35,9 +35,9 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div className="md:col-span-3">
-              <h4 className="font-bold text-white text-base mb-7 tracking-wide">Quick Links</h4>
-              <ul className="space-y-4">
+            <div>
+              <h4 className="font-bold text-white text-base mb-8 tracking-wide">Quick Links</h4>
+              <ul className="space-y-5">
                 {[['/', 'Home'], ['/products', 'Products'], ['/contact', 'Contact Us']].map(([to, label]) => (
                   <li key={to}>
                     <Link to={to} className="text-green-200/55 hover:text-[#8dc63f] transition-colors text-sm font-medium flex items-center gap-2.5 group">
@@ -50,27 +50,29 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div className="md:col-span-4">
-              <h4 className="font-bold text-white text-base mb-7 tracking-wide">Contact</h4>
-              <ul className="space-y-5">
+            <div>
+              <h4 className="font-bold text-white text-base mb-8 tracking-wide">Contact</h4>
+              <ul className="space-y-6">
                 {[
                   { icon: MapPin, text: 'Dhaka, Bangladesh',   href: null },
                   { icon: Mail,   text: 'info@ecofiberbd.com', href: 'mailto:info@ecofiberbd.com' },
                   { icon: Phone,  text: '+8801672268121',       href: 'tel:+8801672268121' },
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <item.icon size={15} color="#8dc63f" className="shrink-0" />
-                    {item.href
-                      ? <a href={item.href} className="text-green-200/55 text-sm hover:text-[#8dc63f] transition-colors">{item.text}</a>
-                      : <span className="text-green-200/55 text-sm">{item.text}</span>
-                    }
+                  <li key={i} className="flex items-start gap-3">
+                    <item.icon size={18} color="#8dc63f" className="shrink-0 mt-0.5" />
+                    <div>
+                      {item.href
+                        ? <a href={item.href} className="text-green-200/60 text-sm hover:text-[#8dc63f] transition-colors font-medium">{item.text}</a>
+                        : <span className="text-green-200/60 text-sm font-medium">{item.text}</span>
+                      }
+                    </div>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-3 text-green-300/35 text-xs">
+          <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-green-300/35 text-xs">
             <p>© {new Date().getFullYear()} EcoFiber BD. All rights reserved.</p>
             <p>Premium Raw Banana Fiber Supplier — Dhaka, Bangladesh</p>
           </div>

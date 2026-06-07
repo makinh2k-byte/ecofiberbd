@@ -26,10 +26,10 @@ export default function App() {
 
       {/* Floating WhatsApp Button */}
       <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+        className="fixed bottom-8 right-8 z-40 flex items-center justify-center w-16 h-16 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl"
         style={{ background: '#25D366', boxShadow: '0 4px 20px rgba(37,211,102,0.4)' }}
         title="Chat with us on WhatsApp">
-        <MessageCircle size={28} color="white" fill="white" />
+        <MessageCircle size={32} color="white" fill="white" />
       </a>
     </BrowserRouter>
   )
