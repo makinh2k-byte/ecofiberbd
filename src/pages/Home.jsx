@@ -6,16 +6,16 @@ import { useReveal } from '../hooks/useReveal'
 
 /* ─── Images ──────────────────────────────────────────────── */
 const IMG = {
-  hero:      'https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1920&q=85',
-  about:     'https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=900&q=80',
-  gradeA:    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
-  gradeB:    'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
-  gradeC:    'https://images.unsplash.com/photo-1519752327041-5a77f2a92e3d?auto=format&fit=crop&w=800&q=80',
-  textile:   'https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?auto=format&fit=crop&w=600&q=80',
-  home:      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80',
-  handicraft:'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80',
-  rope:      'https://images.unsplash.com/photo-1519752327041-5a77f2a92e3d?auto=format&fit=crop&w=600&q=80',
-  paper:     'https://images.unsplash.com/photo-1568376794508-ae52c6ab3929?auto=format&fit=crop&w=600&q=80',
+  hero:       'https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1920&q=85',
+  about:      'https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=900&q=80',
+  gradeA:     'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
+  gradeB:     'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
+  gradeC:     'https://images.unsplash.com/photo-1519752327041-5a77f2a92e3d?auto=format&fit=crop&w=800&q=80',
+  textile:    'https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?auto=format&fit=crop&w=600&q=80',
+  home:       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80',
+  handicraft: 'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80',
+  rope:       'https://images.unsplash.com/photo-1519752327041-5a77f2a92e3d?auto=format&fit=crop&w=600&q=80',
+  paper:      'https://images.unsplash.com/photo-1568376794508-ae52c6ab3929?auto=format&fit=crop&w=600&q=80',
 }
 
 /* ─── Slope dividers ──────────────────────────────────────── */
@@ -61,16 +61,75 @@ const applications = [
   { title: 'Paper Industry',     desc: 'Archival paper, currency paper, tea bags',       img: IMG.paper },
 ]
 
+/* ─── Sub-components (hooks called at component top-level, not in loops) ── */
+
+function FeatureCard({ f, index }) {
+  const ref = useReveal(index)
+  return (
+    <div ref={ref}
+      className="reveal p-8 rounded-2xl border border-white/10 hover:border-[#8dc63f]/40 transition-all duration-500 hover:-translate-y-1"
+      style={{ background: 'rgba(255,255,255,0.06)' }}>
+      <div className="flex items-center gap-3 mb-5">
+        <span className="text-[#8dc63f] font-bold text-xs tracking-[0.2em]">{f.num}</span>
+        <div className="flex-1 h-px bg-[#8dc63f]/25" />
+      </div>
+      <h3 className="text-lg text-white mb-3">{f.title}</h3>
+      <p className="text-green-200/50 text-sm leading-[1.85]">{f.desc}</p>
+    </div>
+  )
+}
+
+function GradeCard({ g, index }) {
+  const ref = useReveal(index)
+  return (
+    <div ref={ref}
+      className="reveal bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group flex flex-col">
+      <div className="h-52 overflow-hidden relative flex-shrink-0">
+        <img src={g.img} alt={g.grade} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div className="absolute inset-0" style={{ background: `linear-gradient(to top,${g.accent}dd 0%,transparent 55%)` }} />
+        <span className="absolute bottom-4 left-5 text-white text-xl font-bold">{g.grade}</span>
+      </div>
+      <div className="p-8 flex flex-col flex-1">
+        <p className="text-gray-500 text-sm leading-[1.85] mb-6 flex-1">{g.desc}</p>
+        <div className="space-y-3 border-t border-gray-100 pt-5">
+          <div className="flex justify-between">
+            <span className="text-gray-400 text-sm">Fiber Length</span>
+            <span className="font-bold text-gray-800 text-sm">{g.length}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-400 text-sm">Best For</span>
+            <span className="font-bold text-gray-800 text-sm text-right">{g.use}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function AppCard({ a, index }) {
+  const ref = useReveal(index)
+  return (
+    <div ref={ref}
+      className="reveal bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group border border-gray-100">
+      <div className="h-40 overflow-hidden">
+        <img src={a.img} alt={a.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+      </div>
+      <div className="p-5 text-center">
+        <h4 className="font-bold text-gray-900 text-sm mb-1.5">{a.title}</h4>
+        <p className="text-xs text-gray-400 leading-relaxed">{a.desc}</p>
+      </div>
+    </div>
+  )
+}
+
 /* ─── Page ────────────────────────────────────────────────── */
 export default function Home() {
-  /* reveal refs */
-  const r = (n = 0) => useReveal(n) // eslint-disable-line
-  const aboutTextRef  = useReveal(0)
-  const aboutImgRef   = useReveal(1)
-  const featHeadRef   = useReveal(0)
-  const gradeHeadRef  = useReveal(0)
-  const appHeadRef    = useReveal(0)
-  const ctaRef        = useReveal(0)
+  const aboutTextRef = useReveal(0)
+  const aboutImgRef  = useReveal(1)
+  const featHeadRef  = useReveal(0)
+  const gradeHeadRef = useReveal(0)
+  const appHeadRef   = useReveal(0)
+  const ctaRef       = useReveal(0)
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -89,14 +148,14 @@ export default function Home() {
             backgroundSize: '64px 64px',
           }} />
 
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pt-32 pb-12 flex flex-col items-center">
+        {/* Hero Content — fully centered */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pt-32 pb-12 flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2.5 bg-white/10 border border-white/20 text-white/80 text-sm font-medium px-5 py-2.5 rounded-full mb-10">
             <span className="w-2 h-2 rounded-full bg-[#8dc63f] pulse-dot" />
             Premium Natural Fiber from Bangladesh
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight mb-7 text-center">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight mb-7 text-center w-full">
             Transforming Waste<br />
             into{' '}
             <span style={{
@@ -114,7 +173,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/products"
-              className="group inline-flex items-center justify-center gap-2.5 font-semibold text-base px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              className="group inline-flex items-center justify-center gap-2.5 font-semibold text-base px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-white"
               style={{ background: '#39962c', boxShadow: '0 6px 28px rgba(57,150,44,0.45)' }}>
               View Products <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -125,7 +184,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Stats */}
+        {/* Stats bar */}
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s, i) => (
@@ -203,21 +262,9 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl text-white mt-4">Key Features & Benefits</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((f, i) => {
-              const ref = useReveal(i) // eslint-disable-line
-              return (
-                <div key={i} ref={ref}
-                  className="reveal p-8 rounded-2xl border border-white/10 hover:border-[#8dc63f]/40 transition-all duration-500 hover:-translate-y-1"
-                  style={{ background: 'rgba(255,255,255,0.06)' }}>
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="text-[#8dc63f] font-bold text-xs tracking-[0.2em]">{f.num}</span>
-                    <div className="flex-1 h-px bg-[#8dc63f]/25" />
-                  </div>
-                  <h3 className="text-lg text-white mb-3">{f.title}</h3>
-                  <p className="text-green-200/50 text-sm leading-[1.85]">{f.desc}</p>
-                </div>
-              )
-            })}
+            {features.map((f, i) => (
+              <FeatureCard key={i} f={f} index={i} />
+            ))}
           </div>
         </div>
       </section>
@@ -235,32 +282,9 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {grades.map((g, i) => {
-              const ref = useReveal(i) // eslint-disable-line
-              return (
-                <div key={i} ref={ref}
-                  className="reveal bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group flex flex-col">
-                  <div className="h-52 overflow-hidden relative flex-shrink-0">
-                    <img src={g.img} alt={g.grade} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(to top,${g.accent}dd 0%,transparent 55%)` }} />
-                    <span className="absolute bottom-4 left-5 text-white text-xl font-bold">{g.grade}</span>
-                  </div>
-                  <div className="p-8 flex flex-col flex-1">
-                    <p className="text-gray-500 text-sm leading-[1.85] mb-6 flex-1">{g.desc}</p>
-                    <div className="space-y-3 border-t border-gray-100 pt-5">
-                      <div className="flex justify-between">
-                        <span className="text-gray-400 text-sm">Fiber Length</span>
-                        <span className="font-bold text-gray-800 text-sm">{g.length}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400 text-sm">Best For</span>
-                        <span className="font-bold text-gray-800 text-sm text-right">{g.use}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+            {grades.map((g, i) => (
+              <GradeCard key={i} g={g} index={i} />
+            ))}
           </div>
           <div className="text-center mt-12">
             <Link to="/products"
@@ -282,21 +306,9 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl text-gray-900 mt-4">Applications & Usage</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {applications.map((a, i) => {
-              const ref = useReveal(i) // eslint-disable-line
-              return (
-                <div key={i} ref={ref}
-                  className="reveal bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 hover:-translate-y-2 group cursor-default border border-gray-100">
-                  <div className="h-40 overflow-hidden">
-                    <img src={a.img} alt={a.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  </div>
-                  <div className="p-5 text-center">
-                    <h4 className="font-bold text-gray-900 text-sm mb-1.5">{a.title}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{a.desc}</p>
-                  </div>
-                </div>
-              )
-            })}
+            {applications.map((a, i) => (
+              <AppCard key={i} a={a} index={i} />
+            ))}
           </div>
         </div>
       </section>
