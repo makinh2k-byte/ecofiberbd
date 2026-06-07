@@ -11,17 +11,6 @@ const COUNTRIES = ['Bangladesh','India','China','Japan','South Korea','Germany',
 const WHATSAPP_NUMBER = '8801672268121'
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20EcoFiber%20BD%2C%20I%20would%20like%20to%20inquire%20about%20your%20banana%20fiber%20products.`
 
-const Slope = ({ dir = 'down', from, to }) => (
-  <div style={{ background: to, lineHeight: 0, fontSize: 0 }}>
-    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-      style={{ display: 'block', width: '100%', height: 80 }}>
-      {dir === 'down'
-        ? <polygon points="0,0 1440,0 1440,80 0,0" fill={from} />
-        : <polygon points="0,80 1440,0 1440,80 0,80" fill={from} />}
-    </svg>
-  </div>
-)
-
 const inputStyle = {
   width: '100%',
   padding: '1rem 1.125rem',
@@ -80,8 +69,6 @@ export default function Contact() {
           </p>
         </div>
       </section>
-
-      <Slope dir="down" from="#1a3820" to="#f7f5f0" />
 
       <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 8rem' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="md:grid-cols-3">

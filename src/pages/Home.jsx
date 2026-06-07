@@ -19,17 +19,6 @@ const IMG = {
   paper:      'https://images.unsplash.com/photo-1568376794508-ae52c6ab3929?auto=format&fit=crop&w=600&q=80',
 }
 
-const Slope = ({ dir = 'down', from, to }) => (
-  <div style={{ background: to, lineHeight: 0, display: 'block', fontSize: 0 }}>
-    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: 80 }}>
-      {dir === 'down'
-        ? <polygon points="0,0 1440,0 1440,80 0,0" fill={from} />
-        : <polygon points="0,80 1440,0 1440,80 0,80" fill={from} />}
-    </svg>
-  </div>
-)
-
 const stats = [
   { value: '100%',   label: 'Biodegradable' },
   { value: '500+',   label: 'MPa Tensile Strength' },
@@ -228,8 +217,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Slope dir="down" from="#1a3820" to="#ffffff" />
-
       {/* ══════════ ABOUT ══════════ */}
       <section style={{ background: '#fff', paddingTop: '8rem', paddingBottom: '8rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
@@ -277,8 +264,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Slope dir="up" from="#0d2010" to="#ffffff" />
-
       {/* ══════════ FEATURES ══════════ */}
       <section style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg,rgba(13,32,16,0.92) 0%,rgba(26,56,32,0.92) 55%,rgba(46,85,53,0.92) 100%)', pointerEvents: 'none' }} />
@@ -292,8 +277,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Slope dir="down" from="#1a3820" to="#f7f5f0" />
 
       {/* ══════════ GRADES ══════════ */}
       <section style={{ background: '#f7f5f0', paddingTop: '8rem', paddingBottom: '8rem' }}>
@@ -317,8 +300,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Slope dir="up" from="#ffffff" to="#f7f5f0" />
-
       {/* ══════════ APPLICATIONS ══════════ */}
       <section style={{ background: '#fff', paddingTop: '8rem', paddingBottom: '8rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
@@ -331,8 +312,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Slope dir="up" from="#1a3820" to="#ffffff" />
 
       {/* ══════════ CTA ══════════ */}
       <section style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>

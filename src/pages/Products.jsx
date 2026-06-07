@@ -19,17 +19,6 @@ const MOCK_PRODUCTS = [
   { id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C', fiber_length_cm: '30–60',  moisture_content_percent: 13, moq_kg: 200, price_per_kg: 4, stock_kg: 5000, description: 'Coarser industrial-grade fiber for marine ropes, shipping cables, and biocomposite reinforcements.',             is_active: true },
 ]
 
-const Slope = ({ dir = 'down', from, to }) => (
-  <div style={{ background: to, lineHeight: 0, fontSize: 0 }}>
-    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-      style={{ display: 'block', width: '100%', height: 80 }}>
-      {dir === 'down'
-        ? <polygon points="0,0 1440,0 1440,80 0,0" fill={from} />
-        : <polygon points="0,80 1440,0 1440,80 0,80" fill={from} />}
-    </svg>
-  </div>
-)
-
 function ProductCard({ p, index }) {
   const ref = useReveal(index)
   const accent = gradeAccent[p.grade] || '#39962c'
@@ -120,8 +109,6 @@ export default function Products() {
           </p>
         </div>
       </section>
-
-      <Slope dir="down" from="#1a3820" to="#f7f5f0" />
 
       <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 8rem' }}>
 
