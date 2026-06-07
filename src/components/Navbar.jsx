@@ -62,11 +62,6 @@ export default function Navbar() {
               <MessageCircle size={18} />
               WhatsApp
             </a>
-            <Link to="/contact"
-              className="font-semibold text-[15px] text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-              style={{ background: '#39962c', boxShadow: '0 2px 12px rgba(57,150,44,0.3)' }}>
-              Get Quote
-            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -86,18 +81,13 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <div className="px-6 pt-3 flex flex-col gap-2">
+            <div className="px-6 pt-3">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
                 className="flex items-center justify-center gap-2 text-center text-white font-semibold py-3 rounded-full transition-all duration-300"
                 style={{ background: '#25D366' }}>
                 <MessageCircle size={18} />
-                WhatsApp
+                Chat on WhatsApp
               </a>
-              <Link to="/contact" onClick={() => setOpen(false)}
-                className="block text-center text-white font-semibold py-3 rounded-full"
-                style={{ background: '#39962c' }}>
-                Get Quote
-              </Link>
             </div>
           </div>
         )}
