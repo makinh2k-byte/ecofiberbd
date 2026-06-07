@@ -15,8 +15,8 @@ export default function Footer() {
 
       <div style={{ background: 'linear-gradient(150deg,#0b1a0d 0%,#1e3d22 60%,#37593b 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(150deg,rgba(11,26,13,0.93) 0%,rgba(30,61,34,0.93) 60%,rgba(55,89,59,0.93) 100%)', pointerEvents: 'none' }} />
-        <div className="max-w-6xl mx-auto px-8 lg:px-16 pt-24 pb-28" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 pt-24 pb-28" style={{ position: 'relative', zIndex: 10 }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mb-24">
 
             {/* Brand */}
             <div>
@@ -73,7 +73,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-green-300/35 text-xs">
+          <div className="border-t border-white/10 pt-16 flex flex-col md:flex-row justify-between items-center gap-8 text-green-300/35 text-xs">
             <p>© {new Date().getFullYear()} EcoFiber BD. All rights reserved.</p>
             <p>Premium Raw Banana Fiber Supplier — Dhaka, Bangladesh</p>
           </div>
