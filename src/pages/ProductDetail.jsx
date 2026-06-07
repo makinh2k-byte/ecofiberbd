@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
+import { useSEO } from '../hooks/useSEO'
 
 const PRODUCTS = [
   { id: 1, name: 'Grade A Premium Banana Fiber', grade: 'Grade A', accent: '#39962c',
@@ -25,6 +26,15 @@ const PRODUCTS = [
 export default function ProductDetail() {
   const { id }   = useParams()
   const product  = PRODUCTS.find(p => p.id === parseInt(id))
+
+  useSEO({
+    title: product ? `${product.name} | Premium Banana Fiber Grade | EcoFiber BD` : 'Product Details | EcoFiber BD',
+    description: product ? `${product.name} - ${product.description}. Fiber length: ${product.fiber_length_cm} cm. Price: $${product.price_per_kg}/kg. Order online from Bangladesh.` : '',
+    keywords: product ? `${product.grade}, banana fiber, ${product.fiber_length_cm} cm, biodegradable fiber` : '',
+    url: `https://ecofiberbd.com/products/${id}`,
+    image: 'https://ecofiberbd.com/favicon.svg'
+  })
+
   const leftRef  = useReveal(0)
   const rightRef = useReveal(1)
   const specsRef = useReveal(0)

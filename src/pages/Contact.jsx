@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Download } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
+import { useSEO } from '../hooks/useSEO'
 
 const PRODUCTS  = ['Grade A Premium Banana Fiber', 'Grade B Standard Banana Fiber', 'Grade C Industrial Banana Fiber', 'General Inquiry']
 const COUNTRIES = ['Bangladesh','India','China','Japan','South Korea','Germany','United Kingdom','United States','Australia','Canada','France','Netherlands','Italy','Spain','Other']
@@ -35,6 +36,14 @@ const inputStyle = {
 }
 
 export default function Contact() {
+  useSEO({
+    title: 'Contact EcoFiber BD | Get in Touch for Banana Fiber Inquiries',
+    description: 'Contact EcoFiber BD for product samples, bulk pricing, and inquiries about premium banana fiber. Dhaka, Bangladesh. Download our business profile.',
+    keywords: 'contact us, banana fiber inquiry, bulk order, product samples, EcoFiber BD contact',
+    url: 'https://ecofiberbd.com/contact',
+    image: 'https://ecofiberbd.com/favicon.svg'
+  })
+
   const [searchParams] = useSearchParams()
   const defaultProduct = searchParams.get('product') || 'General Inquiry'
   const [form, setForm] = useState({

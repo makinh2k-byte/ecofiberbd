@@ -1,8 +1,10 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
+import { useSEO } from '../hooks/useSEO'
 
 const IMG = {
   hero:       '/Images/Hero Section Background.jpeg',
@@ -120,6 +122,46 @@ function AppCard({ a, index }) {
 
 /* ── Page ─────────────────────────────────────────────────── */
 export default function Home() {
+  useSEO({
+    title: 'EcoFiber BD — Premium Raw Banana Fiber Supplier | Bangladesh',
+    description: 'Premium raw banana fiber from Dhaka, Bangladesh. 100% biodegradable, 500-600 MPa tensile strength. Grade A, B & C for textile, paper & handicraft industries.',
+    keywords: 'banana fiber, raw banana fiber, biodegradable fiber, Bangladesh, sustainable fiber supplier, Grade A, Grade B, Grade C',
+    url: 'https://ecofiberbd.com/',
+    image: 'https://ecofiberbd.com/favicon.svg'
+  })
+
+  // Add JSON-LD structured data
+  useEffect(() => {
+    const structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'EcoFiber BD',
+      'url': 'https://ecofiberbd.com',
+      'logo': 'https://ecofiberbd.com/favicon.svg',
+      'description': 'Premium raw banana fiber supplier from Bangladesh',
+      'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': 'Dhaka',
+        'addressCountry': 'BD'
+      },
+      'contactPoint': {
+        '@type': 'ContactPoint',
+        'contactType': 'Business',
+        'telephone': '+88-01672268121',
+        'email': 'info@ecofiberbd.com'
+      },
+      'sameAs': [
+        'https://facebook.com/ecofiberbd',
+        'https://linkedin.com/company/ecofiberbd'
+      ]
+    }
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(structuredData)
+    document.head.appendChild(script)
+    return () => document.head.removeChild(script)
+  }, [])
+
   const aboutTextRef = useReveal(0)
   const aboutImgRef  = useReveal(1)
   const featHeadRef  = useReveal(0)

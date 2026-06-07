@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, ArrowRight } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
+import { useSEO } from '../hooks/useSEO'
 
 const GRADE_IMG = {
   'Grade A': '/Images/Banana_fiber_Grade A.jpg',
@@ -80,6 +81,14 @@ function ProductCard({ p, index }) {
 }
 
 export default function Products() {
+  useSEO({
+    title: 'Premium Banana Fiber Products | Grade A, B & C | EcoFiber BD',
+    description: 'Browse our premium banana fiber products in three grades. Grade A for textiles, Grade B for handicrafts, Grade C for industrial use. 100% biodegradable, sustainably sourced from Bangladesh.',
+    keywords: 'banana fiber products, Grade A fiber, Grade B fiber, Grade C fiber, raw banana fiber, biodegradable fiber, sustainable products',
+    url: 'https://ecofiberbd.com/products',
+    image: 'https://ecofiberbd.com/favicon.svg'
+  })
+
   const [search, setSearch]           = useState('')
   const [gradeFilter, setGradeFilter] = useState('All')
   const specsRef = useReveal(0)
