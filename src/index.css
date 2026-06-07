@@ -1,9 +1,20 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Slopes';
+  src: url('/Slopes.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -12,26 +23,15 @@ body {
   color: #1a1a1a;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-slopes {
+  font-family: 'Slopes', 'Outfit', system-ui, sans-serif;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
-}
-
-/* Sloped section utility */
-.slope-bottom {
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-  padding-bottom: 8rem;
-}
-.slope-top {
-  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
-  padding-top: 8rem;
-  margin-top: -4rem;
-}
-.slope-both {
-  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  margin-top: -3rem;
 }
