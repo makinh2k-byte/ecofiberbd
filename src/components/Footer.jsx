@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MapPin, Mail, Phone, Linkedin } from 'lucide-react'
+import { MapPin, Mail, Phone } from 'lucide-react'
 import logoLight from '../assets/logo-light.svg'
 
 export default function Footer() {
@@ -15,11 +15,11 @@ export default function Footer() {
               sourced from Bangladesh's finest banana plantations.
             </p>
             <div className="flex gap-4 mt-6">
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-colors text-sm font-bold">
-                f
+              <a href="#" className="bg-white/10 hover:bg-white/20 px-3 py-2 rounded-lg transition-colors text-sm font-bold">
+                Facebook
               </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-colors">
-                <Linkedin size={20} />
+              <a href="#" className="bg-white/10 hover:bg-white/20 px-3 py-2 rounded-lg transition-colors text-sm font-bold">
+                LinkedIn
               </a>
             </div>
           </div>
