@@ -34,13 +34,43 @@
     <meta name="googlebot" content="index, follow" />
     <link rel="alternate" hrefLang="en" href="https://ecofiberbd.com/" />
 
-    <!-- Preload Slopes font — prevents flash of unstyled text -->
+    <!-- Preload custom fonts — prevents flash of unstyled text -->
     <link rel="preload" href="/Slopes.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/Garet-Book.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/Garet-Heavy.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
 
-    <!-- Outfit from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Custom font faces -->
+    <style>
+      @font-face {
+        font-family: 'Slopes';
+        src: url('/Slopes.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Garet';
+        src: url('/Garet-Book.ttf') format('truetype');
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Garet';
+        src: url('/Garet-Heavy.ttf') format('truetype');
+        font-weight: 700;
+        font-display: swap;
+      }
+
+      * {
+        font-family: 'Garet', sans-serif;
+      }
+
+      h1, h2, h3, h4, h5, h6, .heading {
+        font-family: 'Slopes', 'Garet', sans-serif;
+        font-weight: normal;
+      }
+    </style>
 
     <title>EcoFiber BD — Premium Raw Banana Fiber Supplier | Bangladesh</title>
   </head>
