@@ -7,13 +7,23 @@ import Contact from './pages/Contact'
 import Admin from './pages/Admin'
 import AdminProducts from './pages/AdminProducts'
 import AdminInquiries from './pages/AdminInquiries'
+import { useScrollToTop } from './hooks/useScrollToTop'
 
 const WHATSAPP_NUMBER = '8801672268121'
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20EcoFiber%20BD%2C%20I%20would%20like%20to%20inquire%20about%20your%20banana%20fiber%20products.`
 
+/**
+ * Scroll to top wrapper component
+ */
+function ScrollToTop() {
+  useScrollToTop()
+  return null
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
