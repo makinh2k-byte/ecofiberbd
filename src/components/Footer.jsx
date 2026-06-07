@@ -19,7 +19,7 @@ export default function Footer() {
 
             {/* Brand */}
             <div>
-              <img src={logoLight} alt="EcoFiber BD" className="h-16 w-auto mb-8" />
+              <img src={logoLight} alt="EcoFiber BD" className="h-20 w-auto mb-8" />
               <p className="text-green-200/60 leading-[1.85] text-sm max-w-xs">
                 Transforming Waste into Sustainable Solutions. Premium raw banana fiber
                 sourced from Bangladesh's finest banana plantations.
