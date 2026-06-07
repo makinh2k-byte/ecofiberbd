@@ -37,8 +37,8 @@ export default function Navbar() {
         ? { background: 'transparent' }
         : { background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(14px)', boxShadow: '0 2px 20px rgba(0,0,0,0.08)' }
       }>
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-20 px-2">
+      <div className="max-w-6xl mx-auto px-6 lg:px-14">
+        <div className="flex items-center justify-between h-20 px-4">
           <Link to="/">
             <img src={logo} alt="EcoFiber BD" className="h-20 w-auto" />
           </Link>
