@@ -1,46 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Homepage -->
   <url>
     <loc>https://ecofiberbd.com/</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg</image:loc>
+      <image:title>Premium raw banana fiber — Grade A — EcoFiber BD Bangladesh</image:title>
+    </image:image>
   </url>
 
   <!-- Products -->
   <url>
     <loc>https://ecofiberbd.com/products</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg</image:loc>
+      <image:title>Buy banana fiber Grade A — Bangladesh</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ecofiberbd.com/Images/Banana_fiber_Grade%20B.jpeg</image:loc>
+      <image:title>Buy banana fiber Grade B — Bangladesh</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ecofiberbd.com/Images/Banana_fiber_Grade%20C.jpeg</image:loc>
+      <image:title>Buy banana fiber Grade C — Bangladesh</image:title>
+    </image:image>
   </url>
 
   <!-- Individual Products -->
   <url>
     <loc>https://ecofiberbd.com/products/1</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg</image:loc>
+      <image:title>Grade A premium banana fiber</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://ecofiberbd.com/products/2</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ecofiberbd.com/Images/Banana_fiber_Grade%20B.jpeg</image:loc>
+      <image:title>Grade B standard banana fiber</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://ecofiberbd.com/products/3</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ecofiberbd.com/Images/Banana_fiber_Grade%20C.jpeg</image:loc>
+      <image:title>Grade C industrial banana fiber</image:title>
+    </image:image>
   </url>
 
   <!-- Contact -->
   <url>
     <loc>https://ecofiberbd.com/contact</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

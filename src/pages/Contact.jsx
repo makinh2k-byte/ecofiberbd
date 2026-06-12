@@ -26,11 +26,11 @@ const inputStyle = {
 
 export default function Contact() {
   useSEO({
-    title: 'Contact EcoFiber BD | Get in Touch for Banana Fiber Inquiries',
-    description: 'Contact EcoFiber BD for product samples, bulk pricing, and inquiries about premium banana fiber. Dhaka, Bangladesh. Download our business profile.',
-    keywords: 'contact us, banana fiber inquiry, bulk order, product samples, EcoFiber BD contact',
+    title: 'Contact Banana Fiber Supplier in Bangladesh | Samples & Wholesale — EcoFiber BD',
+    description: 'Contact EcoFiber BD, a banana fiber supplier & exporter in Dhaka, Bangladesh. Request samples, wholesale pricing and bulk orders of raw banana fiber. Download our business profile.',
+    keywords: 'contact banana fiber supplier, banana fiber Bangladesh contact, buy banana fiber, banana fiber sample, banana fiber bulk order, banana fiber exporter Dhaka, banana fiber wholesale inquiry',
     url: 'https://ecofiberbd.com/contact',
-    image: 'https://ecofiberbd.com/favicon.svg'
+    image: 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
 
   const [searchParams] = useSearchParams()

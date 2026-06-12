@@ -71,11 +71,11 @@ function ProductCard({ p, index }) {
 
 export default function Products() {
   useSEO({
-    title: 'Premium Banana Fiber Products | Grade A, B & C | EcoFiber BD',
-    description: 'Browse our premium banana fiber products in three grades. Grade A for textiles, Grade B for handicrafts, Grade C for industrial use. 100% biodegradable, sustainably sourced from Bangladesh.',
-    keywords: 'banana fiber products, Grade A fiber, Grade B fiber, Grade C fiber, raw banana fiber, biodegradable fiber, sustainable products',
+    title: 'Buy Banana Fiber | Grade A, B & C Prices & Wholesale — EcoFiber BD Bangladesh',
+    description: 'Buy raw banana fiber online from Bangladesh. Grade A, B & C with transparent per-kg pricing and wholesale MOQ. 100% biodegradable, export-ready. Request a quote or sample.',
+    keywords: 'buy banana fiber, banana fiber price, banana fiber wholesale, banana fiber Bangladesh, Grade A banana fiber, Grade B banana fiber, Grade C banana fiber, raw banana fiber supplier, banana fiber for sale, banana fiber per kg',
     url: 'https://ecofiberbd.com/products',
-    image: 'https://ecofiberbd.com/favicon.svg'
+    image: 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
 
   const [search, setSearch]           = useState('')

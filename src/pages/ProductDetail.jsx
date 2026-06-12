@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, CheckCircle } from 'lucide-react'
 import Navbar from '../components/Navbar'
@@ -28,12 +29,43 @@ export default function ProductDetail() {
   const product  = PRODUCTS.find(p => p.id === parseInt(id))
 
   useSEO({
-    title: product ? `${product.name} | Premium Banana Fiber Grade | EcoFiber BD` : 'Product Details | EcoFiber BD',
-    description: product ? `${product.name} - ${product.description}. Fiber length: ${product.fiber_length_cm} cm. Price: $${product.price_per_kg}/kg. Order online from Bangladesh.` : '',
-    keywords: product ? `${product.grade}, banana fiber, ${product.fiber_length_cm} cm, biodegradable fiber` : '',
+    title: product ? `${product.name} — Price $${product.price_per_kg}/kg | Banana Fiber Bangladesh` : 'Product Details | EcoFiber BD',
+    description: product ? `Buy ${product.name} from EcoFiber BD, Bangladesh. ${product.description} Fiber length ${product.fiber_length_cm} cm. Price $${product.price_per_kg}/kg, MOQ ${product.moq_kg} kg. Request a sample.` : '',
+    keywords: product ? `${product.grade} banana fiber, buy banana fiber, banana fiber price, ${product.grade} banana fiber Bangladesh, raw banana fiber, biodegradable fiber` : '',
     url: `https://ecofiberbd.com/products/${id}`,
-    image: 'https://ecofiberbd.com/favicon.svg'
+    image: product ? `https://ecofiberbd.com${encodeURI(product.img)}` : 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
+
+  // Inject per-product structured data (Offer/price) for rich snippets
+  useEffect(() => {
+    if (!product) return
+    const data = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      'name': product.name,
+      'image': `https://ecofiberbd.com${encodeURI(product.img)}`,
+      'description': product.description,
+      'sku': `ECOFIBER-${product.grade.replace(/\s+/g, '').toUpperCase()}`,
+      'brand': { '@type': 'Brand', 'name': 'EcoFiber BD' },
+      'category': 'Natural Fiber',
+      'countryOfOrigin': 'Bangladesh',
+      'material': 'Banana pseudostem cellulose',
+      'offers': {
+        '@type': 'Offer',
+        'priceCurrency': 'USD',
+        'price': String(product.price_per_kg),
+        'availability': 'https://schema.org/InStock',
+        'url': `https://ecofiberbd.com/products/${id}`,
+        'seller': { '@type': 'Organization', 'name': 'EcoFiber BD' }
+      }
+    }
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.id = 'product-jsonld'
+    script.textContent = JSON.stringify(data)
+    document.head.appendChild(script)
+    return () => { document.getElementById('product-jsonld')?.remove() }
+  }, [id, product])
 
   const leftRef  = useReveal(0)
   const rightRef = useReveal(1)

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Navbar from '../components/Navbar'
@@ -112,44 +111,12 @@ function AppCard({ a, index }) {
 /* ── Page ─────────────────────────────────────────────────── */
 export default function Home() {
   useSEO({
-    title: 'EcoFiber BD — Premium Raw Banana Fiber Supplier | Bangladesh',
-    description: 'Premium raw banana fiber from Dhaka, Bangladesh. 100% biodegradable, 500-600 MPa tensile strength. Grade A, B & C for textile, paper & handicraft industries.',
-    keywords: 'banana fiber, raw banana fiber, biodegradable fiber, Bangladesh, sustainable fiber supplier, Grade A, Grade B, Grade C',
+    title: 'Banana Fiber Bangladesh | Raw Banana Fiber Supplier & Exporter — EcoFiber BD',
+    description: "Buy premium raw banana fiber from Bangladesh's trusted supplier & exporter. 100% biodegradable, high-tensile (500–600 MPa). Grade A, B & C at wholesale prices. Request a sample today.",
+    keywords: 'banana fiber, banana fiber Bangladesh, banana fiber supplier, banana fiber exporter, raw banana fiber, buy banana fiber, banana fiber price, banana fiber wholesale, biodegradable fiber, sustainable natural fiber, banana fiber Dhaka',
     url: 'https://ecofiberbd.com/',
-    image: 'https://ecofiberbd.com/favicon.svg'
+    image: 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
-
-  // Add JSON-LD structured data
-  useEffect(() => {
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      'name': 'EcoFiber BD',
-      'url': 'https://ecofiberbd.com',
-      'logo': 'https://ecofiberbd.com/favicon.svg',
-      'description': 'Premium raw banana fiber supplier from Bangladesh',
-      'address': {
-        '@type': 'PostalAddress',
-        'streetAddress': 'Dhaka',
-        'addressCountry': 'BD'
-      },
-      'contactPoint': {
-        '@type': 'ContactPoint',
-        'contactType': 'Business',
-        'telephone': '+88-01672268121',
-        'email': 'info@ecofiberbd.com'
-      },
-      'sameAs': [
-        'https://facebook.com/ecofiberbd',
-        'https://linkedin.com/company/ecofiberbd'
-      ]
-    }
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(structuredData)
-    document.head.appendChild(script)
-    return () => document.head.removeChild(script)
-  }, [])
 
   const aboutTextRef = useReveal(0)
   const aboutImgRef  = useReveal(1)
@@ -165,7 +132,7 @@ export default function Home() {
       {/* ══════════ HERO ══════════ */}
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#fff', overflow: 'hidden' }}>
         <div className="absolute inset-0">
-          <img src={IMG.hero} alt="Banana plantation" className="w-full h-full object-cover" />
+          <img src={IMG.hero} alt="Raw banana fiber sourced from a banana plantation in Bangladesh" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.93) 0%,rgba(20,50,24,0.88) 50%,rgba(40,110,30,0.82) 100%)' }} />
         </div>
         <div className="absolute inset-0 pointer-events-none"
@@ -176,7 +143,7 @@ export default function Home() {
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.625rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem', fontWeight: 500, padding: '0.75rem 1.5rem', borderRadius: '9999px', marginBottom: '2.75rem' }}>
             <span className="pulse-dot" style={{ width: 9, height: 9, borderRadius: '50%', background: '#8dc63f', display: 'inline-block' }} />
-            Premium Natural Fiber from Bangladesh
+            Raw Banana Fiber Supplier &amp; Exporter in Bangladesh
           </div>
 
           <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 5rem)', lineHeight: 1.03, letterSpacing: '-0.02em', marginBottom: '2rem', textAlign: 'center', color: '#fff' }}>
@@ -189,7 +156,7 @@ export default function Home() {
           </h1>
 
           <p style={{ fontSize: 'clamp(1.0625rem, 2vw, 1.25rem)', color: 'rgba(220,252,231,0.72)', maxWidth: '44rem', marginBottom: '3.5rem', lineHeight: 1.9, fontWeight: 300, textAlign: 'center' }}>
-            100% biodegradable raw banana fiber — high tensile strength, lustrous silk-like texture. The eco-friendly alternative to synthetic fibers.
+            Buy premium <strong style={{ fontWeight: 600, color: 'rgba(255,255,255,0.92)' }}>raw banana fiber</strong> from Bangladesh's trusted supplier and exporter. 100% biodegradable, high tensile strength and a silk-like texture — the sustainable, eco-friendly alternative to synthetic fibers, at wholesale prices.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.125rem', justifyContent: 'center', alignItems: 'center' }}>
@@ -225,8 +192,8 @@ export default function Home() {
             <div ref={aboutTextRef} className="reveal-left">
               <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>About EcoFiber BD</span>
               <h2 style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)', marginTop: '1.25rem', marginBottom: '1.75rem', lineHeight: 1.15 }}>
-                Nature's Strongest<br />
-                <span style={{ color: '#39962c' }}>Sustainable Fiber</span>
+                Premium Raw<br />
+                <span style={{ color: '#39962c' }}>Banana Fiber</span>
               </h2>
               <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '1.25rem' }}>
                 Our <strong style={{ color: '#374151' }}>Premium Raw Banana Fiber</strong> is a high-grade natural lignocellulosic fiber extracted from the pseudostems of the banana plant (<em>Musa species</em>). Known for exceptional durability and natural luster, it's a superior sustainable alternative to synthetic fibers and traditional coarse fibers like jute.
@@ -257,7 +224,7 @@ export default function Home() {
 
             <div ref={aboutImgRef} className="reveal-right" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div style={{ borderRadius: '1.75rem', overflow: 'hidden', boxShadow: '0 32px 64px -12px rgba(0,0,0,0.25)', aspectRatio: '4/5', width: '100%', height: '100%' }}>
-                <img src={IMG.about} alt="Natural banana fiber" className="w-full h-full object-cover img-zoom" />
+                <img src={IMG.about} alt="Premium raw banana fiber supplied by EcoFiber BD, Bangladesh" className="w-full h-full object-cover img-zoom" />
               </div>
             </div>
           </div>
