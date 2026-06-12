@@ -65,6 +65,38 @@
     </image:image>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://ecofiberbd.com/blog</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecofiberbd.com/blog/banana-fiber-price-guide-2026</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ecofiberbd.com/blog/banana-fiber-vs-jute</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ecofiberbd.com/blog/how-banana-fiber-is-made</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ecofiberbd.com/blog/uses-of-banana-fiber</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Contact -->
   <url>
     <loc>https://ecofiberbd.com/contact</loc>
