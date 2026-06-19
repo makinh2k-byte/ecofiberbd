@@ -14,7 +14,7 @@ export const ARTICLES = [
       'banana fiber sustainable fashion, banana silk, eco-friendly fabric, sustainable clothing, banana fiber textile, vegan fabric, sustainable fashion 2026',
     date: '2026-06-13',
     readTime: '6 min read',
-    cover: '/Images/Banana_fiber_Grade A.jpg',
+    cover: '/Images/blog-fashion.jpg',
     excerpt:
       'As fashion races to cut its footprint, banana fiber is emerging as a star sustainable textile. Here is why 2026 is its breakout year.',
     sections: [
@@ -57,7 +57,7 @@ export const ARTICLES = [
       'banana fiber packaging, eco-friendly packaging, plastic-free packaging, biodegradable packaging, sustainable packaging material, banana fiber paper',
     date: '2026-06-13',
     readTime: '5 min read',
-    cover: '/Images/Banana_fiber_Grade B.jpeg',
+    cover: '/Images/blog-packaging.jpg',
     excerpt:
       'As single-use plastic bans expand, brands are hunting for biodegradable packaging. Banana fiber is fast becoming a favorite.',
     sections: [
@@ -103,7 +103,7 @@ export const ARTICLES = [
       'banana fiber price, banana fiber price per kg, banana fiber wholesale, buy banana fiber, banana fiber cost, banana fiber Bangladesh price',
     date: '2026-06-13',
     readTime: '5 min read',
-    cover: '/Images/Banana_fiber_Grade A.jpg',
+    cover: '/Images/blog-price.jpg',
     excerpt:
       'A clear breakdown of banana fiber prices by grade, what moves the market, and how to secure the best wholesale rate.',
     sections: [
@@ -149,7 +149,7 @@ export const ARTICLES = [
       'banana fiber vs jute, banana fiber or jute, banana fiber strength, natural fiber comparison, jute alternative, sustainable fiber',
     date: '2026-06-12',
     readTime: '6 min read',
-    cover: '/Images/Banana_fiber_Grade B.jpeg',
+    cover: '/Images/blog-vs-jute.jpg',
     excerpt:
       'Both are natural bast/leaf fibers from South Asia — but they behave very differently. Here is how banana fiber and jute compare.',
     sections: [
@@ -197,7 +197,7 @@ export const ARTICLES = [
       'how banana fiber is made, banana fiber production, banana pseudostem fiber, banana fiber extraction, banana fiber process, decortication',
     date: '2026-06-11',
     readTime: '5 min read',
-    cover: '/Images/Banana_fiber_Grade C.jpeg',
+    cover: '/Images/blog-how-made.jpg',
     excerpt:
       'Banana fiber comes from a part of the plant most farms throw away. Here is how the pseudostem becomes usable fiber.',
     sections: [
@@ -243,7 +243,7 @@ export const ARTICLES = [
       'uses of banana fiber, banana fiber applications, banana fiber for textile, banana fiber paper, banana fiber rope, banana silk',
     date: '2026-06-10',
     readTime: '5 min read',
-    cover: '/Images/Banana_fiber_Grade A.jpg',
+    cover: '/Images/blog-uses.jpg',
     excerpt:
       'From fine "banana silk" fabric to marine rope, banana fiber is remarkably versatile. Here are its top uses by grade.',
     sections: [
