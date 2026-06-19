@@ -142,7 +142,7 @@ export default function Products() {
         {/* Tech specs */}
         <div ref={specsRef} className="reveal" style={{ marginTop: '5rem', borderRadius: '1.25rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.12)' }}>
           <div style={{ position: 'relative', height: '12rem', overflow: 'hidden' }}>
-            <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1400&q=80" alt="Fiber texture" className="w-full h-full object-cover" />
+            <img src="/Images/fiber-texture.jpg" alt="Close-up texture of premium raw banana fiber" className="w-full h-full object-cover" />
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 3rem', background: 'linear-gradient(135deg,rgba(8,20,9,0.92),rgba(55,89,59,0.88))' }}>
               <div>
                 <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Technical Data</span>

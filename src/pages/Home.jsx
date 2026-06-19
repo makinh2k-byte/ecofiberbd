@@ -6,16 +6,16 @@ import { useReveal } from '../hooks/useReveal'
 import { useSEO } from '../hooks/useSEO'
 
 const IMG = {
-  hero:       '/Images/Hero Section Background.jpeg',
-  about:      'https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=900&q=80',
+  hero:       '/Images/hero.jpg',
+  about:      '/Images/fiber-texture.jpg',
   gradeA:     '/Images/Banana_fiber_Grade A.jpg',
   gradeB:     '/Images/Banana_fiber_Grade B.jpeg',
   gradeC:     '/Images/Banana_fiber_Grade C.jpeg',
-  textile:    'https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?auto=format&fit=crop&w=600&q=80',
-  home:       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80',
-  handicraft: 'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=600&q=80',
-  rope:       'https://images.unsplash.com/photo-1519752327041-5a77f2a92e3d?auto=format&fit=crop&w=600&q=80',
-  paper:      'https://images.unsplash.com/photo-1568376794508-ae52c6ab3929?auto=format&fit=crop&w=600&q=80',
+  textile:    '/Images/app-textile.jpg',
+  home:       '/Images/app-home.jpg',
+  handicraft: '/Images/app-handicraft.jpg',
+  rope:       '/Images/app-rope.jpg',
+  paper:      '/Images/app-paper.jpg',
 }
 
 const stats = [
