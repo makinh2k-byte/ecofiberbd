@@ -17,10 +17,10 @@ const values = [
 ]
 
 const stats = [
-  { value: '100%',   label: 'Natural & Biodegradable' },
-  { value: '500+',   label: 'MPa Tensile Strength' },
-  { value: '3',      label: 'Grades for Every Use' },
-  { value: '3–6 mo', label: 'Decomposition Time' },
+  { value: '2025',     label: 'Founded' },
+  { value: '1,000+',   label: 'Sourcing Partners Nationwide' },
+  { value: '100 t/mo', label: 'Combined Monthly Capacity' },
+  { value: '100%',     label: 'Natural & Biodegradable' },
 ]
 
 function ValueCard({ v, index }) {
@@ -81,8 +81,11 @@ export default function About() {
               <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '1.25rem' }}>
                 EcoFiber BD supplies and exports premium <strong style={{ color: '#374151' }}>raw banana fiber</strong> from Bangladesh. Our fiber is extracted from the pseudostems of the banana plant (<em>Musa species</em>) — a natural, lignocellulosic material known for its exceptional strength and silk-like luster.
               </p>
-              <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '2rem' }}>
+              <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '1.25rem' }}>
                 What begins as agricultural waste becomes a high-value, 100% biodegradable resource. We grade every batch as A, B or C so textile mills, paper manufacturers, handicraft makers and industrial buyers get exactly the fiber their application needs.
+              </p>
+              <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '2rem' }}>
+                Founded in <strong style={{ color: '#374151' }}>2025</strong> as a partnership between two friends fascinated by the untapped potential of banana fiber, EcoFiber BD started by sourcing from the finest banana and natural-fiber producers across Bangladesh. Today we work with a nationwide network of <strong style={{ color: '#374151' }}>over 1,000 fiber entrepreneurs</strong>, together capable of supplying up to <strong style={{ color: '#374151' }}>100 tons of natural fiber every month</strong>.
               </p>
               <Link to="/products" className="inline-flex items-center gap-2.5 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ background: '#39962c', boxShadow: '0 4px 20px rgba(57,150,44,0.3)', color: '#fff', padding: '1.125rem 2.25rem', borderRadius: '9999px', textDecoration: 'none', fontSize: '1rem' }}>
