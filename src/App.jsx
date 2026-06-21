@@ -6,6 +6,7 @@ import ProductDetail from './pages/ProductDetail'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import About from './pages/About'
 import Admin from './pages/Admin'
 import AdminProducts from './pages/AdminProducts'
 import AdminInquiries from './pages/AdminInquiries'
@@ -28,6 +29,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/blog" element={<Blog />} />

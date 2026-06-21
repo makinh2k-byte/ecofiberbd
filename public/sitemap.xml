@@ -13,6 +13,14 @@
     </image:image>
   </url>
 
+  <!-- About -->
+  <url>
+    <loc>https://ecofiberbd.com/about</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Products -->
   <url>
     <loc>https://ecofiberbd.com/products</loc>
