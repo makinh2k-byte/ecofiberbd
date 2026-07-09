@@ -26,31 +26,30 @@ function ProductCard({ p, index }) {
   return (
     <div ref={ref} className="reveal transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group"
       style={{ background: '#fff', borderRadius: '1.25rem', overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ height: '15rem', overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
+      <div style={{ height: '16rem', overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
         <img src={img} alt={p.grade} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${accent}ee 0%, transparent 55%)` }} />
-        <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.5rem', right: '1.5rem', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
-          <span style={{ color: '#fff', fontSize: '1.25rem', fontWeight: 700 }}>{p.grade}</span>
-          <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.375rem' }}>${p.price_per_kg}<span style={{ fontSize: '0.875rem', fontWeight: 400, opacity: 0.75 }}>/kg</span></span>
+        <div style={{ position: 'absolute', bottom: '1rem', left: '1.25rem', right: '1.25rem', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+          <span style={{ color: '#fff', fontSize: '1.125rem', fontWeight: 700 }}>{p.grade}</span>
+          <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.25rem' }}>${p.price_per_kg}<span style={{ fontSize: '0.8125rem', fontWeight: 400, opacity: 0.75 }}>/kg</span></span>
         </div>
       </div>
-      <div style={{ padding: '2rem 2.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: '1.0625rem', lineHeight: 1.4 }}>{p.name}</h3>
-        <p style={{ color: '#9ca3af', fontSize: '0.9375rem', lineHeight: 1.85, marginBottom: '1.75rem', flex: 1 }}>{p.description}</p>
-        <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1.5rem', marginBottom: '1.75rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <div style={{ padding: '1.375rem 1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '0.625rem', fontSize: '1rem', lineHeight: 1.35 }}>{p.name}</h3>
+        <p style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.125rem', flex: 1 }}>{p.description}</p>
+        <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1rem', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {[
             ['Fiber Length', `${p.fiber_length_cm} cm`],
             ['Moisture',     `~${p.moisture_content_percent}%`],
             ['Min. Order',   `${p.moq_kg} kg`],
-            ['Stock',        `${p.stock_kg.toLocaleString()} kg`],
           ].map(([l, v]) => (
             <div key={l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ color: '#9ca3af', fontSize: '0.875rem' }}>{l}</span>
-              <span style={{ fontWeight: 600, color: '#374151', fontSize: '0.9375rem' }}>{v}</span>
+              <span style={{ color: '#9ca3af', fontSize: '0.8125rem' }}>{l}</span>
+              <span style={{ fontWeight: 600, color: '#374151', fontSize: '0.875rem' }}>{v}</span>
             </div>
           ))}
         </div>
-        <div style={{ display: 'flex', gap: '0.875rem' }}>
+        <div style={{ display: 'flex', gap: '0.75rem' }}>
           <Link to={`/products/${p.id}`}
             className="flex-1 text-center font-semibold rounded-full text-sm transition-all duration-300"
             style={{ border: `2px solid ${accent}`, color: accent, padding: '0.875rem', display: 'block', textDecoration: 'none' }}
@@ -134,7 +133,7 @@ export default function Products() {
             <p style={{ fontSize: '1.125rem', fontWeight: 500 }}>No products found.</p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '2rem' }} className="md:grid-cols-2 lg:grid-cols-3">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem', alignItems: 'start' }}>
             {filtered.map((p, i) => <ProductCard key={p.id} p={p} index={i} />)}
           </div>
         )}

@@ -18,6 +18,33 @@ const IMG = {
   paper:      '/Images/app-paper.jpg',
 }
 
+const faqs = [
+  {
+    q: 'What is banana fiber?',
+    a: 'Banana fiber is a strong, natural fiber extracted from the pseudostem of the banana plant — the trunk that is left over after harvest. It is 100% biodegradable, has a silk-like luster, and offers high tensile strength (around 500–600 MPa), making it a sustainable alternative to synthetic fibers.',
+  },
+  {
+    q: 'How much does banana fiber cost per kg?',
+    a: 'At EcoFiber BD, raw banana fiber ranges from about USD 4 to USD 15 per kilogram depending on grade — Grade A (premium long-staple) is the highest, Grade C (industrial) the most economical. Final wholesale pricing depends on quantity, packaging and destination; contact us for a quotation.',
+  },
+  {
+    q: 'Do you export banana fiber from Bangladesh?',
+    a: 'Yes. EcoFiber BD is a banana fiber supplier and exporter based in Dhaka, Bangladesh, shipping to textile mills, paper manufacturers, handicraft makers and industrial buyers worldwide. We provide export-ready grading and packaging.',
+  },
+  {
+    q: 'What are the grades of banana fiber you supply?',
+    a: 'We supply three grades: Grade A (90–120 cm, for fine textiles and banana silk), Grade B (60–90 cm, for home furnishings, handicrafts and blended textiles), and Grade C (30–60 cm, for ropes, cables and biocomposites).',
+  },
+  {
+    q: 'Can I get a sample before ordering?',
+    a: 'Absolutely. We provide samples so you can assess quality before placing a bulk order. Request a sample through our contact form or WhatsApp and we will respond within 24 hours.',
+  },
+  {
+    q: 'What is banana fiber used for?',
+    a: 'Banana fiber is used in textiles and "banana silk" fabric, eco-friendly paper, ropes and cables, handicrafts, home furnishings, and biocomposite materials. Its strength and biodegradability make it popular across sustainable industries.',
+  },
+]
+
 const stats = [
   { value: '100%',   label: 'Biodegradable' },
   { value: '500+',   label: 'MPa Tensile Strength' },
@@ -123,6 +150,7 @@ export default function Home() {
   const featHeadRef  = useReveal(0)
   const gradeHeadRef = useReveal(0)
   const appHeadRef   = useReveal(0)
+  const faqHeadRef   = useReveal(0)
   const ctaRef       = useReveal(0)
 
   return (
@@ -276,6 +304,24 @@ export default function Home() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
             {applications.map((a, i) => <AppCard key={i} a={a} index={i} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ FAQ ══════════ */}
+      <section style={{ background: '#f7f5f0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 2rem' }}>
+          <div ref={faqHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>FAQ</span>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Banana Fiber — Common Questions</h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {faqs.map((f, i) => (
+              <details key={i} style={{ background: '#fff', borderRadius: '1rem', border: '1px solid #f3f4f6', boxShadow: '0 2px 12px rgba(0,0,0,0.05)', padding: '1.5rem 1.75rem' }}>
+                <summary style={{ cursor: 'pointer', fontWeight: 700, color: '#111827', fontSize: '1.0625rem', listStyle: 'none' }}>{f.q}</summary>
+                <p style={{ color: '#6b7280', fontSize: '1rem', lineHeight: 1.9, marginTop: '1rem' }}>{f.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
