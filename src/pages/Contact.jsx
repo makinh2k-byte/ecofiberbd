@@ -114,12 +114,6 @@ export default function Contact() {
               Download Profile
             </a>
 
-            <div style={{ borderRadius: '1.25rem', padding: '2rem', border: '1px solid rgba(57,150,44,0.2)', background: 'rgba(57,150,44,0.06)' }}>
-              <h4 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: '1.0625rem' }}>Packaging & Storage</h4>
-              <p style={{ fontSize: '0.9375rem', color: '#6b7280', lineHeight: 1.85 }}>
-                Compressed bales in jute or PP bags, or loose bundles as per buyer requirement. Stored in cool, dry, and well-ventilated conditions.
-              </p>
-            </div>
           </div>
 
           {/* Form */}

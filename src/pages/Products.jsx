@@ -35,7 +35,7 @@ function ProductCard({ p, index }) {
         </div>
       </div>
       <div style={{ padding: '1.375rem 1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '0.625rem', fontSize: '1rem', lineHeight: 1.35 }}>{p.name}</h3>
+        <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '0.625rem', fontSize: '1.375rem', lineHeight: 1.25 }}>{p.name}</h3>
         <p style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.125rem', flex: 1 }}>{p.description}</p>
         <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1rem', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {[
@@ -133,7 +133,7 @@ export default function Products() {
             <p style={{ fontSize: '1.125rem', fontWeight: 500 }}>No products found.</p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
             {filtered.map((p, i) => <ProductCard key={p.id} p={p} index={i} />)}
           </div>
         )}
@@ -167,6 +167,14 @@ export default function Products() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Packaging & Storage */}
+        <div style={{ marginTop: '2.5rem', borderRadius: '1.25rem', padding: '2.5rem 2.75rem', border: '1px solid rgba(57,150,44,0.2)', background: 'rgba(57,150,44,0.06)' }}>
+          <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: '1.3125rem' }}>Packaging &amp; Storage</h3>
+          <p style={{ fontSize: '0.9375rem', color: '#6b7280', lineHeight: 1.85, maxWidth: '48rem' }}>
+            Compressed bales in jute or PP bags, or loose bundles as per buyer requirement. Stored in cool, dry, and well-ventilated conditions.
+          </p>
         </div>
       </div>
 
