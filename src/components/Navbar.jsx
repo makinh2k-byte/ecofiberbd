@@ -59,10 +59,10 @@ export default function Navbar() {
               </Link>
             ))}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 font-semibold text-[16px] text-white px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg transform hover:scale-105"
-              style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)' }}
+              className="flex items-center gap-2 font-semibold text-[15px] text-white rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg transform hover:scale-105"
+              style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)', padding: '0.6rem 1.4rem', marginLeft: '0.5rem' }}
               title="Chat with us on WhatsApp">
-              <MessageCircle size={20} className="transition-transform group-hover:rotate-12" />
+              <MessageCircle size={18} className="transition-transform group-hover:rotate-12" />
               WhatsApp
             </a>
           </div>
@@ -92,8 +92,8 @@ export default function Navbar() {
             ))}
             <div className="pt-2 mt-2 border-t border-gray-200">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 text-center text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 text-[15px] mt-2 hover:scale-105"
-                style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)' }}>
+                className="flex items-center justify-center gap-2 text-center text-white font-semibold rounded-lg transition-all duration-300 text-[15px] hover:scale-105"
+                style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)', padding: '0.75rem 1rem', marginTop: '0.5rem' }}>
                 <MessageCircle size={18} />
                 Chat on WhatsApp
               </a>

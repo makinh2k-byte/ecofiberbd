@@ -9,17 +9,17 @@ import { useSEO } from '../hooks/useSEO'
 const PRODUCTS = [
   { id: 1, name: 'Grade A Premium Banana Fiber', grade: 'Grade A', accent: '#39962c',
     img: '/Images/Banana_fiber_Grade A.jpg',
-    fiber_length_cm: '90–120', moisture_content_percent: 13, moq_kg: 100, price_per_kg: 15, stock_kg: 2000,
+    fiber_length_cm: '90–120', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 15, stock_kg: 2000,
     description: 'Premium long-staple banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production. Carefully decorticated and sun-dried to preserve natural luster and strength.',
     applications: ['Fine Textiles & "Banana Silk"', 'Sarees & Blended Garments', 'High-Quality Paper', 'Currency & Archival Paper', 'Tea Bag Production'] },
   { id: 2, name: 'Grade B Standard Banana Fiber', grade: 'Grade B', accent: '#8dc63f',
     img: '/Images/Banana_fiber_Grade B.jpeg',
-    fiber_length_cm: '60–90', moisture_content_percent: 13, moq_kg: 150, price_per_kg: 10, stock_kg: 3500,
+    fiber_length_cm: '60–90', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 10, stock_kg: 3500,
     description: 'Mid-grade fiber perfect for home furnishings, handicrafts, blended textiles, and general manufacturing. Excellent balance of strength and workability.',
     applications: ['Curtains & Table Mats', 'Cushion Covers & Upholstery', 'Baskets & Bags', 'Hats & Carpets', 'Decorative Wall Hangings'] },
   { id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C', accent: '#37593b',
     img: '/Images/Banana_fiber_Grade C.jpeg',
-    fiber_length_cm: '30–60', moisture_content_percent: 13, moq_kg: 200, price_per_kg: 4, stock_kg: 5000,
+    fiber_length_cm: '30–60', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 4, stock_kg: 5000,
     description: 'Coarser industrial-grade fiber best suited for marine ropes, shipping cables, and biocomposite reinforcements. Superior resistance to saltwater and UV damage.',
     applications: ['Marine Ropes & Shipping Cables', 'Biocomposite Panels', 'Automotive Reinforcements', 'Industrial Composites', 'Construction Materials'] },
 ]
@@ -30,7 +30,7 @@ export default function ProductDetail() {
 
   useSEO({
     title: product ? `${product.name} — Price $${product.price_per_kg}/kg | Banana Fiber Bangladesh` : 'Product Details | EcoFiber BD',
-    description: product ? `Buy ${product.name} from EcoFiber BD, Bangladesh. ${product.description} Fiber length ${product.fiber_length_cm} cm. Price $${product.price_per_kg}/kg, MOQ ${product.moq_kg} kg. Request a sample.` : '',
+    description: product ? `Buy ${product.name} from EcoFiber BD, Bangladesh. ${product.description} Fiber length ${product.fiber_length_cm} cm. Price $${product.price_per_kg}/kg, MOQ ${product.moq_kg / 1000} ton. Request a sample.` : '',
     keywords: product ? `${product.grade} banana fiber, buy banana fiber, banana fiber price, ${product.grade} banana fiber Bangladesh, raw banana fiber, biodegradable fiber` : '',
     url: `https://ecofiberbd.com/products/${id}`,
     image: product ? `https://ecofiberbd.com${encodeURI(product.img)}` : 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
@@ -88,11 +88,11 @@ export default function ProductDetail() {
     ['Fiber Length',     `${product.fiber_length_cm} cm`],
     ['Texture',          'Silky sheen, lightweight, stiff yet pliable'],
     ['Tensile Strength', 'High — 500–600 MPa'],
-    ['Moisture Regain',  `~${product.moisture_content_percent}% (Breathable)`],
+    ['Moisture Regain',  `< ${product.moisture_content_percent}% (Breathable)`],
     ['Composition',      'Cellulose ~65%, Hemicellulose ~15%, Lignin ~10%'],
     ['Biodegradability', '100% Biodegradable & Compostable (3–6 months)'],
     ['Packaging',        'Jute or PP bags / loose bundles'],
-    ['Min. Order (MOQ)', `${product.moq_kg} kg`],
+    ['Min. Order (MOQ)', `${product.moq_kg / 1000} ton`],
     ['Stock Available',  `${product.stock_kg.toLocaleString()} kg`],
   ]
 
@@ -153,7 +153,7 @@ export default function ProductDetail() {
             <div style={{ display: 'flex', alignItems: 'stretch', gap: '1.25rem', marginBottom: '2.75rem' }}>
               {[
                 { label: 'Price', value: `$${product.price_per_kg}`, unit: '/kg', color: product.accent },
-                { label: 'Min. Order', value: `${product.moq_kg}`, unit: ' kg', color: '#1f2937' },
+                { label: 'Min. Order', value: `${product.moq_kg / 1000}`, unit: ' ton', color: '#1f2937' },
               ].map(item => (
                 <div key={item.label} style={{ borderRadius: '1.125rem', padding: '1.75rem', flex: 1, textAlign: 'center', border: '1px solid #e5e7eb', background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
                   <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.625rem' }}>{item.label}</div>

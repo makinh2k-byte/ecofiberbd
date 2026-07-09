@@ -5,26 +5,26 @@ import AdminLayout from '../components/AdminLayout'
 const INITIAL_PRODUCTS = [
   {
     id: 1, name: 'Grade A Premium Banana Fiber', grade: 'Grade A',
-    fiber_length_cm: '90–120', moisture_content_percent: 13,
+    fiber_length_cm: '90–120', moisture_content_percent: 12,
     moq_kg: 100, price_per_kg: 8.5, stock_kg: 2000,
     description: 'Premium long-staple banana fiber ideal for fine textiles.', is_active: true,
   },
   {
     id: 2, name: 'Grade B Standard Banana Fiber', grade: 'Grade B',
-    fiber_length_cm: '60–90', moisture_content_percent: 13,
+    fiber_length_cm: '60–90', moisture_content_percent: 12,
     moq_kg: 150, price_per_kg: 6.0, stock_kg: 3500,
     description: 'Mid-grade fiber for home furnishings and handicrafts.', is_active: true,
   },
   {
     id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C',
-    fiber_length_cm: '30–60', moisture_content_percent: 13,
+    fiber_length_cm: '30–60', moisture_content_percent: 12,
     moq_kg: 200, price_per_kg: 4.0, stock_kg: 5000,
     description: 'Industrial-grade fiber for marine and composite applications.', is_active: true,
   },
 ]
 
 const empty = {
-  name: '', grade: 'Grade A', fiber_length_cm: '', moisture_content_percent: 13,
+  name: '', grade: 'Grade A', fiber_length_cm: '', moisture_content_percent: 12,
   moq_kg: '', price_per_kg: '', stock_kg: '', description: '', is_active: true,
 }
 

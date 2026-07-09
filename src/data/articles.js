@@ -216,7 +216,7 @@ export const ARTICLES = [
       {
         heading: '3. Washing and sun-drying',
         body: [
-          'Extracted fiber is washed to remove sap and residue, then sun-dried. Proper drying brings moisture down to a stable level (around 13%), preserving the fiber\'s natural sheen and preventing mildew.',
+          'Extracted fiber is washed to remove sap and residue, then sun-dried. Proper drying brings moisture down to a stable level (below 12%), preserving the fiber\'s natural sheen and preventing mildew.',
         ],
       },
       {

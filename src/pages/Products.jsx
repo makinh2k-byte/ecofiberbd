@@ -14,9 +14,9 @@ const GRADE_IMG = {
 const gradeAccent = { 'Grade A': '#39962c', 'Grade B': '#8dc63f', 'Grade C': '#37593b' }
 
 const MOCK_PRODUCTS = [
-  { id: 1, name: 'Grade A Premium Banana Fiber',  grade: 'Grade A', fiber_length_cm: '90–120', moisture_content_percent: 13, moq_kg: 100, price_per_kg: 15, stock_kg: 2000, description: 'Premium long-staple banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production.', is_active: true },
-  { id: 2, name: 'Grade B Standard Banana Fiber',  grade: 'Grade B', fiber_length_cm: '60–90',  moisture_content_percent: 13, moq_kg: 150, price_per_kg: 10, stock_kg: 3500, description: 'Mid-grade fiber perfect for home furnishings, handicrafts, blended textiles, and general manufacturing.',         is_active: true },
-  { id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C', fiber_length_cm: '30–60',  moisture_content_percent: 13, moq_kg: 200, price_per_kg: 4, stock_kg: 5000, description: 'Coarser industrial-grade fiber for marine ropes, shipping cables, and biocomposite reinforcements.',             is_active: true },
+  { id: 1, name: 'Grade A Premium Banana Fiber',  grade: 'Grade A', fiber_length_cm: '90–120', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 15, stock_kg: 2000, description: 'Premium long-staple banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production.', is_active: true },
+  { id: 2, name: 'Grade B Standard Banana Fiber',  grade: 'Grade B', fiber_length_cm: '60–90',  moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 10, stock_kg: 3500, description: 'Mid-grade fiber perfect for home furnishings, handicrafts, blended textiles, and general manufacturing.',         is_active: true },
+  { id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C', fiber_length_cm: '30–60',  moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 4, stock_kg: 5000, description: 'Coarser industrial-grade fiber for marine ropes, shipping cables, and biocomposite reinforcements.',             is_active: true },
 ]
 
 function ProductCard({ p, index }) {
@@ -40,8 +40,8 @@ function ProductCard({ p, index }) {
         <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1rem', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {[
             ['Fiber Length', `${p.fiber_length_cm} cm`],
-            ['Moisture',     `~${p.moisture_content_percent}%`],
-            ['Min. Order',   `${p.moq_kg} kg`],
+            ['Moisture',     `< ${p.moisture_content_percent}%`],
+            ['Min. Order',   `${p.moq_kg / 1000} ton`],
           ].map(([l, v]) => (
             <div key={l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ color: '#9ca3af', fontSize: '0.8125rem' }}>{l}</span>
