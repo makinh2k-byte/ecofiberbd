@@ -93,11 +93,9 @@ export default function Products() {
       <Navbar />
 
       {/* Hero */}
-      <section style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.92) 0%,rgba(20,50,24,0.88) 55%,rgba(40,110,30,0.82) 100%)' }} />
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ opacity: 0.25, backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px)', backgroundSize: '64px 64px' }} />
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+      <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
+        <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Our Products</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
             Premium raw banana fiber in three grades — sourced from banana pseudostems across Bangladesh.

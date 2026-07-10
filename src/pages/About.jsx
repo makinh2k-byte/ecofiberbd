@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 import { useSEO } from '../hooks/useSEO'
 
-const PATTERN = '/ecofiber background Pattern.svg'
+const PATTERN = '/ecofiber-background-Pattern.png'
 
 const values = [
   { icon: Recycle,     title: 'Zero-Waste Sourcing', desc: 'Our fiber comes from banana pseudostems — an agricultural by-product that would otherwise be discarded. No extra land, water or fertilizer required.' },
@@ -38,6 +38,16 @@ function ValueCard({ v, index }) {
   )
 }
 
+function StatCard({ s, index }) {
+  const ref = useReveal(index)
+  return (
+    <div ref={ref} className="reveal-scale transition-transform duration-300 hover:-translate-y-1" style={{ textAlign: 'center' }}>
+      <div style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 700, color: '#fff', marginBottom: '0.375rem' }}>{s.value}</div>
+      <div style={{ fontSize: '0.8125rem', color: 'rgba(220,252,231,0.75)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{s.label}</div>
+    </div>
+  )
+}
+
 export default function About() {
   useSEO({
     title: 'About EcoFiber BD | Banana Fiber Supplier & Exporter in Bangladesh',
@@ -59,9 +69,9 @@ export default function About() {
       <Navbar />
 
       {/* Hero */}
-      <section style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.92) 0%,rgba(20,50,24,0.88) 55%,rgba(40,110,30,0.82) 100%)' }} />
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+      <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
+        <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>About EcoFiber BD</h1>
           <p style={{ color: 'rgba(220,252,231,0.7)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
             Transforming Waste into Sustainable Solutions — a banana fiber supplier and exporter based in Dhaka, Bangladesh.
@@ -135,15 +145,12 @@ export default function About() {
       </section>
 
       {/* Stats band */}
-      <section style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', paddingTop: '5rem', paddingBottom: '5rem' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.94) 0%,rgba(57,150,44,0.94) 100%)', pointerEvents: 'none' }} />
+      <section className="leaf-anim" style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '5rem', paddingBottom: '5rem' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.85) 0%,rgba(57,150,44,0.82) 100%)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.5rem' }}>
             {stats.map((s, i) => (
-              <div key={i} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 700, color: '#fff', marginBottom: '0.375rem' }}>{s.value}</div>
-                <div style={{ fontSize: '0.8125rem', color: 'rgba(220,252,231,0.75)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{s.label}</div>
-              </div>
+              <StatCard key={i} s={s} index={i} />
             ))}
           </div>
         </div>

@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useSEO } from '../hooks/useSEO'
 
-const PATTERN = '/ecofiber background Pattern.svg'
+const PATTERN = '/ecofiber-background-Pattern.png'
 const UPDATED = 'January 2026'
 
 const h2 = { fontSize: '1.5rem', color: '#111827', marginTop: '2.5rem', marginBottom: '1rem' }
@@ -21,9 +21,10 @@ export default function Privacy() {
     <div style={{ minHeight: '100vh', overflowX: 'hidden', background: '#f7f5f0' }}>
       <Navbar />
 
-      <section style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '5rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.92) 0%,rgba(20,50,24,0.88) 55%,rgba(40,110,30,0.82) 100%)' }} />
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: '44rem', margin: '0 auto', padding: '0 2rem' }}>
+      <section style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '5rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)' }}>
+        <div className="absolute inset-0 leaf-anim" style={{ backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
+        <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '44rem', margin: '0 auto', padding: '0 2rem' }}>
           <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', marginBottom: '1rem', color: '#fff' }}>Privacy Policy</h1>
           <p style={{ color: 'rgba(220,252,231,0.7)', fontSize: '1rem', fontWeight: 300 }}>Last updated: {UPDATED}</p>
         </div>

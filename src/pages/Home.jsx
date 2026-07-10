@@ -167,7 +167,7 @@ export default function Home() {
           style={{ opacity: 0.25, backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px)', backgroundSize: '64px 64px' }} />
 
         {/* Hero content */}
-        <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '10rem 2rem 4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <div className="hero-rise" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '10rem 2rem 4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.625rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem', fontWeight: 500, padding: '0.75rem 1.5rem', borderRadius: '9999px', marginBottom: '2.75rem' }}>
             <span className="pulse-dot" style={{ width: 9, height: 9, borderRadius: '50%', background: '#8dc63f', display: 'inline-block' }} />
@@ -260,8 +260,8 @@ export default function Home() {
       </section>
 
       {/* ══════════ FEATURES ══════════ */}
-      <section style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg,rgba(13,32,16,0.92) 0%,rgba(26,56,32,0.92) 55%,rgba(46,85,53,0.92) 100%)', pointerEvents: 'none' }} />
+      <section className="leaf-anim" style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg,rgba(13,32,16,0.85) 0%,rgba(26,56,32,0.83) 55%,rgba(46,85,53,0.80) 100%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
           <div ref={featHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Why Choose Us</span>
@@ -327,8 +327,8 @@ export default function Home() {
       </section>
 
       {/* ══════════ CTA ══════════ */}
-      <section style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: 'url(/ecofiber\ background\ Pattern.svg)', backgroundSize: '600px 600px', backgroundPosition: 'center', backgroundAttachment: 'fixed', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.94) 0%,rgba(57,150,44,0.94) 100%)', pointerEvents: 'none' }} />
+      <section className="leaf-anim" style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.85) 0%,rgba(57,150,44,0.82) 100%)', pointerEvents: 'none' }} />
         <div ref={ctaRef} className="reveal" style={{ maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center', position: 'relative', zIndex: 10 }}>
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#fff', marginBottom: '1.75rem', lineHeight: 1.15, textAlign: 'center' }}>
             Ready to Source<br />Sustainable Fiber?

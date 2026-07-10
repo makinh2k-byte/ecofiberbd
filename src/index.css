@@ -98,3 +98,33 @@ h1, h2, h3, h4, h5, h6, .slopes {
 /* ── Image hover zoom ───────────────────────────── */
 .img-zoom { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
 .img-zoom:hover { transform: scale(1.06); }
+
+/* ── Ambient leaf-pattern drift ─────────────────── */
+@keyframes leafDrift {
+  from { background-position: 0px 0px; }
+  to   { background-position: 420px 420px; }
+}
+.leaf-anim { animation: leafDrift 90s linear infinite; }
+
+/* ── Hero entrance rise ─────────────────────────── */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-rise { animation: heroRise 1.05s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-rise > * { animation: heroRise 1.05s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-rise > *:nth-child(2) { animation-delay: 0.12s; }
+.hero-rise > *:nth-child(3) { animation-delay: 0.24s; }
+
+/* ── Soft floating accent (decorative orbs) ─────── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-18px); }
+}
+.float-slow { animation: floatY 9s ease-in-out infinite; }
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .leaf-anim, .hero-rise, .hero-rise > *, .float-slow, .pulse-dot { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
