@@ -40,13 +40,13 @@ export default function Navbar() {
         : { background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(14px)', boxShadow: '0 2px 20px rgba(0,0,0,0.08)' }
       }>
       <div className="max-w-6xl mx-auto px-6 lg:px-14">
-        <div className="flex items-center justify-between h-20 px-4">
+        <div className="flex items-center justify-between h-20">
           <Link to="/" className="transition-transform duration-300 hover:scale-105">
             <img src={logo} alt="EcoFiber BD" className="h-20 w-auto" />
           </Link>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-5">
             {links.map(l => (
               <Link key={l.to} to={l.to}
                 className={`font-semibold text-[15px] transition-all duration-200 relative group ${
@@ -60,7 +60,7 @@ export default function Navbar() {
             ))}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 font-semibold text-[15px] text-white rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg transform hover:scale-105"
-              style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)', padding: '0.6rem 1.4rem', marginLeft: '0.5rem' }}
+              style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)', padding: '0.6rem 1.125rem', marginLeft: '0.25rem', flexShrink: 0 }}
               title="Chat with us on WhatsApp">
               <MessageCircle size={18} className="transition-transform group-hover:rotate-12" />
               WhatsApp
