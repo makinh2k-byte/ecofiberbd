@@ -81,13 +81,13 @@ function FeatureCard({ f, index }) {
   const ref = useReveal(index)
   return (
     <div ref={ref} className="reveal transition-all duration-500 hover:-translate-y-2"
-      style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '1.25rem', padding: '2.5rem' }}>
+      style={{ background: 'rgba(10,26,12,0.65)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '1.25rem', padding: '2.5rem', boxShadow: '0 8px 28px rgba(0,0,0,0.25)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
         <span style={{ color: '#8dc63f', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.25em' }}>{f.num}</span>
-        <div style={{ flex: 1, height: 1, background: 'rgba(141,198,63,0.2)' }} />
+        <div style={{ flex: 1, height: 1, background: 'rgba(141,198,63,0.25)' }} />
       </div>
       <h3 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '1rem', lineHeight: 1.3 }}>{f.title}</h3>
-      <p style={{ color: 'rgba(187,247,208,0.55)', fontSize: '0.9375rem', lineHeight: 1.9 }}>{f.desc}</p>
+      <p style={{ color: 'rgba(220,252,231,0.85)', fontSize: '0.9375rem', lineHeight: 1.9 }}>{f.desc}</p>
     </div>
   )
 }

@@ -75,29 +75,39 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu dropdown */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-out border-t border-gray-200 ${open ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}
-          style={transparent ? { borderColor: 'rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.95)' } : { background: 'rgba(255,255,255,0.98)', borderColor: '#e5e7eb' }}>
-          <div className="py-3 px-6">
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${open ? 'max-h-[560px] opacity-100' : 'max-h-0 opacity-0'}`}
+          style={{
+            background: 'rgba(255,255,255,0.99)',
+            backdropFilter: 'blur(16px)',
+            borderRadius: '0 0 1.5rem 1.5rem',
+            boxShadow: open ? '0 20px 40px rgba(0,0,0,0.18)' : 'none',
+            border: '1px solid rgba(0,0,0,0.06)',
+            borderTop: 'none',
+          }}>
+          <div className="py-4 px-5" style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
             {links.map((l, i) => (
               <Link key={l.to} to={l.to}
                 onClick={() => setOpen(false)}
-                className={`block py-3 px-3 font-semibold text-[15px] rounded-lg transition-all duration-200 ${
+                className={`flex items-center font-semibold text-[16px] rounded-xl transition-all duration-200 ${
                   location.pathname === l.to
-                    ? 'text-[#39962c] bg-green-50'
+                    ? 'text-[#39962c]'
                     : 'text-gray-700 hover:text-[#39962c] hover:bg-gray-50'
                 }`}
-                style={{ animationDelay: `${i * 30}ms` }}>
+                style={{
+                  padding: '0.875rem 1rem',
+                  background: location.pathname === l.to ? 'rgba(57,150,44,0.08)' : 'transparent',
+                  borderLeft: location.pathname === l.to ? '3px solid #39962c' : '3px solid transparent',
+                }}>
                 {l.label}
               </Link>
             ))}
-            <div className="pt-2 mt-2 border-t border-gray-200">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 text-center text-white font-semibold rounded-lg transition-all duration-300 text-[15px] hover:scale-105"
-                style={{ background: '#25D366', boxShadow: '0 2px 12px rgba(37,211,102,0.3)', padding: '0.75rem 1rem', marginTop: '0.5rem' }}>
-                <MessageCircle size={18} />
-                Chat on WhatsApp
-              </a>
-            </div>
+            <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)', margin: '0.5rem 0' }} />
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
+              className="flex items-center justify-center gap-2 text-center text-white font-semibold rounded-xl transition-all duration-300 text-[16px] hover:scale-[1.02]"
+              style={{ background: '#25D366', boxShadow: '0 4px 16px rgba(37,211,102,0.35)', padding: '0.875rem 1rem' }}>
+              <MessageCircle size={19} />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>
