@@ -20,7 +20,7 @@ function ArticleCard({ a, index }) {
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem' }}><Calendar size={14} /> {new Date(a.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem' }}><Clock size={14} /> {a.readTime}</span>
         </div>
-        <h2 style={{ fontSize: '1.25rem', color: '#111827', lineHeight: 1.35, marginBottom: '0.75rem' }}>{a.title}</h2>
+        <h2 style={{ fontSize: 'calc(1.25rem + 3px)', color: '#111827', lineHeight: 1.35, marginBottom: '0.75rem' }}>{a.title}</h2>
         <p style={{ color: '#6b7280', fontSize: '0.9375rem', lineHeight: 1.8, marginBottom: '1.5rem', flex: 1 }}>{a.excerpt}</p>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#39962c', fontWeight: 600, fontSize: '0.9375rem' }}>
           Read article <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -49,7 +49,7 @@ export default function Blog() {
       <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Banana Fiber Insights</h1>
+          <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Banana Fiber Insights</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
             Prices, comparisons and practical guides on raw banana fiber — from Bangladesh's trusted supplier and exporter.
           </p>

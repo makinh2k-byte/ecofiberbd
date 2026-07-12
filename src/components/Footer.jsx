@@ -25,7 +25,7 @@ const productLinks = [
   { to: '/products',   label: 'All Products' },
 ]
 
-const headingStyle = { color: '#fff', fontSize: '0.8125rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1.375rem' }
+const headingStyle = { color: '#fff', fontSize: 'calc(0.8125rem + 3px)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1.375rem' }
 const linkStyle    = { color: 'rgba(220,252,231,0.7)', fontSize: '0.9375rem', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-block' }
 
 function FootLink({ to, children }) {

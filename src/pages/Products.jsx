@@ -35,7 +35,7 @@ function ProductCard({ p, index }) {
         </div>
       </div>
       <div style={{ padding: '1.375rem 1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '0.625rem', fontSize: '1.375rem', lineHeight: 1.25 }}>{p.name}</h3>
+        <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '0.625rem', fontSize: 'calc(1.375rem + 3px)', lineHeight: 1.25 }}>{p.name}</h3>
         <p style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.125rem', flex: 1 }}>{p.description}</p>
         <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1rem', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {[
@@ -96,7 +96,7 @@ export default function Products() {
       <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Our Products</h1>
+          <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Our Products</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
             Premium raw banana fiber in three grades — sourced from banana pseudostems across Bangladesh.
           </p>
@@ -143,7 +143,7 @@ export default function Products() {
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 3rem', background: 'linear-gradient(135deg,rgba(8,20,9,0.92),rgba(55,89,59,0.88))' }}>
               <div>
                 <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Technical Data</span>
-                <h3 style={{ fontSize: '2rem', color: '#fff', marginTop: '0.75rem' }}>Technical Specifications</h3>
+                <h3 style={{ fontSize: 'calc(2rem + 3px)', color: '#fff', marginTop: '0.75rem' }}>Technical Specifications</h3>
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function Products() {
 
         {/* Packaging & Storage */}
         <div style={{ marginTop: '2.5rem', borderRadius: '1.25rem', padding: '2.5rem 2.75rem', border: '1px solid rgba(57,150,44,0.2)', background: 'rgba(57,150,44,0.06)' }}>
-          <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: '1.3125rem' }}>Packaging &amp; Storage</h3>
+          <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: 'calc(1.3125rem + 3px)' }}>Packaging &amp; Storage</h3>
           <p style={{ fontSize: '0.9375rem', color: '#6b7280', lineHeight: 1.85, maxWidth: '48rem' }}>
             Compressed bales in jute or PP bags, or loose bundles as per buyer requirement. Stored in cool, dry, and well-ventilated conditions.
           </p>

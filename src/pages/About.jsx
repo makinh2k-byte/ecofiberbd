@@ -32,7 +32,7 @@ function ValueCard({ v, index }) {
       <div style={{ width: '3.25rem', height: '3.25rem', borderRadius: '0.875rem', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(57,150,44,0.10)', marginBottom: '1.5rem' }}>
         <Icon size={24} color="#39962c" />
       </div>
-      <h3 style={{ fontWeight: 700, color: '#111827', fontSize: '1.125rem', marginBottom: '0.75rem' }}>{v.title}</h3>
+      <h3 style={{ fontWeight: 700, color: '#111827', fontSize: 'calc(1.125rem + 3px)', marginBottom: '0.75rem' }}>{v.title}</h3>
       <p style={{ color: '#6b7280', fontSize: '0.9375rem', lineHeight: 1.85 }}>{v.desc}</p>
     </div>
   )
@@ -72,7 +72,7 @@ export default function About() {
       <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>About EcoFiber BD</h1>
+          <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>About EcoFiber BD</h1>
           <p style={{ color: 'rgba(220,252,231,0.7)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
             Transforming Waste into Sustainable Solutions — a banana fiber supplier and exporter based in Dhaka, Bangladesh.
           </p>
@@ -85,7 +85,7 @@ export default function About() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div ref={introTextRef} className="reveal-left">
               <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Who We Are</span>
-              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', marginTop: '1.25rem', marginBottom: '1.75rem', lineHeight: 1.2, color: '#111827' }}>
+              <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', marginTop: '1.25rem', marginBottom: '1.75rem', lineHeight: 1.2, color: '#111827' }}>
                 Premium banana fiber,<br /><span style={{ color: '#39962c' }}>sustainably sourced</span>
               </h2>
               <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '1.25rem' }}>
@@ -116,13 +116,13 @@ export default function About() {
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div ref={missionRef} className="reveal" style={{ background: '#fff', borderRadius: '1.25rem', padding: '2.75rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
-              <h3 style={{ fontSize: '1.5rem', color: '#111827', marginBottom: '1rem' }}>Our Mission</h3>
+              <h3 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#111827', marginBottom: '1rem' }}>Our Mission</h3>
               <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.9 }}>
                 To turn banana-plant waste into premium, sustainable fiber — giving manufacturers a biodegradable alternative to synthetic materials while creating new income for farmers in Bangladesh.
               </p>
             </div>
             <div ref={visionRef} className="reveal" style={{ background: '#fff', borderRadius: '1.25rem', padding: '2.75rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
-              <h3 style={{ fontSize: '1.5rem', color: '#111827', marginBottom: '1rem' }}>Our Vision</h3>
+              <h3 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#111827', marginBottom: '1rem' }}>Our Vision</h3>
               <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.9 }}>
                 To make Bangladesh a recognised global source of high-quality natural banana fiber, advancing a circular economy where nothing from the harvest goes to waste.
               </p>
@@ -136,7 +136,7 @@ export default function About() {
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={valuesHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>What We Stand For</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Our Values</h2>
+            <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Our Values</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem' }}>
             {values.map((v, i) => <ValueCard key={i} v={v} index={i} />)}
@@ -159,7 +159,7 @@ export default function About() {
       {/* CTA */}
       <section style={{ background: '#f7f5f0', paddingTop: '6rem', paddingBottom: '7rem' }}>
         <div ref={ctaRef} className="reveal" style={{ maxWidth: '46rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.2, textAlign: 'center' }}>Let's work together</h2>
+          <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.2, textAlign: 'center' }}>Let's work together</h2>
           <p style={{ fontSize: '1.0625rem', color: '#6b7280', marginBottom: '2.5rem', lineHeight: 1.9, maxWidth: '34rem', margin: '0 auto 2.5rem', textAlign: 'center' }}>
             Looking for a reliable banana fiber supplier in Bangladesh? Request a sample, ask about wholesale pricing, or tell us about your project.
           </p>

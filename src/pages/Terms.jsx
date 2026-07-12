@@ -5,7 +5,7 @@ import { useSEO } from '../hooks/useSEO'
 const PATTERN = '/ecofiber-background-Pattern.png'
 const UPDATED = 'January 2026'
 
-const h2 = { fontSize: '1.5rem', color: '#111827', marginTop: '2.5rem', marginBottom: '1rem' }
+const h2 = { fontSize: 'calc(1.5rem + 3px)', color: '#111827', marginTop: '2.5rem', marginBottom: '1rem' }
 const p  = { color: '#4b5563', fontSize: '1rem', lineHeight: 1.9, marginBottom: '1rem' }
 const li = { color: '#4b5563', fontSize: '1rem', lineHeight: 1.85, marginBottom: '0.5rem' }
 
@@ -25,7 +25,7 @@ export default function Terms() {
         <div className="absolute inset-0 leaf-anim" style={{ backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '44rem', margin: '0 auto', padding: '0 2rem' }}>
-          <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', marginBottom: '1rem', color: '#fff' }}>Terms &amp; Conditions</h1>
+          <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', marginBottom: '1rem', color: '#fff' }}>Terms &amp; Conditions</h1>
           <p style={{ color: 'rgba(220,252,231,0.7)', fontSize: '1rem', fontWeight: 300 }}>Last updated: {UPDATED}</p>
         </div>
       </section>

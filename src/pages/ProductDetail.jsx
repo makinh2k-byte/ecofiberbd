@@ -74,7 +74,7 @@ export default function ProductDetail() {
   if (!product) return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ textAlign: 'center' }}>
-        <h2 style={{ fontSize: '1.5rem', color: '#1f2937', marginBottom: '1.25rem' }}>Product not found</h2>
+        <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#1f2937', marginBottom: '1.25rem' }}>Product not found</h2>
         <Link to="/products" style={{ color: '#39962c', fontWeight: 500, textDecoration: 'none' }}>← Back to Products</Link>
       </div>
     </div>
@@ -113,7 +113,7 @@ export default function ProductDetail() {
           <span style={{ display: 'inline-block', color: '#fff', fontSize: '0.8125rem', fontWeight: 700, padding: '0.625rem 1.25rem', borderRadius: '9999px', marginBottom: '1.5rem', background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.3)' }}>
             {product.grade}
           </span>
-          <h1 style={{ fontSize: 'clamp(2.25rem, 5vw, 3.25rem)', maxWidth: '40rem', lineHeight: 1.15 }}>{product.name}</h1>
+          <h1 style={{ fontSize: 'clamp(calc(2.25rem + 3px), 5vw, calc(3.25rem + 3px))', maxWidth: '40rem', lineHeight: 1.15 }}>{product.name}</h1>
         </div>
       </section>
 
@@ -164,7 +164,7 @@ export default function ProductDetail() {
               ))}
             </div>
 
-            <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.8125rem' }}>Key Applications</h3>
+            <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'calc(0.8125rem + 3px)' }}>Key Applications</h3>
             <ul style={{ marginBottom: '2.75rem', display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
               {product.applications.map(a => (
                 <li key={a} style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', color: '#4b5563', fontSize: '0.9375rem' }}>
@@ -196,7 +196,7 @@ export default function ProductDetail() {
           <div style={{ position: 'relative', height: '7rem', overflow: 'hidden' }}>
             <img src={product.img} alt="" className="w-full h-full object-cover" />
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 2.5rem', background: `linear-gradient(135deg,rgba(11,26,13,0.90),${product.accent}cc)` }}>
-              <h2 style={{ fontSize: '1.5rem', color: '#fff' }}>Full Technical Specifications</h2>
+              <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#fff' }}>Full Technical Specifications</h2>
             </div>
           </div>
           <div>

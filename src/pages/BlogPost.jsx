@@ -51,7 +51,7 @@ export default function BlogPost() {
 
   if (!article) return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1.25rem' }}>
-      <h2 style={{ fontSize: '1.5rem', color: '#1f2937' }}>Article not found</h2>
+      <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#1f2937' }}>Article not found</h2>
       <Link to="/blog" style={{ color: '#39962c', fontWeight: 500, textDecoration: 'none' }}>← Back to Blog</Link>
     </div>
   )
@@ -72,7 +72,7 @@ export default function BlogPost() {
           <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500, marginBottom: '1.75rem', textDecoration: 'none', fontSize: '0.9375rem' }}>
             <ArrowLeft size={16} /> Back to Blog
           </Link>
-          <h1 style={{ fontSize: 'clamp(1.875rem, 4.5vw, 2.75rem)', lineHeight: 1.2, color: '#fff', marginBottom: '1.5rem' }}>{article.title}</h1>
+          <h1 style={{ fontSize: 'clamp(calc(1.875rem + 3px), 4.5vw, calc(2.75rem + 3px))', lineHeight: 1.2, color: '#fff', marginBottom: '1.5rem' }}>{article.title}</h1>
           <div style={{ display: 'flex', gap: '1.5rem', color: 'rgba(255,255,255,0.75)', fontSize: '0.875rem' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem' }}><Calendar size={15} /> {new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem' }}><Clock size={15} /> {article.readTime}</span>
@@ -86,7 +86,7 @@ export default function BlogPost() {
           <p style={{ fontSize: '1.125rem', color: '#374151', lineHeight: 1.9, marginBottom: '2.5rem', fontWeight: 500 }}>{article.excerpt}</p>
           {article.sections.map((s, i) => (
             <section key={i} style={{ marginBottom: '2.5rem' }}>
-              <h2 style={{ fontSize: '1.5rem', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.3 }}>{s.heading}</h2>
+              <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.3 }}>{s.heading}</h2>
               {s.body.map((p, j) => (
                 <p key={j} style={{ color: '#4b5563', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '1rem' }}>{p}</p>
               ))}
@@ -95,7 +95,7 @@ export default function BlogPost() {
 
           {/* CTA */}
           <div style={{ marginTop: '3rem', padding: '2rem', borderRadius: '1rem', background: 'rgba(57,150,44,0.07)', border: '1px solid rgba(57,150,44,0.18)', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.25rem', color: '#111827', marginBottom: '0.75rem' }}>Looking to buy banana fiber?</h3>
+            <h3 style={{ fontSize: 'calc(1.25rem + 3px)', color: '#111827', marginBottom: '0.75rem' }}>Looking to buy banana fiber?</h3>
             <p style={{ color: '#6b7280', fontSize: '0.9375rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               EcoFiber BD supplies premium raw banana fiber — Grade A, B & C — from Bangladesh. Request a sample or wholesale quote.
             </p>
@@ -114,7 +114,7 @@ export default function BlogPost() {
 
         {/* Related */}
         <div style={{ marginTop: '3.5rem' }}>
-          <h3 style={{ fontSize: '1.25rem', color: '#111827', marginBottom: '1.5rem' }}>Related articles</h3>
+          <h3 style={{ fontSize: 'calc(1.25rem + 3px)', color: '#111827', marginBottom: '1.5rem' }}>Related articles</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
             {related.map(r => (
               <Link key={r.slug} to={`/blog/${r.slug}`}
@@ -124,7 +124,7 @@ export default function BlogPost() {
                   <img src={r.cover} alt={r.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div style={{ padding: '1.25rem 1.5rem' }}>
-                  <h4 style={{ fontSize: '1rem', color: '#111827', lineHeight: 1.4 }}>{r.title}</h4>
+                  <h4 style={{ fontSize: 'calc(1rem + 3px)', color: '#111827', lineHeight: 1.4 }}>{r.title}</h4>
                 </div>
               </Link>
             ))}

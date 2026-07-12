@@ -86,7 +86,7 @@ function FeatureCard({ f, index }) {
         <span style={{ color: '#8dc63f', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.25em' }}>{f.num}</span>
         <div style={{ flex: 1, height: 1, background: 'rgba(141,198,63,0.25)' }} />
       </div>
-      <h3 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '1rem', lineHeight: 1.3 }}>{f.title}</h3>
+      <h3 style={{ color: '#fff', fontSize: 'calc(1.2rem + 3px)', marginBottom: '1rem', lineHeight: 1.3 }}>{f.title}</h3>
       <p style={{ color: 'rgba(220,252,231,0.85)', fontSize: '0.9375rem', lineHeight: 1.9 }}>{f.desc}</p>
     </div>
   )
@@ -128,7 +128,7 @@ function AppCard({ a, index }) {
         <img src={a.img} alt={a.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
       </div>
       <div style={{ padding: '1.5rem 1.25rem', textAlign: 'center' }}>
-        <h4 style={{ fontWeight: 700, color: '#111827', fontSize: '0.9375rem', marginBottom: '0.5rem' }}>{a.title}</h4>
+        <h4 style={{ fontWeight: 700, color: '#111827', fontSize: 'calc(0.9375rem + 3px)', marginBottom: '0.5rem' }}>{a.title}</h4>
         <p style={{ fontSize: '0.8125rem', color: '#9ca3af', lineHeight: 1.65 }}>{a.desc}</p>
       </div>
     </div>
@@ -174,7 +174,7 @@ export default function Home() {
             Raw Banana Fiber Supplier &amp; Exporter in Bangladesh
           </div>
 
-          <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 5rem)', lineHeight: 1.03, letterSpacing: '-0.02em', marginBottom: '2rem', textAlign: 'center', color: '#fff' }}>
+          <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(5rem + 3px))', lineHeight: 1.03, letterSpacing: '-0.02em', marginBottom: '2rem', textAlign: 'center', color: '#fff' }}>
             Transforming Waste<br />
             into{' '}
             <span style={{ background: 'linear-gradient(90deg,#8dc63f,#c0f060)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
@@ -219,7 +219,7 @@ export default function Home() {
 
             <div ref={aboutTextRef} className="reveal-left">
               <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>About EcoFiber BD</span>
-              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', marginTop: '1.25rem', marginBottom: '1.75rem', lineHeight: 1.15 }}>
+              <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', marginTop: '1.25rem', marginBottom: '1.75rem', lineHeight: 1.15 }}>
                 Premium Raw<br />
                 <span style={{ color: '#39962c' }}>Banana Fiber</span>
               </h2>
@@ -265,7 +265,7 @@ export default function Home() {
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
           <div ref={featHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Why Choose Us</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#fff', marginTop: '1.25rem', textAlign: 'center' }}>Key Features & Benefits</h2>
+            <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#fff', marginTop: '1.25rem', textAlign: 'center' }}>Key Features & Benefits</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.75rem' }}>
             {features.map((f, i) => <FeatureCard key={i} f={f} index={i} />)}
@@ -278,7 +278,7 @@ export default function Home() {
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={gradeHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Our Products</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Available Fiber Grades</h2>
+            <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Available Fiber Grades</h2>
             <p style={{ color: '#9ca3af', marginTop: '1.25rem', fontSize: '1.0625rem', maxWidth: '36rem', margin: '1.25rem auto 0', lineHeight: 1.75, textAlign: 'center' }}>
               Three grades to match your exact application — from premium textile-grade to industrial fiber.
             </p>
@@ -300,7 +300,7 @@ export default function Home() {
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={appHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Use Cases</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Applications & Usage</h2>
+            <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Applications & Usage</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
             {applications.map((a, i) => <AppCard key={i} a={a} index={i} />)}
@@ -313,7 +313,7 @@ export default function Home() {
         <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={faqHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>FAQ</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Banana Fiber — Common Questions</h2>
+            <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#111827', marginTop: '1.25rem', textAlign: 'center' }}>Banana Fiber — Common Questions</h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {faqs.map((f, i) => (
@@ -330,7 +330,7 @@ export default function Home() {
       <section className="leaf-anim" style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.85) 0%,rgba(57,150,44,0.82) 100%)', pointerEvents: 'none' }} />
         <div ref={ctaRef} className="reveal" style={{ maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center', position: 'relative', zIndex: 10 }}>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', color: '#fff', marginBottom: '1.75rem', lineHeight: 1.15, textAlign: 'center' }}>
+          <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#fff', marginBottom: '1.75rem', lineHeight: 1.15, textAlign: 'center' }}>
             Ready to Source<br />Sustainable Fiber?
           </h2>
           <p style={{ fontSize: '1.125rem', color: 'rgba(220,252,231,0.65)', marginBottom: '3.5rem', fontWeight: 300, lineHeight: 1.95, maxWidth: '38rem', margin: '0 auto 3.5rem', textAlign: 'center' }}>

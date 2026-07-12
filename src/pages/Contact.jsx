@@ -63,7 +63,7 @@ export default function Contact() {
       <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '44rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(2.75rem, 7vw, 4rem)', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Get in Touch</h1>
+          <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Get in Touch</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, lineHeight: 1.9, textAlign: 'center' }}>
             Request samples, bulk pricing, or any inquiries about our premium banana fiber.
           </p>
@@ -76,7 +76,7 @@ export default function Contact() {
           {/* Sidebar */}
           <div ref={sidebarRef} className="reveal-left" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div style={{ background: '#fff', borderRadius: '1.25rem', padding: '2.5rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
-              <h2 style={{ fontSize: '1.375rem', color: '#111827', marginBottom: '0.75rem' }}>Contact Information</h2>
+              <h2 style={{ fontSize: 'calc(1.375rem + 3px)', color: '#111827', marginBottom: '0.75rem' }}>Contact Information</h2>
               <p style={{ color: '#9ca3af', fontSize: '0.9375rem', marginBottom: '2.5rem', lineHeight: 1.7 }}>We respond to all inquiries within 24 hours.</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
                 {[
@@ -123,7 +123,7 @@ export default function Contact() {
                 <div style={{ width: '5.5rem', height: '5.5rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(57,150,44,0.10)', marginBottom: '2rem' }}>
                   <CheckCircle size={42} color="#39962c" />
                 </div>
-                <h3 style={{ fontSize: '1.75rem', color: '#111827', marginBottom: '1rem' }}>Inquiry Sent!</h3>
+                <h3 style={{ fontSize: 'calc(1.75rem + 3px)', color: '#111827', marginBottom: '1rem' }}>Inquiry Sent!</h3>
                 <p style={{ color: '#9ca3af', marginBottom: '2.5rem', lineHeight: 1.7, maxWidth: '22rem', textAlign: 'center', fontSize: '1rem' }}>
                   Thank you for reaching out. Our team will respond within 24 hours.
                 </p>
@@ -135,7 +135,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={submit} style={{ background: '#fff', borderRadius: '1.25rem', padding: '2.75rem 3rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
-                <h2 style={{ fontSize: '1.75rem', color: '#111827', marginBottom: '2.25rem' }}>Send an Inquiry</h2>
+                <h2 style={{ fontSize: 'calc(1.75rem + 3px)', color: '#111827', marginBottom: '2.25rem' }}>Send an Inquiry</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }} className="sm:grid-cols-2">
                   <div>
                     <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.625rem' }}>Full Name *</label>
