@@ -76,6 +76,7 @@ export default function RequestQuote() {
   })
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [error, setError]     = useState('')
 
   const sidebarRef = useReveal(0)
   const formRef    = useReveal(1)
@@ -100,10 +101,10 @@ export default function RequestQuote() {
       `Quotation request — ${form.product}`
     )}&body=${encodeURIComponent(`Hello EcoFiber BD,\n\nPlease send me a quotation for the following:\n\n${summary()}\n\nThank you.`)}`
 
-  /** Also record the RFQ on our side so nothing is lost if the buyer's mail client fails. */
+  /** Returns whether the request actually reached us. */
   const record = async () => {
     try {
-      await fetch('/api/inquiries', {
+      const res = await fetch('/api/inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -112,21 +113,32 @@ export default function RequestQuote() {
           message: `QUOTE REQUEST\n\n${summary()}`,
         }),
       })
-    } catch { /* non-blocking — the buyer still has WhatsApp/email */ }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        return { ok: false, error: data.error || 'Your request could not be sent.' }
+      }
+      return { ok: true }
+    } catch {
+      return { ok: false, error: 'Your request could not be sent. Please check your connection.' }
+    }
   }
 
   const submit = async e => {
     e.preventDefault()
-    setLoading(true)
-    await record()
+    setLoading(true); setError('')
+    const result = await record()
     setLoading(false)
-    setSuccess(true)
+    // never show a confirmation we cannot stand behind
+    if (result.ok) setSuccess(true)
+    else setError(result.error)
   }
 
+  /** WhatsApp and email always open: the details ride in the link itself, so
+   *  these still work when our own endpoint is down. */
   const openChannel = async href => {
     if (!canSend) return
-    await record()
     window.open(href, '_blank', 'noopener,noreferrer')
+    record()
     setSuccess(true)
   }
 
@@ -298,6 +310,15 @@ export default function RequestQuote() {
                     Please include a sample with the quotation
                   </label>
                 </div>
+
+                {error && (
+                  <div style={{ marginTop: '1.5rem', padding: '1.125rem 1.25rem', borderRadius: '0.875rem', background: '#fef2f2', border: '1px solid #fecaca' }}>
+                    <div style={{ color: '#b91c1c', fontWeight: 600, fontSize: '0.9375rem', marginBottom: '0.375rem' }}>{error}</div>
+                    <div style={{ color: '#7f1d1d', fontSize: '0.875rem', lineHeight: 1.7 }}>
+                      Use the WhatsApp or Email buttons below - they carry the same details and work independently.
+                    </div>
+                  </div>
+                )}
 
                 <button type="submit" disabled={loading}
                   className="inline-flex items-center justify-center gap-2.5 font-bold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-60"

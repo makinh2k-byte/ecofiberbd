@@ -1,6 +1,6 @@
 name = "ecofiberbdv2"
 main = "src/index.js"
-compatibility_date = "2024-04-05"
+compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
 [assets]
@@ -10,8 +10,9 @@ binding = "ASSETS"
 [build]
 command = "npm run build"
 
-# D1 Database binding (configure after creating database)
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "ecofiberbd"
-# database_id = "YOUR_DATABASE_ID_HERE"
+# Email Routing send binding — delivers inquiry notifications.
+# `destination_address` must be a VERIFIED destination address in
+# Cloudflare > Email > Email Routing > Destination addresses.
+[[send_email]]
+name = "SEB"
+destination_address = "info@ecofiberbd.com"

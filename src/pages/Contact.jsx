@@ -41,19 +41,32 @@ export default function Contact() {
   })
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [error, setError]     = useState('')
 
   const sidebarRef = useReveal(0)
   const formRef    = useReveal(1)
 
   const set = e => setForm({ ...form, [e.target.name]: e.target.value })
   const submit = async e => {
-    e.preventDefault(); setLoading(true)
+    e.preventDefault(); setLoading(true); setError('')
     try {
-      const res = await fetch('/api/inquiries', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
-      if (res.ok) { setSuccess(true); setForm({ name:'', email:'', phone:'', country:'', message:'', product:'General Inquiry' }) }
-      else throw new Error()
-    } catch { setSuccess(true) } finally { setLoading(false) }
+      const res  = await fetch('/api/inquiries', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(data.error || 'Your message could not be sent.')
+      setSuccess(true)
+      setForm({ name:'', email:'', phone:'', country:'', message:'', product:'General Inquiry' })
+    } catch (err) {
+      // never claim success we can't verify — offer the direct channels instead
+      setError(err.message || 'Your message could not be sent.')
+    } finally { setLoading(false) }
   }
+
+  /** Same details, handed to WhatsApp/email so a failed send is never a dead end. */
+  const fallbackText = () => [
+    `Name: ${form.name}`, `Email: ${form.email}`,
+    form.phone ? `Phone: ${form.phone}` : '', `Country: ${form.country}`,
+    `Product: ${form.product}`, '', form.message,
+  ].filter(Boolean).join('\n')
 
   return (
     <div style={{ minHeight: '100vh', overflowX: 'hidden', background: '#f7f5f0' }}>
@@ -181,6 +194,21 @@ export default function Contact() {
                       style={{ ...inputStyle, resize: 'none' }} />
                   </div>
                 </div>
+                {error && (
+                  <div style={{ marginTop: '1.5rem', padding: '1.125rem 1.25rem', borderRadius: '0.875rem', background: '#fef2f2', border: '1px solid #fecaca' }}>
+                    <div style={{ color: '#b91c1c', fontWeight: 600, fontSize: '0.9375rem', marginBottom: '0.5rem' }}>{error}</div>
+                    <div style={{ color: '#7f1d1d', fontSize: '0.875rem', lineHeight: 1.7 }}>
+                      Please send it to us directly instead —{' '}
+                      <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(fallbackText())}`}
+                        target="_blank" rel="noopener noreferrer"
+                        style={{ color: '#b91c1c', fontWeight: 700 }}>WhatsApp</a>
+                      {' '}or{' '}
+                      <a href={`mailto:info@ecofiberbd.com?subject=${encodeURIComponent(`Inquiry - ${form.product}`)}&body=${encodeURIComponent(fallbackText())}`}
+                        style={{ color: '#b91c1c', fontWeight: 700 }}>email</a>.
+                    </div>
+                  </div>
+                )}
+
                 <button type="submit" disabled={loading}
                   className="inline-flex items-center justify-center gap-2.5 font-bold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-60"
                   style={{ marginTop: '2rem', width: '100%', background: '#39962c', boxShadow: '0 4px 24px rgba(57,150,44,0.35)', color: '#fff', padding: '1.125rem', borderRadius: '9999px', fontSize: '1.0625rem', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', fontFamily: 'inherit' }}>
