@@ -6,37 +6,22 @@ import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 import { useSEO } from '../hooks/useSEO'
 
-const PRODUCTS = [
-  { id: 1, name: 'Grade A Premium Banana Fiber', grade: 'Grade A', accent: '#39962c',
-    img: '/Images/Banana_fiber_Grade A.jpg',
-    fiber_length_cm: '90–120', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 15, stock_kg: 2000,
-    description: 'Premium long-staple banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production. Carefully decorticated and sun-dried to preserve natural luster and strength.',
-    applications: ['Fine Textiles & "Banana Silk"', 'Sarees & Blended Garments', 'High-Quality Paper', 'Currency & Archival Paper', 'Tea Bag Production'] },
-  { id: 2, name: 'Grade B Standard Banana Fiber', grade: 'Grade B', accent: '#8dc63f',
-    img: '/Images/Banana_fiber_Grade B.jpeg',
-    fiber_length_cm: '60–90', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 10, stock_kg: 3500,
-    description: 'Mid-grade fiber perfect for home furnishings, handicrafts, blended textiles, and general manufacturing. Excellent balance of strength and workability.',
-    applications: ['Curtains & Table Mats', 'Cushion Covers & Upholstery', 'Baskets & Bags', 'Hats & Carpets', 'Decorative Wall Hangings'] },
-  { id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C', accent: '#37593b',
-    img: '/Images/Banana_fiber_Grade C.jpeg',
-    fiber_length_cm: '30–60', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 4, stock_kg: 5000,
-    description: 'Coarser industrial-grade fiber best suited for marine ropes, shipping cables, and biocomposite reinforcements. Superior resistance to saltwater and UV damage.',
-    applications: ['Marine Ropes & Shipping Cables', 'Biocomposite Panels', 'Automotive Reinforcements', 'Industrial Composites', 'Construction Materials'] },
-]
+import { PRODUCTS, TDS, DATA_SOURCE_NOTE } from '../data/products'
 
 export default function ProductDetail() {
   const { id }   = useParams()
   const product  = PRODUCTS.find(p => p.id === parseInt(id))
 
   useSEO({
-    title: product ? `${product.name} — Price $${product.price_per_kg}/kg | Banana Fiber Bangladesh` : 'Product Details | EcoFiber BD',
-    description: product ? `Buy ${product.name} from EcoFiber BD, Bangladesh. ${product.description} Fiber length ${product.fiber_length_cm} cm. Price $${product.price_per_kg}/kg, MOQ ${product.moq_kg / 1000} ton. Request a sample.` : '',
-    keywords: product ? `${product.grade} banana fiber, buy banana fiber, banana fiber price, ${product.grade} banana fiber Bangladesh, raw banana fiber, biodegradable fiber` : '',
+    title: product ? `${product.name} — Specifications & Quote | Banana Fiber Bangladesh` : 'Product Details | EcoFiber BD',
+    description: product ? `${product.name} from EcoFiber BD, Bangladesh. ${product.description} Fiber length ${product.fiber_length_cm} cm, moisture ${product.moisture_content_percent}%. Request a quote or sample.` : '',
+    keywords: product ? `${product.grade} banana fiber, ${product.grade} banana fiber Bangladesh, banana fiber specifications, raw banana fiber, banana pseudo-stem fiber, biodegradable fiber, banana fiber quote` : '',
     url: `https://ecofiberbd.com/products/${id}`,
     image: product ? `https://ecofiberbd.com${encodeURI(product.img)}` : 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
 
-  // Inject per-product structured data (Offer/price) for rich snippets
+  // Inject per-product structured data for rich snippets. No price is published —
+  // the offer points buyers at the quotation flow instead.
   useEffect(() => {
     if (!product) return
     const data = {
@@ -49,13 +34,11 @@ export default function ProductDetail() {
       'brand': { '@type': 'Brand', 'name': 'EcoFiber BD' },
       'category': 'Natural Fiber',
       'countryOfOrigin': 'Bangladesh',
-      'material': 'Banana pseudostem cellulose',
+      'material': 'Banana pseudo-stem cellulose',
       'offers': {
         '@type': 'Offer',
-        'priceCurrency': 'USD',
-        'price': String(product.price_per_kg),
         'availability': 'https://schema.org/InStock',
-        'url': `https://ecofiberbd.com/products/${id}`,
+        'url': 'https://ecofiberbd.com/quote',
         'seller': { '@type': 'Organization', 'name': 'EcoFiber BD' }
       }
     }
@@ -81,19 +64,24 @@ export default function ProductDetail() {
   )
 
   const specRows = [
-    ['Material',         '100% Natural Banana Pseudostem Fiber'],
-    ['Fiber Type',       'Raw, Decorticated & Sun-Dried'],
-    ['Grade',            product.grade],
-    ['Color',            'Natural Off-White / Cream / Pale Brown (Dyeable)'],
-    ['Fiber Length',     `${product.fiber_length_cm} cm`],
-    ['Texture',          'Silky sheen, lightweight, stiff yet pliable'],
-    ['Tensile Strength', 'High — 500–600 MPa'],
-    ['Moisture Regain',  `< ${product.moisture_content_percent}% (Breathable)`],
-    ['Composition',      'Cellulose ~65%, Hemicellulose ~15%, Lignin ~10%'],
-    ['Biodegradability', '100% Biodegradable & Compostable (3–6 months)'],
-    ['Packaging',        'Jute or PP bags / loose bundles'],
-    ['Min. Order (MOQ)', `${product.moq_kg / 1000} ton`],
-    ['Stock Available',  `${product.stock_kg.toLocaleString()} kg`],
+    ['Material',            '100% Natural Banana Pseudo-Stem Fiber (Musa spp.)'],
+    ['Fiber Type',          'Mechanically extracted, washed & sun-dried'],
+    ['Grade',               product.grade],
+    ['Sorted Fiber Length', `${product.fiber_length_cm} cm`],
+    ['Fiber Diameter',      '80 – 250 µm'],
+    ['Linear Density',      '6.8 – 66.3 tex'],
+    ['Density',             '1.2 – 1.35 g/cm³'],
+    ['Tensile Strength',    '500 – 900 MPa'],
+    ["Young's Modulus",     '8 – 32 GPa'],
+    ['Elongation at Break', '1.0 – 3.5%'],
+    ['Moisture Content',    `${product.moisture_content_percent}%`],
+    ['Moisture Regain',     '~10 – 13%'],
+    ['Color',               'Off-white to yellowish-brown (natural, unbleached — dyeable)'],
+    ['Luster',              'Silky sheen'],
+    ['Composition',         'Cellulose 60–65%, Hemicellulose 18–19%, Lignin 5–10%, Pectin 3–5%, Ash 1–5%, Wax <1%'],
+    ['Biodegradability',    '100% Biodegradable & Compostable'],
+    ['Packaging',           'Jute or PP bags / loose bundles'],
+    ['Order Volume',        'Quoted per enquiry'],
   ]
 
   return (
@@ -150,18 +138,12 @@ export default function ProductDetail() {
           <div ref={rightRef} className="reveal-right">
             <p style={{ color: '#6b7280', lineHeight: 1.95, marginBottom: '2.25rem', fontSize: '1.0625rem' }}>{product.description}</p>
 
-            <div style={{ display: 'flex', alignItems: 'stretch', gap: '1.25rem', marginBottom: '2.75rem' }}>
-              {[
-                { label: 'Price', value: `$${product.price_per_kg}`, unit: '/kg', color: product.accent },
-                { label: 'Min. Order', value: `${product.moq_kg / 1000}`, unit: ' ton', color: '#1f2937' },
-              ].map(item => (
-                <div key={item.label} style={{ borderRadius: '1.125rem', padding: '1.75rem', flex: 1, textAlign: 'center', border: '1px solid #e5e7eb', background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.625rem' }}>{item.label}</div>
-                  <div style={{ fontSize: '2.25rem', fontWeight: 800, color: item.color, lineHeight: 1 }}>
-                    {item.value}<span style={{ fontSize: '1rem', fontWeight: 500, color: '#9ca3af' }}>{item.unit}</span>
-                  </div>
-                </div>
-              ))}
+            <div style={{ borderRadius: '1.125rem', padding: '1.75rem 2rem', marginBottom: '2.75rem', border: `1px solid ${product.accent}33`, background: `${product.accent}0d` }}>
+              <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.625rem' }}>Pricing</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: product.accent, lineHeight: 1.3, marginBottom: '0.625rem' }}>Quoted per enquiry</div>
+              <p style={{ color: '#6b7280', fontSize: '0.875rem', lineHeight: 1.75 }}>
+                Rates depend on grade, fiber form, order volume, packaging and destination. Send your requirement and we will reply with a written quotation within 24 hours.
+              </p>
             </div>
 
             <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'calc(0.8125rem + 3px)' }}>Key Applications</h3>
@@ -175,12 +157,12 @@ export default function ProductDetail() {
             </ul>
 
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <Link to={`/contact?product=${product.name}`}
+              <Link to={`/quote?product=${encodeURIComponent(product.name)}`}
                 className="flex-1 text-center font-bold transition-all hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ display: 'block', padding: '1.125rem', borderRadius: '9999px', color: '#fff', background: product.accent, textDecoration: 'none', fontSize: '1rem' }}>
                 Request Quote
               </Link>
-              <Link to="/contact"
+              <Link to={`/quote?product=${encodeURIComponent(product.name)}&sample=1`}
                 className="flex-1 text-center font-bold transition-all hover:-translate-y-0.5"
                 style={{ display: 'block', padding: '1.125rem', borderRadius: '9999px', border: `2px solid ${product.accent}`, color: product.accent, textDecoration: 'none', fontSize: '1rem' }}
                 onMouseEnter={e => { e.currentTarget.style.background = product.accent; e.currentTarget.style.color = '#fff' }}
@@ -196,7 +178,12 @@ export default function ProductDetail() {
           <div style={{ position: 'relative', height: '7rem', overflow: 'hidden' }}>
             <img src={product.img} alt="" className="w-full h-full object-cover" />
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 2.5rem', background: `linear-gradient(135deg,rgba(11,26,13,0.90),${product.accent}cc)` }}>
-              <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#fff' }}>Full Technical Specifications</h2>
+              <div>
+                <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#fff' }}>Full Technical Specifications</h2>
+                <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.5rem' }}>
+                  TDS {TDS.docNo} · {TDS.revision} · {TDS.issueDate} · Origin: {TDS.origin}
+                </div>
+              </div>
             </div>
           </div>
           <div>
@@ -210,6 +197,9 @@ export default function ProductDetail() {
               </div>
             ))}
           </div>
+          <p style={{ padding: '1.75rem 2.5rem', color: '#9ca3af', fontSize: '0.8125rem', lineHeight: 1.8, background: '#fafafa' }}>
+            {DATA_SOURCE_NOTE}
+          </p>
         </div>
       </div>
 

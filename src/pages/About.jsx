@@ -13,7 +13,7 @@ const values = [
   { icon: ShieldCheck, title: 'Consistent Quality',   desc: 'Carefully decorticated, sun-dried and sorted into clear grades, so you receive reliable fiber length, cleanliness and strength every time.' },
   { icon: Users,       title: 'Empowering Farmers',   desc: 'By turning crop waste into income, we support local banana farmers and contribute to a circular rural economy in Bangladesh.' },
   { icon: Globe,       title: 'Built for Export',     desc: 'Export-ready packaging and grading for textile mills, paper manufacturers and buyers worldwide.' },
-  { icon: Award,       title: 'Premium Standards',    desc: 'High tensile strength (500–600 MPa) and a natural silk-like luster — fiber that performs as good as it looks.' },
+  { icon: Award,       title: 'Premium Standards',    desc: 'High tensile strength (500–900 MPa) and a natural silky sheen — fiber that performs as good as it looks.' },
 ]
 
 const stats = [
@@ -161,12 +161,12 @@ export default function About() {
         <div ref={ctaRef} className="reveal" style={{ maxWidth: '46rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.2, textAlign: 'center' }}>Let's work together</h2>
           <p style={{ fontSize: '1.0625rem', color: '#6b7280', marginBottom: '2.5rem', lineHeight: 1.9, maxWidth: '34rem', margin: '0 auto 2.5rem', textAlign: 'center' }}>
-            Looking for a reliable banana fiber supplier in Bangladesh? Request a sample, ask about wholesale pricing, or tell us about your project.
+            Looking for a reliable banana fiber supplier in Bangladesh? Request a quotation, ask for a sample, or tell us about your project.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-            <Link to="/contact" className="inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+            <Link to="/quote" className="inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               style={{ background: '#39962c', boxShadow: '0 4px 24px rgba(57,150,44,0.35)', color: '#fff', padding: '1.125rem 2.5rem', borderRadius: '9999px', fontSize: '1.0625rem', textDecoration: 'none' }}>
-              Contact Us <ArrowRight size={18} />
+              Request a Quote <ArrowRight size={18} />
             </Link>
             <Link to="/products" className="inline-flex items-center font-semibold transition-all duration-300 hover:-translate-y-1"
               style={{ border: '2px solid #39962c', color: '#39962c', padding: '1.125rem 2.5rem', borderRadius: '9999px', fontSize: '1.0625rem', textDecoration: 'none' }}>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Download } from 'lucide-react'
+import { useSearchParams, Link } from 'react-router-dom'
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Download, FileText } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
@@ -26,9 +26,9 @@ const inputStyle = {
 
 export default function Contact() {
   useSEO({
-    title: 'Contact Banana Fiber Supplier in Bangladesh | Samples & Wholesale — EcoFiber BD',
-    description: 'Contact EcoFiber BD, a banana fiber supplier & exporter in Dhaka, Bangladesh. Request samples, wholesale pricing and bulk orders of raw banana fiber. Download our business profile.',
-    keywords: 'contact banana fiber supplier, banana fiber Bangladesh contact, buy banana fiber, banana fiber sample, banana fiber bulk order, banana fiber exporter Dhaka, banana fiber wholesale inquiry',
+    title: 'Contact Banana Fiber Supplier in Bangladesh | Samples & Enquiries — EcoFiber BD',
+    description: 'Contact EcoFiber BD, a banana fiber supplier & exporter in Dhaka, Bangladesh. Ask about samples, specifications and bulk supply of raw banana fiber, or request a quotation.',
+    keywords: 'contact banana fiber supplier, banana fiber Bangladesh contact, banana fiber sample, banana fiber bulk order, banana fiber exporter Dhaka, banana fiber enquiry',
     url: 'https://ecofiberbd.com/contact',
     image: 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
@@ -65,7 +65,7 @@ export default function Contact() {
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '44rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Get in Touch</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, lineHeight: 1.9, textAlign: 'center' }}>
-            Request samples, bulk pricing, or any inquiries about our premium banana fiber.
+            Questions about grades, specifications or supply? Send us a message — and if you need pricing, use our quote request form.
           </p>
         </div>
       </section>
@@ -113,6 +113,18 @@ export default function Contact() {
               <Download size={20} />
               Download Profile
             </a>
+
+            <div style={{ borderRadius: '1.25rem', padding: '2rem 2.25rem', border: '1px solid rgba(57,150,44,0.2)', background: 'rgba(57,150,44,0.06)' }}>
+              <div style={{ fontWeight: 700, color: '#111827', marginBottom: '0.75rem', fontSize: '1rem' }}>Need pricing?</div>
+              <p style={{ color: '#6b7280', fontSize: '0.875rem', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                We quote each order individually. Send your grade, quantity and destination and we will reply within 24 hours.
+              </p>
+              <Link to="/quote"
+                className="inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg w-full"
+                style={{ background: '#39962c', color: '#fff', fontSize: '0.9375rem', padding: '0.875rem 1.5rem', textDecoration: 'none' }}>
+                <FileText size={18} /> Request a Quote
+              </Link>
+            </div>
 
           </div>
 

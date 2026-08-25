@@ -89,53 +89,57 @@ export const ARTICLES = [
       {
         heading: 'Sourcing fiber for packaging',
         body: [
-          'Packaging typically uses Grade B and Grade C banana fiber, where strength and volume matter more than fine texture. EcoFiber BD supplies these grades from Bangladesh at wholesale rates — request a sample to test molding, pulping or cushioning for your packaging line.',
+          'Packaging typically uses Grade B and Grade C banana fiber, where strength and volume matter more than fine texture. EcoFiber BD supplies these grades from Bangladesh — request a quotation and a sample to test molding, pulping or cushioning for your packaging line.',
         ],
       },
     ],
   },
   {
     slug: 'banana-fiber-price-guide-2026',
-    title: 'Banana Fiber Price Guide 2026: Grades & Wholesale Rates',
+    title: 'Banana Fiber Costing Guide 2026: What Drives the Quote',
     description:
-      'How much does banana fiber cost in 2026? A breakdown of Grade A, B and C banana fiber prices per kg, what drives the price, and how to buy at wholesale rates from Bangladesh.',
+      'What determines the cost of banana fiber in 2026 — grade, fiber form, volume, processing and freight — and how to prepare a request so you get an accurate quotation fast.',
     keywords:
-      'banana fiber price, banana fiber price per kg, banana fiber wholesale, buy banana fiber, banana fiber cost, banana fiber Bangladesh price',
+      'banana fiber cost, banana fiber quotation, banana fiber quote, banana fiber sourcing, banana fiber Bangladesh, banana fiber RFQ',
     date: '2026-06-13',
     readTime: '5 min read',
     cover: '/Images/blog-price.jpg',
     excerpt:
-      'A clear breakdown of banana fiber prices by grade, what moves the market, and how to secure the best wholesale rate.',
+      'Banana fiber is quoted per enquiry, not sold off a price list. Here is what moves the number — and how to get an accurate quotation quickly.',
     sections: [
       {
-        heading: 'What does banana fiber cost in 2026?',
+        heading: 'Why banana fiber is quoted, not listed',
         body: [
-          'Banana fiber pricing is driven mainly by grade (fiber length and cleanliness), order volume, and processing quality. As a guide, raw banana fiber typically ranges from around $4 per kg for coarse industrial grade up to $15 per kg for premium long-staple textile grade.',
-          'At EcoFiber BD, our published rates are: Grade A (premium, 90–120 cm) $15/kg, Grade B (standard, 60–90 cm) $10/kg, and Grade C (industrial, 30–60 cm) $4/kg. Wholesale and bulk orders are quoted individually and come in below list price.',
+          'Banana fiber is a natural product from a fragmented supply base. Two lots of the same grade can differ in length, cleanliness, moisture and color, and the cost of getting them to your door depends on packaging, volume and destination. A single published per-kg figure would be misleading for almost every buyer who reads it.',
+          'For that reason EcoFiber BD quotes each enquiry individually. Send the grade, fiber form, quantity and destination and you receive a written quotation — with terms, lead time and packaging options — within 24 hours.',
         ],
       },
       {
-        heading: 'What drives the price of banana fiber?',
+        heading: 'What drives the cost of banana fiber?',
         body: [
-          'Fiber length and grade: longer, cleaner, more lustrous fibers (Grade A) command a premium because they spin into finer yarn for textiles and "banana silk".',
-          'Order volume: larger orders lower the per-kg cost. Most suppliers, including EcoFiber BD, set a minimum order quantity (MOQ) and discount above it.',
-          'Processing: hand-decorticated, sun-dried, well-sorted fiber costs more than mixed or partially processed stock — but yields far less waste for the buyer.',
-          'Export logistics: freight, packaging (jute or PP bales), and destination affect the landed cost.',
+          'Fiber length and grade: longer, cleaner, more lustrous fiber (Grade A) commands a premium because it spins into finer yarn for textiles and "banana silk".',
+          'Fiber form: raw strands, combed fiber, chopped fiber at a specified cut length, and baled tow each carry different processing costs.',
+          'Order volume: larger and repeating orders lower the per-kg cost, because extraction, sorting and consolidation are planned rather than improvised.',
+          'Processing and sorting: hand-decorticated, sun-dried, well-sorted fiber costs more than mixed or partially processed stock — but yields far less waste for the buyer.',
+          'Export logistics: freight, packaging (jute or PP bales), incoterms and destination port all affect the landed cost.',
+          'Testing requirements: buyer-specified lab testing, third-party inspection or a batch Certificate of Analysis adds cost that is worth budgeting for on first orders.',
         ],
       },
       {
-        heading: 'How to buy banana fiber at wholesale rates',
+        heading: 'How to get an accurate quotation quickly',
         body: [
-          'Order by grade, not by "best price" — matching the grade to your application avoids paying textile rates for an industrial use, or vice versa.',
-          'Consolidate volume to clear MOQ thresholds and unlock bulk pricing.',
-          'Request a sample first to confirm length, moisture and cleanliness before committing to a bulk order.',
+          'Specify by grade and application, not by "best price" — matching the grade to your application avoids paying textile rates for an industrial use, or vice versa.',
+          'State the fiber form and, if relevant, the cut length, moisture ceiling and packaging you need.',
+          'Give a realistic volume and whether the requirement is one-off or recurring; consolidated volume prices better than repeated small lots.',
+          'Name the destination port and your preferred incoterms so the quote is landed-cost comparable.',
+          'Request a sample alongside the quotation to confirm length, moisture and cleanliness before committing to a bulk order.',
           'Buy direct from the source country. Sourcing banana fiber directly from Bangladesh removes middleman margins.',
         ],
       },
       {
-        heading: 'Get a live quote',
+        heading: 'Get a quotation',
         body: [
-          'Prices move with season and volume. For an up-to-date quote on Grade A, B or C banana fiber — including wholesale rates and export terms — contact EcoFiber BD for a sample and quotation.',
+          'Rates move with season, volume and freight. For a current quotation on Grade A, B or C banana fiber — including export terms and sample availability — send your requirement through the EcoFiber BD quote request form, WhatsApp or email.',
         ],
       },
     ],
@@ -156,7 +160,7 @@ export const ARTICLES = [
       {
         heading: 'Strength and durability',
         body: [
-          'Banana fiber has a high tensile strength of roughly 500–600 MPa and strong resistance to saltwater and UV, which is why it is used in marine ropes and composites. Jute is strong but generally coarser and degrades faster when exposed to moisture.',
+          'Banana fiber has a high tensile strength — typically in the 500–900 MPa range — with a cellulose content of 60–65%, which is why it is used in cordage and composite reinforcement. Jute is strong but generally coarser and degrades faster when exposed to moisture.',
           'For applications that demand long service life or contact with water, banana fiber usually outlasts jute.',
         ],
       },
@@ -177,7 +181,7 @@ export const ARTICLES = [
       {
         heading: 'Cost',
         body: [
-          'Jute is generally cheaper per kg because it is mass-produced. Banana fiber sits at a premium for textile grades but is competitive at industrial grade — and it often delivers better value where strength, water resistance or appearance matter.',
+          'Jute is generally the cheaper of the two because it is mass-produced at scale. Banana fiber sits at a premium for textile grades but is competitive at industrial grade — and it often delivers better value where strength, water resistance or appearance matter.',
         ],
       },
       {
@@ -216,7 +220,7 @@ export const ARTICLES = [
       {
         heading: '3. Washing and sun-drying',
         body: [
-          'Extracted fiber is washed to remove sap and residue, then sun-dried. Proper drying brings moisture down to a stable level (below 12%), preserving the fiber\'s natural sheen and preventing mildew.',
+          'Extracted fiber is washed to remove sap and residue, then sun-dried. Proper drying brings moisture down to a stable 10–13%, preserving the fiber\'s natural sheen and preventing mildew.',
         ],
       },
       {

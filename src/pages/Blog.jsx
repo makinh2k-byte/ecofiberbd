@@ -32,9 +32,9 @@ function ArticleCard({ a, index }) {
 
 export default function Blog() {
   useSEO({
-    title: 'Banana Fiber Blog | Prices, Uses & Guides — EcoFiber BD Bangladesh',
-    description: 'Guides and insights on banana fiber: 2026 price guide, banana fiber vs jute, how it is made, and top uses. From EcoFiber BD, a banana fiber supplier in Bangladesh.',
-    keywords: 'banana fiber blog, banana fiber guide, banana fiber price, banana fiber uses, banana fiber vs jute, banana fiber Bangladesh',
+    title: 'Banana Fiber Blog | Guides, Uses & Sourcing — EcoFiber BD Bangladesh',
+    description: 'Guides and insights on banana fiber: what drives cost, banana fiber vs jute, how it is made, and top uses. From EcoFiber BD, a banana fiber supplier in Bangladesh.',
+    keywords: 'banana fiber blog, banana fiber guide, banana fiber sourcing, banana fiber uses, banana fiber vs jute, banana fiber Bangladesh',
     url: 'https://ecofiberbd.com/blog',
     image: 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
@@ -51,7 +51,7 @@ export default function Blog() {
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Banana Fiber Insights</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
-            Prices, comparisons and practical guides on raw banana fiber — from Bangladesh's trusted supplier and exporter.
+            Sourcing guides, comparisons and practical insight on raw banana fiber — from Bangladesh's trusted supplier and exporter.
           </p>
         </div>
       </section>

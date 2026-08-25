@@ -1,28 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, ArrowRight } from 'lucide-react'
+import { Search } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 import { useSEO } from '../hooks/useSEO'
-
-const GRADE_IMG = {
-  'Grade A': '/Images/Banana_fiber_Grade A.jpg',
-  'Grade B': '/Images/Banana_fiber_Grade B.jpeg',
-  'Grade C': '/Images/Banana_fiber_Grade C.jpeg',
-}
-const gradeAccent = { 'Grade A': '#39962c', 'Grade B': '#8dc63f', 'Grade C': '#37593b' }
-
-const MOCK_PRODUCTS = [
-  { id: 1, name: 'Grade A Premium Banana Fiber',  grade: 'Grade A', fiber_length_cm: '90–120', moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 15, stock_kg: 2000, description: 'Premium long-staple banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production.', is_active: true },
-  { id: 2, name: 'Grade B Standard Banana Fiber',  grade: 'Grade B', fiber_length_cm: '60–90',  moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 10, stock_kg: 3500, description: 'Mid-grade fiber perfect for home furnishings, handicrafts, blended textiles, and general manufacturing.',         is_active: true },
-  { id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C', fiber_length_cm: '30–60',  moisture_content_percent: 12, moq_kg: 1000, price_per_kg: 4, stock_kg: 5000, description: 'Coarser industrial-grade fiber for marine ropes, shipping cables, and biocomposite reinforcements.',             is_active: true },
-]
+import {
+  PRODUCTS, TDS, DATA_SOURCE_NOTE,
+  PHYSICAL_PROPERTIES, MECHANICAL_PROPERTIES, CHEMICAL_COMPOSITION,
+  AVAILABLE_FORMS, QUALITY_STATEMENT, STORAGE_HANDLING,
+} from '../data/products'
 
 function ProductCard({ p, index }) {
   const ref = useReveal(index)
-  const accent = gradeAccent[p.grade] || '#39962c'
-  const img    = GRADE_IMG[p.grade]
+  const accent = p.accent
+  const img    = p.img
   return (
     <div ref={ref} className="reveal transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group"
       style={{ background: '#fff', borderRadius: '1.25rem', overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', display: 'flex', flexDirection: 'column' }}>
@@ -31,7 +23,7 @@ function ProductCard({ p, index }) {
         <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${accent}ee 0%, transparent 55%)` }} />
         <div style={{ position: 'absolute', bottom: '1rem', left: '1.25rem', right: '1.25rem', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
           <span style={{ color: '#fff', fontSize: '1.125rem', fontWeight: 700 }}>{p.grade}</span>
-          <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.25rem' }}>${p.price_per_kg}<span style={{ fontSize: '0.8125rem', fontWeight: 400, opacity: 0.75 }}>/kg</span></span>
+          <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.8125rem', letterSpacing: '0.06em', textTransform: 'uppercase', padding: '0.375rem 0.75rem', borderRadius: '9999px', background: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.35)' }}>Price on request</span>
         </div>
       </div>
       <div style={{ padding: '1.375rem 1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
@@ -40,8 +32,8 @@ function ProductCard({ p, index }) {
         <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1rem', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {[
             ['Fiber Length', `${p.fiber_length_cm} cm`],
-            ['Moisture',     `< ${p.moisture_content_percent}%`],
-            ['Min. Order',   `${p.moq_kg / 1000} ton`],
+            ['Moisture',     `${p.moisture_content_percent}%`],
+            ['Order Volume', 'Quoted per enquiry'],
           ].map(([l, v]) => (
             <div key={l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ color: '#9ca3af', fontSize: '0.8125rem' }}>{l}</span>
@@ -57,7 +49,7 @@ function ProductCard({ p, index }) {
             onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = accent }}>
             Details
           </Link>
-          <Link to={`/contact?product=${p.name}`}
+          <Link to={`/quote?product=${encodeURIComponent(p.name)}`}
             className="flex-1 text-center text-white font-semibold rounded-full text-sm transition-all duration-300 hover:opacity-90"
             style={{ background: accent, padding: '0.875rem', display: 'block', textDecoration: 'none' }}>
             Get Quote
@@ -70,9 +62,9 @@ function ProductCard({ p, index }) {
 
 export default function Products() {
   useSEO({
-    title: 'Buy Banana Fiber | Grade A, B & C Prices & Wholesale — EcoFiber BD Bangladesh',
-    description: 'Buy raw banana fiber online from Bangladesh. Grade A, B & C with transparent per-kg pricing and wholesale MOQ. 100% biodegradable, export-ready. Request a quote or sample.',
-    keywords: 'buy banana fiber, banana fiber price, banana fiber wholesale, banana fiber Bangladesh, Grade A banana fiber, Grade B banana fiber, Grade C banana fiber, raw banana fiber supplier, banana fiber for sale, banana fiber per kg',
+    title: 'Banana Fiber Grades A, B & C — Technical Data & Quotes | EcoFiber BD Bangladesh',
+    description: 'Raw banana pseudo-stem fiber from Bangladesh in Grade A, B and C. Full technical data sheet — tensile 500–900 MPa, cellulose 60–65%, moisture 10–13%. Request a quote or sample.',
+    keywords: 'banana fiber, banana fiber grades, banana fiber technical data sheet, banana fiber specifications, banana fiber Bangladesh, Grade A banana fiber, raw banana fiber supplier, banana pseudo-stem fiber, request banana fiber quote',
     url: 'https://ecofiberbd.com/products',
     image: 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
@@ -82,10 +74,9 @@ export default function Products() {
   const specsRef = useReveal(0)
   const grades   = ['All', 'Grade A', 'Grade B', 'Grade C']
 
-  const filtered = MOCK_PRODUCTS.filter(p =>
+  const filtered = PRODUCTS.filter(p =>
     p.name.toLowerCase().includes(search.toLowerCase()) &&
-    (gradeFilter === 'All' || p.grade === gradeFilter) &&
-    p.is_active
+    (gradeFilter === 'All' || p.grade === gradeFilter)
   )
 
   return (
@@ -98,7 +89,7 @@ export default function Products() {
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>Our Products</h1>
           <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '1.125rem', fontWeight: 300, maxWidth: '40rem', margin: '0 auto', lineHeight: 1.9, textAlign: 'center' }}>
-            Premium raw banana fiber in three grades — sourced from banana pseudostems across Bangladesh.
+            Natural banana pseudo-stem fiber (Musa spp.) in three grades — mechanically extracted, washed and sun-dried, sourced across Bangladesh. Every order is quoted individually.
           </p>
         </div>
       </section>
@@ -142,37 +133,86 @@ export default function Products() {
             <img src="/Images/fiber-texture.jpg" alt="Close-up texture of premium raw banana fiber" className="w-full h-full object-cover" />
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 3rem', background: 'linear-gradient(135deg,rgba(8,20,9,0.92),rgba(55,89,59,0.88))' }}>
               <div>
-                <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Technical Data</span>
+                <span style={{ color: '#8dc63f', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Technical Data Sheet · {TDS.docNo} · {TDS.revision}</span>
                 <h3 style={{ fontSize: 'calc(2rem + 3px)', color: '#fff', marginTop: '0.75rem' }}>Technical Specifications</h3>
               </div>
             </div>
           </div>
-          <div style={{ padding: '3rem', display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center', background: 'linear-gradient(135deg,#0d2010,#1e3d22)' }} className="md:grid-cols-2">
-            <p style={{ color: 'rgba(187,247,208,0.55)', lineHeight: 1.95, fontSize: '0.9375rem' }}>
-              All fiber is raw, decorticated and sun-dried. Composition: Cellulose (~65%), Hemicellulose (~15%), Lignin (~10%). Available in Natural Off-White / Cream / Pale Brown — fully dyeable.
+          <div style={{ padding: '3rem', background: 'linear-gradient(135deg,#0d2010,#1e3d22)' }}>
+            <p style={{ color: 'rgba(187,247,208,0.55)', lineHeight: 1.95, fontSize: '0.9375rem', maxWidth: '54rem', marginBottom: '2.5rem' }}>
+              Banana fiber is a natural cellulosic bast/leaf-sheath fiber mechanically extracted from the pseudo-stem of the banana plant (<em>Musa</em> species) — a by-product of banana cultivation. It is biodegradable, renewable, and produced without additional land or water beyond existing banana cultivation.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.125rem' }}>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="md:grid-cols-3">
               {[
-                ['Material',         '100% Banana Pseudostem'],
-                ['Tensile Strength', '500–600 MPa'],
-                ['Color',            'Off-White / Cream'],
-                ['Biodegradability', '3–6 Months'],
-              ].map(([l, v]) => (
-                <div key={l} style={{ borderRadius: '0.875rem', padding: '1.5rem', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.07)' }}>
-                  <div style={{ color: '#8dc63f', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.625rem' }}>{l}</div>
-                  <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.9375rem' }}>{v}</div>
+                ['Physical Properties',  PHYSICAL_PROPERTIES],
+                ['Mechanical Properties', MECHANICAL_PROPERTIES],
+                ['Chemical Composition', CHEMICAL_COMPOSITION],
+              ].map(([heading, rows]) => (
+                <div key={heading}>
+                  <div style={{ color: '#8dc63f', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.125rem' }}>{heading}</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    {rows.map(([l, v]) => (
+                      <div key={l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '1rem', paddingBottom: '0.75rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                        <span style={{ color: 'rgba(187,247,208,0.55)', fontSize: '0.8125rem' }}>{l}</span>
+                        <span style={{ color: '#fff', fontWeight: 600, fontSize: '0.875rem', textAlign: 'right' }}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
+
+            <p style={{ color: 'rgba(187,247,208,0.4)', lineHeight: 1.85, fontSize: '0.8125rem', marginTop: '2.5rem', maxWidth: '54rem' }}>
+              {DATA_SOURCE_NOTE}
+            </p>
           </div>
+        </div>
+
+        {/* Available forms */}
+        <div style={{ marginTop: '2.5rem', background: '#fff', borderRadius: '1.25rem', padding: '2.5rem 2.75rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
+          <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1.25rem', fontSize: 'calc(1.3125rem + 3px)' }}>Available Forms &amp; Grades</h3>
+          <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem', maxWidth: '52rem' }}>
+            {AVAILABLE_FORMS.map(f => (
+              <li key={f} style={{ display: 'flex', gap: '0.875rem', color: '#6b7280', fontSize: '0.9375rem', lineHeight: 1.7 }}>
+                <span style={{ color: '#39962c', flexShrink: 0 }}>◆</span>{f}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quality & sourcing */}
+        <div style={{ marginTop: '2.5rem', background: '#fff', borderRadius: '1.25rem', padding: '2.5rem 2.75rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
+          <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: 'calc(1.3125rem + 3px)' }}>Quality &amp; Sourcing</h3>
+          <p style={{ fontSize: '0.9375rem', color: '#6b7280', lineHeight: 1.85, maxWidth: '52rem' }}>{QUALITY_STATEMENT}</p>
         </div>
 
         {/* Packaging & Storage */}
         <div style={{ marginTop: '2.5rem', borderRadius: '1.25rem', padding: '2.5rem 2.75rem', border: '1px solid rgba(57,150,44,0.2)', background: 'rgba(57,150,44,0.06)' }}>
-          <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: 'calc(1.3125rem + 3px)' }}>Packaging &amp; Storage</h3>
-          <p style={{ fontSize: '0.9375rem', color: '#6b7280', lineHeight: 1.85, maxWidth: '48rem' }}>
-            Compressed bales in jute or PP bags, or loose bundles as per buyer requirement. Stored in cool, dry, and well-ventilated conditions.
+          <h3 style={{ fontWeight: 700, color: '#111827', marginBottom: '1rem', fontSize: 'calc(1.3125rem + 3px)' }}>Packaging, Storage &amp; Handling</h3>
+          <p style={{ fontSize: '0.9375rem', color: '#6b7280', lineHeight: 1.85, maxWidth: '48rem', marginBottom: '1.25rem' }}>
+            Compressed bales in jute or PP bags, or loose bundles as per buyer requirement.
           </p>
+          <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxWidth: '48rem' }}>
+            {STORAGE_HANDLING.map(s => (
+              <li key={s} style={{ display: 'flex', gap: '0.875rem', color: '#6b7280', fontSize: '0.9375rem', lineHeight: 1.7 }}>
+                <span style={{ color: '#39962c', flexShrink: 0 }}>◆</span>{s}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quote CTA */}
+        <div style={{ marginTop: '2.5rem', borderRadius: '1.25rem', padding: '3rem 2.75rem', textAlign: 'center', background: 'linear-gradient(135deg,#1a3820,#39962c)', boxShadow: '0 20px 40px rgba(0,0,0,0.12)' }}>
+          <h3 style={{ fontWeight: 700, color: '#fff', marginBottom: '0.875rem', fontSize: 'calc(1.5rem + 3px)' }}>Need pricing?</h3>
+          <p style={{ color: 'rgba(220,252,231,0.72)', fontSize: '0.9375rem', lineHeight: 1.8, maxWidth: '34rem', margin: '0 auto 2rem' }}>
+            Rates depend on grade, fiber form, volume, packaging and destination — so we quote each enquiry individually. Send us your requirement and we will reply within 24 hours.
+          </p>
+          <Link to="/quote"
+            className="inline-block font-bold rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+            style={{ background: '#fff', color: '#1a3820', padding: '1.125rem 2.75rem', textDecoration: 'none', fontSize: '1rem' }}>
+            Request a Quote
+          </Link>
         </div>
       </div>
 

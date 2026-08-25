@@ -21,11 +21,11 @@ const IMG = {
 const faqs = [
   {
     q: 'What is banana fiber?',
-    a: 'Banana fiber is a strong, natural fiber extracted from the pseudostem of the banana plant — the trunk that is left over after harvest. It is 100% biodegradable, has a silk-like luster, and offers high tensile strength (around 500–600 MPa), making it a sustainable alternative to synthetic fibers.',
+    a: 'Banana fiber is a natural cellulosic fiber mechanically extracted from the pseudo-stem of the banana plant (Musa spp.) — the trunk left over after harvest. It is 100% biodegradable, has a silky sheen, and offers high tensile strength (typically 500–900 MPa), making it a sustainable alternative to synthetic fibers.',
   },
   {
-    q: 'How much does banana fiber cost per kg?',
-    a: 'At EcoFiber BD, raw banana fiber ranges from about USD 4 to USD 15 per kilogram depending on grade — Grade A (premium long-staple) is the highest, Grade C (industrial) the most economical. Final wholesale pricing depends on quantity, packaging and destination; contact us for a quotation.',
+    q: 'How much does banana fiber cost?',
+    a: 'We quote every order individually rather than publishing a price list, because the rate depends on grade, fiber form, order volume, packaging and destination. Send your requirement through our quote request form, WhatsApp or email and we will reply with a written quotation within 24 hours.',
   },
   {
     q: 'Do you export banana fiber from Bangladesh?',
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: 'Can I get a sample before ordering?',
-    a: 'Absolutely. We provide samples so you can assess quality before placing a bulk order. Request a sample through our contact form or WhatsApp and we will respond within 24 hours.',
+    a: 'Absolutely. We provide samples so you can assess quality before placing a bulk order. Tick the sample option on our quote request form, or message us on WhatsApp, and we will respond within 24 hours.',
   },
   {
     q: 'What is banana fiber used for?',
@@ -54,7 +54,7 @@ const stats = [
 
 const features = [
   { num: '01', title: 'Eco-Friendly',      desc: 'Sourced from post-harvest agricultural waste — no extra land, water, or fertilizers needed.' },
-  { num: '02', title: 'High Strength',      desc: 'Tensile strength of 500–600 MPa, comparable to glass fiber. UV and saltwater resistant.' },
+  { num: '02', title: 'High Strength',      desc: 'Tensile strength of 500–900 MPa with a Young\'s modulus of 8–32 GPa — strong enough for composite reinforcement.' },
   { num: '03', title: 'Safe & Non-Toxic',   desc: 'Naturally fire-resistant. Free from hazardous chemicals or synthetic coatings.' },
   { num: '04', title: 'Zero-Waste Process', desc: 'Harvested from banana pseudostems — turning agricultural by-products into premium material.' },
   { num: '05', title: 'Global Reach',       desc: 'Supplied to textile mills, paper manufacturers, and export buyers worldwide.' },
@@ -139,8 +139,8 @@ function AppCard({ a, index }) {
 export default function Home() {
   useSEO({
     title: 'Banana Fiber Bangladesh | Raw Banana Fiber Supplier & Exporter — EcoFiber BD',
-    description: "Buy premium raw banana fiber from Bangladesh's trusted supplier & exporter. 100% biodegradable, high-tensile (500–600 MPa). Grade A, B & C at wholesale prices. Request a sample today.",
-    keywords: 'banana fiber, banana fiber Bangladesh, banana fiber supplier, banana fiber exporter, raw banana fiber, buy banana fiber, banana fiber price, banana fiber wholesale, biodegradable fiber, sustainable natural fiber, banana fiber Dhaka',
+    description: "Source premium raw banana fiber from Bangladesh's trusted supplier & exporter. 100% biodegradable, high-tensile (500–900 MPa). Grade A, B & C — request a quote or sample today.",
+    keywords: 'banana fiber, banana fiber Bangladesh, banana fiber supplier, banana fiber exporter, raw banana fiber, banana pseudo-stem fiber, banana fiber quote, banana fiber sample, biodegradable fiber, sustainable natural fiber, banana fiber Dhaka',
     url: 'https://ecofiberbd.com/',
     image: 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
   })
@@ -184,7 +184,7 @@ export default function Home() {
           </h1>
 
           <p style={{ fontSize: 'clamp(1.0625rem, 2vw, 1.25rem)', color: 'rgba(220,252,231,0.72)', maxWidth: '44rem', marginBottom: '3.5rem', lineHeight: 1.9, fontWeight: 300, textAlign: 'center' }}>
-            Buy premium <strong style={{ fontWeight: 600, color: 'rgba(255,255,255,0.92)' }}>raw banana fiber</strong> from Bangladesh's trusted supplier and exporter. 100% biodegradable, high tensile strength and a silk-like texture — the sustainable, eco-friendly alternative to synthetic fibers, at wholesale prices.
+            Source premium <strong style={{ fontWeight: 600, color: 'rgba(255,255,255,0.92)' }}>raw banana fiber</strong> from Bangladesh's trusted supplier and exporter. 100% biodegradable, high tensile strength and a silky sheen — the sustainable, eco-friendly alternative to synthetic fibers. Every order quoted individually.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.125rem', justifyContent: 'center', alignItems: 'center' }}>
@@ -192,9 +192,9 @@ export default function Home() {
               style={{ background: '#39962c', boxShadow: '0 6px 28px rgba(57,150,44,0.45)', color: '#fff', padding: '1.125rem 2.5rem', borderRadius: '9999px', fontSize: '1.0625rem' }}>
               View Products <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/contact"
+            <Link to="/quote"
               style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 600, fontSize: '1.0625rem', padding: '1.125rem 2.5rem', borderRadius: '9999px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
-              Request Sample
+              Request a Quote
             </Link>
           </div>
         </div>
@@ -233,9 +233,9 @@ export default function Home() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.75rem 2.5rem', marginBottom: '3rem' }}>
                 {[
                   { label: '100% Natural',  sub: 'No chemicals or coatings' },
-                  { label: '500–600 MPa',   sub: 'Tensile strength' },
+                  { label: '500–900 MPa',   sub: 'Tensile strength' },
                   { label: 'Silky Texture', sub: 'Natural sheen & luster' },
-                  { label: 'Compostable',   sub: 'Decomposes in 3–6 months' },
+                  { label: 'Compostable',   sub: '100% biodegradable' },
                 ].map((c, i) => (
                   <div key={i} style={{ borderLeft: '4px solid #39962c', paddingLeft: '1.25rem' }}>
                     <div style={{ fontWeight: 700, color: '#111827', fontSize: '1.0625rem' }}>{c.label}</div>
@@ -334,12 +334,12 @@ export default function Home() {
             Ready to Source<br />Sustainable Fiber?
           </h2>
           <p style={{ fontSize: '1.125rem', color: 'rgba(220,252,231,0.65)', marginBottom: '3.5rem', fontWeight: 300, lineHeight: 1.95, maxWidth: '38rem', margin: '0 auto 3.5rem', textAlign: 'center' }}>
-            Contact us for samples, pricing, and bulk orders. We supply to textile mills, paper manufacturers, and export buyers worldwide.
+            Tell us your grade, quantity and destination and we will send a written quotation within 24 hours — by email or WhatsApp. We supply textile mills, paper manufacturers, and export buyers worldwide.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.125rem', justifyContent: 'center', alignItems: 'center' }}>
-            <Link to="/contact" className="inline-flex items-center justify-center font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+            <Link to="/quote" className="inline-flex items-center justify-center font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               style={{ background: '#fff', color: '#39962c', padding: '1.125rem 2.75rem', borderRadius: '9999px', fontSize: '1.0625rem', textDecoration: 'none' }}>
-              Request a Sample
+              Request a Quote
             </Link>
             <Link to="/products" className="inline-flex items-center justify-center font-bold transition-all duration-300 hover:-translate-y-1"
               style={{ border: '2px solid rgba(255,255,255,0.4)', color: '#fff', padding: '1.125rem 2.75rem', borderRadius: '9999px', fontSize: '1.0625rem', textDecoration: 'none' }}>

@@ -31,6 +31,7 @@ export default function Navbar() {
     { to: '/products',label: 'Products'},
     { to: '/blog',    label: 'Blog'    },
     { to: '/contact', label: 'Contact' },
+    { to: '/quote',   label: 'Get Quote' },
   ]
 
   return (

@@ -38,6 +38,7 @@ const ROUTES = [
   '/blog',
   ...BLOG_SLUGS.map((s) => `/blog/${s}`),
   '/contact',
+  '/quote',
   '/privacy',
   '/terms',
 ]

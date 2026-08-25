@@ -10,8 +10,8 @@ Goal: rank on **"banana fiber"**, **"banana fiber Bangladesh"**, and related buy
 
 - Keyword-optimized `<title>` and meta description on every page (homepage now targets "Banana Fiber Bangladesh | Raw Banana Fiber Supplier & Exporter").
 - Homepage **H1/H2 and hero copy now contain "banana fiber"** (previously it didn't — major fix).
-- Rich **structured data** (JSON-LD): Organization + LocalBusiness, WebSite, and Product/Offer with price range — makes you eligible for rich results and the local pack.
-- Per-product price schema on each product page (targets "banana fiber price").
+- Rich **structured data** (JSON-LD): Organization + LocalBusiness, WebSite, and Product/Offer — makes you eligible for rich results and the local pack.
+- Per-product schema on each product page. **No price is published anywhere on the site** (Aug 2026): offers carry no `price`/`lowPrice`/`highPrice` and point at `/quote` instead. Do not reintroduce price fields into schema or copy.
 - **Local SEO signals**: geo meta tags + Dhaka, Bangladesh address in schema.
 - `sitemap.xml` with image entries + `robots.txt` referencing it.
 - Keyword-rich image alt text.
@@ -68,7 +68,7 @@ Aim for **5–10 quality links in the first month**. Quality > quantity.
 
 Google rewards depth. Consider adding a **/blog** or **/resources** section with articles that target buyer questions (each becomes a ranking page):
 
-- "Banana Fiber Price Guide 2026 — Grades & Wholesale Rates"
+- "Banana Fiber Costing Guide 2026 — What Drives the Quote" (live at `/blog/banana-fiber-price-guide-2026` — slug kept for SEO continuity)
 - "Banana Fiber vs Jute: Which Natural Fiber Is Stronger?"
 - "How Banana Fiber Is Made (From Pseudostem to Yarn)"
 - "Top Uses of Banana Fiber: Textiles, Paper, Rope & Composites"
@@ -83,8 +83,8 @@ These rank for long-tail searches and earn backlinks. (I can build the blog sect
 | Tier | Keywords |
 |------|----------|
 | Primary | banana fiber · banana fiber Bangladesh · banana fiber supplier · raw banana fiber |
-| Supplier/Export | banana fiber exporter · banana fiber manufacturer Bangladesh · banana fiber wholesale |
-| Buy/Price | buy banana fiber · banana fiber price · banana fiber per kg · banana fiber for sale |
+| Supplier/Export | banana fiber exporter · banana fiber manufacturer Bangladesh · banana fiber bulk supply |
+| Buy/Quote | banana fiber quote · banana fiber quotation · banana fiber sample · banana fiber specifications · banana fiber technical data sheet |
 | Sustainability | biodegradable fiber · sustainable natural fiber · eco-friendly fiber |
 | Local/Long-tail | banana fiber Dhaka · banana pseudostem fiber · banana silk fiber · Grade A banana fiber |
 

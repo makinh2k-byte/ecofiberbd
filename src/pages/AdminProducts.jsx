@@ -5,27 +5,27 @@ import AdminLayout from '../components/AdminLayout'
 const INITIAL_PRODUCTS = [
   {
     id: 1, name: 'Grade A Premium Banana Fiber', grade: 'Grade A',
-    fiber_length_cm: '90–120', moisture_content_percent: 12,
-    moq_kg: 100, price_per_kg: 8.5, stock_kg: 2000,
+    fiber_length_cm: '90–120', moisture_content_percent: '10–13',
+    moq_kg: 100, stock_kg: 2000,
     description: 'Premium long-staple banana fiber ideal for fine textiles.', is_active: true,
   },
   {
     id: 2, name: 'Grade B Standard Banana Fiber', grade: 'Grade B',
-    fiber_length_cm: '60–90', moisture_content_percent: 12,
-    moq_kg: 150, price_per_kg: 6.0, stock_kg: 3500,
+    fiber_length_cm: '60–90', moisture_content_percent: '10–13',
+    moq_kg: 150, stock_kg: 3500,
     description: 'Mid-grade fiber for home furnishings and handicrafts.', is_active: true,
   },
   {
     id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C',
-    fiber_length_cm: '30–60', moisture_content_percent: 12,
-    moq_kg: 200, price_per_kg: 4.0, stock_kg: 5000,
+    fiber_length_cm: '30–60', moisture_content_percent: '10–13',
+    moq_kg: 200, stock_kg: 5000,
     description: 'Industrial-grade fiber for marine and composite applications.', is_active: true,
   },
 ]
 
 const empty = {
-  name: '', grade: 'Grade A', fiber_length_cm: '', moisture_content_percent: 12,
-  moq_kg: '', price_per_kg: '', stock_kg: '', description: '', is_active: true,
+  name: '', grade: 'Grade A', fiber_length_cm: '', moisture_content_percent: '10–13',
+  moq_kg: '', stock_kg: '', description: '', is_active: true,
 }
 
 export default function AdminProducts() {
@@ -83,7 +83,7 @@ export default function AdminProducts() {
           <table className="w-full">
             <thead className="bg-gray-50 border-b border-gray-100">
               <tr>
-                {['Product', 'Grade', 'Length', 'Price/kg', 'MOQ', 'Stock', 'Status', 'Actions'].map(h => (
+                {['Product', 'Grade', 'Length', 'MOQ', 'Stock', 'Status', 'Actions'].map(h => (
                   <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">{h}</th>
                 ))}
               </tr>
@@ -101,7 +101,6 @@ export default function AdminProducts() {
                     </span>
                   </td>
                   <td className="px-5 py-4 text-sm text-gray-700">{p.fiber_length_cm} cm</td>
-                  <td className="px-5 py-4 text-sm font-semibold text-[#39962c]">${p.price_per_kg}</td>
                   <td className="px-5 py-4 text-sm text-gray-700">{p.moq_kg} kg</td>
                   <td className="px-5 py-4 text-sm text-gray-700">{p.stock_kg?.toLocaleString()} kg</td>
                   <td className="px-5 py-4">
@@ -163,11 +162,6 @@ export default function AdminProducts() {
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c]" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Price per kg ($)</label>
-                  <input type="number" value={form.price_per_kg} onChange={e => setForm({ ...form, price_per_kg: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c]" />
-                </div>
-                <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">MOQ (kg)</label>
                   <input type="number" value={form.moq_kg} onChange={e => setForm({ ...form, moq_kg: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c]" />
@@ -178,8 +172,8 @@ export default function AdminProducts() {
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c]" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Moisture Content (%)</label>
-                  <input type="number" value={form.moisture_content_percent} onChange={e => setForm({ ...form, moisture_content_percent: e.target.value })}
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Moisture Content (% range)</label>
+                  <input value={form.moisture_content_percent} onChange={e => setForm({ ...form, moisture_content_percent: e.target.value })} placeholder="e.g. 10–13"
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c]" />
                 </div>
                 <div className="col-span-2">

@@ -97,14 +97,14 @@ export default function BlogPost() {
           <div style={{ marginTop: '3rem', padding: '2rem', borderRadius: '1rem', background: 'rgba(57,150,44,0.07)', border: '1px solid rgba(57,150,44,0.18)', textAlign: 'center' }}>
             <h3 style={{ fontSize: 'calc(1.25rem + 3px)', color: '#111827', marginBottom: '0.75rem' }}>Looking to buy banana fiber?</h3>
             <p style={{ color: '#6b7280', fontSize: '0.9375rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              EcoFiber BD supplies premium raw banana fiber — Grade A, B & C — from Bangladesh. Request a sample or wholesale quote.
+              EcoFiber BD supplies premium raw banana fiber — Grade A, B &amp; C — from Bangladesh. Request a quotation or a sample.
             </p>
             <div style={{ display: 'flex', gap: '0.875rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/products" className="inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5"
                 style={{ background: '#39962c', color: '#fff', padding: '0.875rem 1.75rem', borderRadius: '9999px', textDecoration: 'none', fontSize: '0.9375rem' }}>
                 View Products <ArrowRight size={16} />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5"
+              <Link to="/quote" className="inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5"
                 style={{ border: '2px solid #39962c', color: '#39962c', padding: '0.875rem 1.75rem', borderRadius: '9999px', textDecoration: 'none', fontSize: '0.9375rem' }}>
                 Get a Quote
               </Link>

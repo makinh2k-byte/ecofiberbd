@@ -21,6 +21,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Request a quote -->
+  <url>
+    <loc>https://ecofiberbd.com/quote</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Products -->
   <url>
     <loc>https://ecofiberbd.com/products</loc>

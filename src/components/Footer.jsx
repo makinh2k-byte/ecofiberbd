@@ -16,6 +16,7 @@ const exploreLinks = [
   { to: '/products', label: 'Products' },
   { to: '/blog',     label: 'Blog' },
   { to: '/contact',  label: 'Contact' },
+  { to: '/quote',    label: 'Request a Quote' },
 ]
 
 const productLinks = [

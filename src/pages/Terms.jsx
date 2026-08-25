@@ -12,7 +12,7 @@ const li = { color: '#4b5563', fontSize: '1rem', lineHeight: 1.85, marginBottom:
 export default function Terms() {
   useSEO({
     title: 'Terms & Conditions | EcoFiber BD — Banana Fiber Supplier Bangladesh',
-    description: 'Terms and Conditions for using the EcoFiber BD website and for the sale of our banana fiber products, including orders, pricing, samples and quality.',
+    description: 'Terms and Conditions for using the EcoFiber BD website and for the sale of our banana fiber products, including orders, quotations, samples and quality.',
     keywords: 'EcoFiber BD terms and conditions, banana fiber supplier terms',
     url: 'https://ecofiberbd.com/terms',
   })
@@ -43,14 +43,14 @@ export default function Terms() {
 
           <h2 style={h2}>Inquiries, quotes & orders</h2>
           <ul style={{ paddingLeft: '1.25rem', listStyle: 'disc', marginBottom: '1rem' }}>
-            <li style={li}>Prices shown on the website are indicative. Final pricing is confirmed in a written quotation based on grade, quantity, packaging and destination.</li>
+            <li style={li}>No prices are published on this website. All pricing is confirmed in a written quotation based on grade, fiber form, quantity, packaging and destination.</li>
             <li style={li}>An order is confirmed only once we agree the quotation and any deposit or payment terms in writing.</li>
-            <li style={li}>Minimum order quantities (MOQ) apply per grade as stated on the product pages.</li>
+            <li style={li}>Minimum order quantities may apply depending on grade and fiber form; these are confirmed in the quotation.</li>
           </ul>
 
           <h2 style={h2}>Pricing & payment</h2>
           <p style={p}>
-            All prices are exclusive of shipping, duties and taxes unless otherwise stated. Payment terms, currency and method are agreed in the quotation. We reserve the right to change prices before an order is confirmed.
+            Quoted prices are exclusive of shipping, duties and taxes unless otherwise stated. Payment terms, currency and method are agreed in the quotation. A quotation is valid for the period stated on it, and we reserve the right to requote before an order is confirmed.
           </p>
 
           <h2 style={h2}>Samples</h2>
