@@ -74,8 +74,20 @@ export default function Navbar() {
     borderRadius: '9999px',
     transition: 'background 0.4s, box-shadow 0.4s, border-color 0.4s',
     ...(onDark
-      ? { background: 'rgba(10,26,12,0.55)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.16)', boxShadow: '0 6px 24px rgba(0,0,0,0.18)' }
-      : { background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(14px)', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 6px 24px rgba(0,0,0,0.10)' }),
+      ? {
+          background: 'rgba(10,26,12,0.48)',
+          backdropFilter: 'blur(22px) saturate(165%)',
+          WebkitBackdropFilter: 'blur(22px) saturate(165%)',
+          border: '1px solid rgba(255,255,255,0.22)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.20)',
+        }
+      : {
+          background: 'rgba(255,255,255,0.72)',
+          backdropFilter: 'blur(22px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(22px) saturate(180%)',
+          border: '1px solid rgba(255,255,255,0.6)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.13), inset 0 1px 0 rgba(255,255,255,0.8)',
+        }),
   }
 
   const pill = active => ({
@@ -94,7 +106,7 @@ export default function Navbar() {
     transition: 'background 0.25s, color 0.25s',
     ...(active
       ? { background: '#39962c', color: '#fff' }
-      : { background: 'transparent', color: onDark ? 'rgba(255,255,255,0.88)' : '#4b5563' }),
+      : { background: 'transparent', color: onDark ? 'rgba(255,255,255,0.92)' : '#374151' }),
   })
 
   const hoverIn = (e, active) => {
@@ -105,7 +117,7 @@ export default function Navbar() {
   const hoverOut = (e, active) => {
     if (active) return
     e.currentTarget.style.background = 'transparent'
-    e.currentTarget.style.color = onDark ? 'rgba(255,255,255,0.88)' : '#4b5563'
+    e.currentTarget.style.color = onDark ? 'rgba(255,255,255,0.92)' : '#374151'
   }
 
   const inProducts = location.pathname.startsWith('/products')
@@ -157,8 +169,10 @@ export default function Navbar() {
                 position: 'absolute', top: 'calc(100% + 0.625rem)', left: 0,
                 width: 'min(24rem, calc(100vw - 2.5rem))', flexDirection: 'column',
                 borderRadius: '1.5rem', overflow: 'hidden', zIndex: 60,
-                background: 'rgba(255,255,255,0.99)', backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 22px 44px rgba(0,0,0,0.20)',
+                background: 'rgba(255,255,255,0.80)',
+                backdropFilter: 'blur(26px) saturate(180%)', WebkitBackdropFilter: 'blur(26px) saturate(180%)',
+                border: '1px solid rgba(255,255,255,0.6)',
+                boxShadow: '0 22px 44px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.8)',
               }}>
               <div style={{ padding: '0.75rem' }}>
                 <div style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9ca3af', padding: '0.5rem 0.875rem 0.625rem' }}>
@@ -172,7 +186,7 @@ export default function Navbar() {
                     <img src={g.img} alt="" style={{ width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', objectFit: 'cover', flexShrink: 0 }} />
                     <span style={{ flex: 1, minWidth: 0 }}>
                       <span style={{ display: 'block', fontWeight: 700, color: '#111827', fontSize: '0.9375rem' }}>{g.grade}</span>
-                      <span style={{ display: 'block', color: '#9ca3af', fontSize: '0.8125rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{g.name}</span>
+                      <span style={{ display: 'block', color: '#6b7280', fontSize: '0.8125rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{g.name}</span>
                     </span>
                     <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: g.accent, flexShrink: 0 }} />
                   </Link>
@@ -232,10 +246,11 @@ export default function Navbar() {
           maxWidth: '76rem', margin: '0.625rem auto 0', pointerEvents: 'auto',
           borderRadius: '1.5rem', overflow: 'hidden',
           maxHeight: 'calc(100svh - 7rem)', overflowY: 'auto',
-          background: 'rgba(255,255,255,0.99)',
-          backdropFilter: 'blur(16px)',
-          border: '1px solid rgba(0,0,0,0.06)',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.18)',
+          background: 'rgba(255,255,255,0.80)',
+          backdropFilter: 'blur(26px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(26px) saturate(180%)',
+          border: '1px solid rgba(255,255,255,0.6)',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.8)',
         }}>
         <div style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
           {links.map(l => {
@@ -244,7 +259,7 @@ export default function Navbar() {
               display: 'flex', alignItems: 'center', padding: '0.875rem 1.125rem',
               borderRadius: '9999px', fontSize: '1rem', fontWeight: 600, textDecoration: 'none',
               background: active ? '#39962c' : 'transparent',
-              color: active ? '#fff' : '#374151',
+              color: active ? '#fff' : '#1f2937',
             }
             if (l.dropdown) {
               return (
