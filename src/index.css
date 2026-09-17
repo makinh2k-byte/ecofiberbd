@@ -128,3 +128,25 @@ h1, h2, h3, h4, h5, h6, .slopes {
   .leaf-anim, .hero-rise, .hero-rise > *, .float-slow, .pulse-dot { animation: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ── Navbar responsive visibility ────────────────
+   The floating nav sets its looks with inline styles, and an inline `display`
+   would beat any Tailwind `md:hidden` class. So the desktop/mobile switch lives
+   here instead, where it can't be overridden by the inline style attribute. */
+.nav-desktop { display: flex; }
+.nav-mobile,
+.nav-mobile-panel { display: none; }
+
+@media (max-width: 767px) {
+  .nav-desktop { display: none; }
+  .nav-mobile { display: flex; }
+  .nav-mobile-panel { display: block; }
+}
+
+/* Mobile nav panel entrance (animating max-height proved unreliable here) */
+@keyframes navPanelIn {
+  from { opacity: 0; transform: translateY(-10px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.nav-panel-in { animation: navPanelIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@media (prefers-reduced-motion: reduce) { .nav-panel-in { animation: none; } }
