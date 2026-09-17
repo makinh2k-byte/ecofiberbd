@@ -150,3 +150,32 @@ h1, h2, h3, h4, h5, h6, .slopes {
 }
 .nav-panel-in { animation: navPanelIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
 @media (prefers-reduced-motion: reduce) { .nav-panel-in { animation: none; } }
+
+/* Homepage hero fills exactly one screen. svh = smallest viewport height, so
+   mobile browser chrome appearing can never push the content out of view.
+   min-height (not height) so very short screens scroll instead of clipping. */
+.hero-fit {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* ── Responsive grids ────────────────────────────
+   These containers set `display:grid` inline, and an inline
+   `grid-template-columns` beats Tailwind's `md:grid-cols-*`, so those classes
+   never applied and every one of them was stuck at its mobile column count.
+   Declaring the breakpoints here keeps them out of the inline style's reach. */
+.grid-md-2, .grid-md-3 { grid-template-columns: 1fr; }
+.grid-md-4 { grid-template-columns: repeat(2, 1fr); }
+
+@media (min-width: 768px) {
+  .grid-md-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-md-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-md-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* On a narrow AND short screen the hero stat tiles wrap to two rows (~200px)
+   and are the only thing pushing the hero past one screen, so drop them there.
+   The same figures appear further down the page and on the products page. */
+@media (max-width: 767px) and (max-height: 740px) {
+  .hero-stats { display: none; }
+}

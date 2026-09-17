@@ -161,7 +161,7 @@ export default function Home() {
       <Navbar />
 
       {/* ══════════ HERO ══════════ */}
-      <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#fff', overflow: 'hidden' }}>
+      <section className="hero-fit" style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#fff', overflow: 'hidden' }}>
         <div className="absolute inset-0">
           <img src={IMG.hero} alt="Raw banana fiber sourced from a banana plantation in Bangladesh" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.93) 0%,rgba(20,50,24,0.88) 50%,rgba(40,110,30,0.82) 100%)' }} />
@@ -170,14 +170,14 @@ export default function Home() {
           style={{ opacity: 0.25, backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px)', backgroundSize: '64px 64px' }} />
 
         {/* Hero content */}
-        <div className="hero-rise" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '10rem 2rem 4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <div className="hero-rise" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: 'clamp(5.5rem, 11vh, 10rem) 1.5rem clamp(0.75rem, 2.5vh, 2.5rem)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
 
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.625rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem', fontWeight: 500, padding: '0.75rem 1.5rem', borderRadius: '9999px', marginBottom: '2.75rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.625rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(0.75rem, 1.6vh, 0.875rem)', fontWeight: 500, padding: 'clamp(0.45rem, 1.2vh, 0.75rem) clamp(1rem, 3vw, 1.5rem)', borderRadius: '9999px', marginBottom: 'clamp(0.625rem, 2vh, 2.75rem)' }}>
             <span className="pulse-dot" style={{ width: 9, height: 9, borderRadius: '50%', background: '#8dc63f', display: 'inline-block' }} />
             Raw Banana Fiber Supplier &amp; Exporter in Bangladesh
           </div>
 
-          <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(5rem + 3px))', lineHeight: 1.03, letterSpacing: '-0.02em', marginBottom: '2rem', textAlign: 'center', color: '#fff' }}>
+          <h1 style={{ fontSize: 'clamp(1.875rem, min(7.5vw, 9vh), calc(5rem + 3px))', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 'clamp(0.75rem, 2.2vh, 2rem)', textAlign: 'center', color: '#fff' }}>
             Transforming Waste<br />
             into{' '}
             <span style={{ background: 'linear-gradient(90deg,#8dc63f,#c0f060)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
@@ -186,29 +186,29 @@ export default function Home() {
             <br />Solutions
           </h1>
 
-          <p style={{ fontSize: 'clamp(1.0625rem, 2vw, 1.25rem)', color: 'rgba(220,252,231,0.72)', maxWidth: '44rem', marginBottom: '3.5rem', lineHeight: 1.9, fontWeight: 300, textAlign: 'center' }}>
+          <p style={{ fontSize: 'clamp(0.875rem, min(2vw, 2.1vh), 1.25rem)', color: 'rgba(220,252,231,0.72)', maxWidth: '44rem', marginBottom: 'clamp(1rem, 2.5vh, 3.5rem)', lineHeight: 1.62, fontWeight: 300, textAlign: 'center' }}>
             Source premium <strong style={{ fontWeight: 600, color: 'rgba(255,255,255,0.92)' }}>raw banana fiber</strong> from Bangladesh's trusted supplier and exporter. 100% biodegradable, high tensile strength and a silky sheen — the sustainable, eco-friendly alternative to synthetic fibers. Every order quoted individually.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.125rem', justifyContent: 'center', alignItems: 'center' }}>
             <Link to="/products" className="group inline-flex items-center justify-center gap-2.5 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              style={{ background: '#39962c', boxShadow: '0 6px 28px rgba(57,150,44,0.45)', color: '#fff', padding: '1.125rem 2.5rem', borderRadius: '9999px', fontSize: '1.0625rem' }}>
+              style={{ background: '#39962c', boxShadow: '0 6px 28px rgba(57,150,44,0.45)', color: '#fff', padding: 'clamp(0.8rem, 1.7vh, 1.125rem) 2.25rem', borderRadius: '9999px', fontSize: 'clamp(0.9375rem, 1.9vh, 1.0625rem)' }}>
               View Products <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link to="/quote"
-              style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 600, fontSize: '1.0625rem', padding: '1.125rem 2.5rem', borderRadius: '9999px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+              style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 600, fontSize: 'clamp(0.9375rem, 1.9vh, 1.0625rem)', padding: 'clamp(0.8rem, 1.7vh, 1.125rem) 2.25rem', borderRadius: '9999px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
               Request a Quote
             </Link>
           </div>
         </div>
 
         {/* Stats */}
-        <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '0 2rem 6rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.125rem' }} className="md:grid-cols-4">
+        <div className="hero-stats" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '0 1.5rem clamp(1rem, 3.5vh, 4rem)' }}>
+          <div className="grid-md-4" style={{ display: 'grid', gap: '1.125rem' }}>
             {stats.map((s, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.09)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '1.125rem', padding: '1.75rem 1.25rem', textAlign: 'center' }}>
-                <div style={{ fontSize: 'clamp(1.625rem, 3.5vw, 2rem)', fontWeight: 700, color: '#fff', marginBottom: '0.375rem' }}>{s.value}</div>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(187,247,208,0.65)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{s.label}</div>
+              <div key={i} style={{ background: 'rgba(255,255,255,0.09)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '1.125rem', padding: 'clamp(0.6rem, 1.6vh, 1.75rem) 0.875rem', textAlign: 'center' }}>
+                <div style={{ fontSize: 'clamp(1.125rem, min(3.5vw, 3vh), 2rem)', fontWeight: 700, color: '#fff', marginBottom: '0.25rem' }}>{s.value}</div>
+                <div style={{ fontSize: 'clamp(0.625rem, 1.4vh, 0.75rem)', color: 'rgba(187,247,208,0.65)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', lineHeight: 1.3 }}>{s.label}</div>
               </div>
             ))}
           </div>

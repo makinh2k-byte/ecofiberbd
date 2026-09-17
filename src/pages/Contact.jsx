@@ -84,7 +84,7 @@ export default function Contact() {
       </section>
 
       <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 8rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="md:grid-cols-3">
+        <div className="grid-md-3" style={{ display: 'grid', gap: '2.5rem' }}>
 
           {/* Sidebar */}
           <div ref={sidebarRef} className="reveal-left" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

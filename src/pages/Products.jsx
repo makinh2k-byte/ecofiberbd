@@ -143,7 +143,7 @@ export default function Products() {
               Banana fiber is a natural cellulosic bast/leaf-sheath fiber mechanically extracted from the pseudo-stem of the banana plant (<em>Musa</em> species) — a by-product of banana cultivation. It is biodegradable, renewable, and produced without additional land or water beyond existing banana cultivation.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="md:grid-cols-3">
+            <div className="grid-md-3" style={{ display: 'grid', gap: '2.5rem' }}>
               {[
                 ['Physical Properties',  PHYSICAL_PROPERTIES],
                 ['Mechanical Properties', MECHANICAL_PROPERTIES],

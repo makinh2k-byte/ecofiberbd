@@ -113,7 +113,7 @@ export default function ProductDetail() {
       </div>
 
       <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 8rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', marginBottom: '5rem' }} className="md:grid-cols-2">
+        <div className="grid-md-2" style={{ display: 'grid', gap: '4rem', marginBottom: '5rem' }}>
 
           {/* Left — image + tags */}
           <div ref={leftRef} className="reveal-left">
