@@ -164,46 +164,44 @@ export default function Home() {
       <section className="hero-fit" style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#fff', overflow: 'hidden' }}>
         <div className="absolute inset-0">
           <img src={IMG.hero} alt="Raw banana fiber sourced from a banana plantation in Bangladesh" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.93) 0%,rgba(20,50,24,0.88) 50%,rgba(40,110,30,0.82) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(100deg, rgba(8,20,9,0.22) 0%, rgba(8,20,9,0.30) 30%, rgba(11,28,13,0.62) 50%, rgba(10,26,12,0.84) 72%, rgba(10,26,12,0.88) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,20,9,0.55) 0%, rgba(8,20,9,0.10) 35%, transparent 60%)' }} />
         </div>
         <div className="absolute inset-0 pointer-events-none"
           style={{ opacity: 0.25, backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px)', backgroundSize: '64px 64px' }} />
 
         {/* Hero content */}
-        <div className="hero-rise" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: 'clamp(5.5rem, 11vh, 10rem) 1.5rem clamp(0.75rem, 2.5vh, 2.5rem)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <div className="hero-row" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '76rem', margin: '0 auto', padding: 'clamp(5rem, 9.5vh, 10rem) 1.5rem clamp(0.75rem, 2.5vh, 2.5rem)', display: 'flex' }}>
+          <div className="hero-rise hero-panel" style={{ width: '100%', maxWidth: '36rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', padding: 0 }}>
 
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.625rem', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(0.75rem, 1.6vh, 0.875rem)', fontWeight: 500, padding: 'clamp(0.45rem, 1.2vh, 0.75rem) clamp(1rem, 3vw, 1.5rem)', borderRadius: '9999px', marginBottom: 'clamp(0.625rem, 2vh, 2.75rem)' }}>
-            <span className="pulse-dot" style={{ width: 9, height: 9, borderRadius: '50%', background: '#8dc63f', display: 'inline-block' }} />
-            Raw Banana Fiber Supplier &amp; Exporter in Bangladesh
-          </div>
-
-          <h1 style={{ fontSize: 'clamp(1.875rem, min(7.5vw, 9vh), calc(5rem + 3px))', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 'clamp(0.75rem, 2.2vh, 2rem)', textAlign: 'center', color: '#fff' }}>
+          <h1 style={{ fontSize: 'clamp(1.875rem, min(7.5vw, 8vh), calc(4.5rem + 3px))', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 'clamp(0.625rem, 1.8vh, 1.75rem)', textAlign: 'right', color: '#fff' }}>
             Transforming Waste<br />
             into{' '}
-            <span style={{ background: 'linear-gradient(90deg,#8dc63f,#c0f060)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span style={{ background: 'linear-gradient(90deg,#8dc63f,#c0f060)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', textShadow: 'none' }}>
               Sustainable
             </span>
             <br />Solutions
           </h1>
 
-          <p style={{ fontSize: 'clamp(0.875rem, min(2vw, 2.1vh), 1.25rem)', color: 'rgba(220,252,231,0.72)', maxWidth: '44rem', marginBottom: 'clamp(1rem, 2.5vh, 3.5rem)', lineHeight: 1.62, fontWeight: 300, textAlign: 'center' }}>
+          <p style={{ fontSize: 'clamp(0.875rem, min(2vw, 2.1vh), 1.25rem)', color: 'rgba(233,253,238,0.94)', maxWidth: '34rem', marginBottom: 'clamp(0.75rem, 2vh, 3rem)', lineHeight: 1.62, fontWeight: 300, textAlign: 'justify', textAlignLast: 'right', hyphens: 'auto' }}>
             Source premium <strong style={{ fontWeight: 600, color: 'rgba(255,255,255,0.92)' }}>raw banana fiber</strong> from Bangladesh's trusted supplier and exporter. 100% biodegradable, high tensile strength and a silky sheen — the sustainable, eco-friendly alternative to synthetic fibers. Every order quoted individually.
           </p>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.125rem', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.125rem', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Link to="/products" className="group inline-flex items-center justify-center gap-2.5 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              style={{ background: '#39962c', boxShadow: '0 6px 28px rgba(57,150,44,0.45)', color: '#fff', padding: 'clamp(0.8rem, 1.7vh, 1.125rem) 2.25rem', borderRadius: '9999px', fontSize: 'clamp(0.9375rem, 1.9vh, 1.0625rem)' }}>
+              style={{ background: '#39962c', boxShadow: '0 6px 28px rgba(57,150,44,0.45)', color: '#fff', padding: 'clamp(0.8rem, 1.7vh, 1.125rem) 1.75rem', borderRadius: '9999px', fontSize: 'clamp(0.9375rem, 1.9vh, 1.0625rem)', border: '1px solid transparent', minWidth: '14rem' }}>
               View Products <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link to="/quote"
-              style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 600, fontSize: 'clamp(0.9375rem, 1.9vh, 1.0625rem)', padding: 'clamp(0.8rem, 1.7vh, 1.125rem) 2.25rem', borderRadius: '9999px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+              style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 600, fontSize: 'clamp(0.9375rem, 1.9vh, 1.0625rem)', padding: 'clamp(0.8rem, 1.7vh, 1.125rem) 1.75rem', borderRadius: '9999px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', minWidth: '14rem' }}>
               Request a Quote
             </Link>
+          </div>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="hero-stats" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '0 1.5rem clamp(1rem, 3.5vh, 4rem)' }}>
+        <div className="hero-stats" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '0 1.5rem clamp(0.75rem, 3vh, 3.5rem)' }}>
           <div className="grid-md-4" style={{ display: 'grid', gap: '1.125rem' }}>
             {stats.map((s, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.09)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '1.125rem', padding: 'clamp(0.6rem, 1.6vh, 1.75rem) 0.875rem', textAlign: 'center' }}>
