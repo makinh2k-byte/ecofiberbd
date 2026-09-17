@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 import { useSEO } from '../hooks/useSEO'
 
-import { PRODUCTS, TDS, DATA_SOURCE_NOTE } from '../data/products'
+import { PRODUCTS, TDS, DATA_SOURCE_NOTE, FIBER_LENGTH } from '../data/products'
 
 export default function ProductDetail() {
   const { id }   = useParams()
@@ -14,7 +14,7 @@ export default function ProductDetail() {
 
   useSEO({
     title: product ? `${product.name} — Specifications & Quote | Banana Fiber Bangladesh` : 'Product Details | EcoFiber BD',
-    description: product ? `${product.name} from EcoFiber BD, Bangladesh. ${product.description} Fiber length ${product.fiber_length_cm} cm, moisture ${product.moisture_content_percent}%. Request a quote or sample.` : '',
+    description: product ? `${product.name} from EcoFiber BD, Bangladesh. ${product.description} Fiber length ${FIBER_LENGTH}, moisture ${product.moisture_content_percent}%. Request a quote or sample.` : '',
     keywords: product ? `${product.grade} banana fiber, ${product.grade} banana fiber Bangladesh, banana fiber specifications, raw banana fiber, banana pseudo-stem fiber, biodegradable fiber, banana fiber quote` : '',
     url: `https://ecofiberbd.com/products/${id}`,
     image: product ? `https://ecofiberbd.com${encodeURI(product.img)}` : 'https://ecofiberbd.com/Images/Banana_fiber_Grade%20A.jpg'
@@ -67,7 +67,7 @@ export default function ProductDetail() {
     ['Material',            '100% Natural Banana Pseudo-Stem Fiber (Musa spp.)'],
     ['Fiber Type',          'Mechanically extracted, washed & sun-dried'],
     ['Grade',               product.grade],
-    ['Sorted Fiber Length', `${product.fiber_length_cm} cm`],
+    ['Fiber Length',         FIBER_LENGTH],
     ['Fiber Diameter',      '80 – 250 µm'],
     ['Linear Density',      '6.8 – 66.3 tex'],
     ['Density',             '1.2 – 1.35 g/cm³'],

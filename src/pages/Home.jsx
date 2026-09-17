@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: 'What are the grades of banana fiber you supply?',
-    a: 'We supply three grades: Grade A (90–120 cm, for fine textiles and banana silk), Grade B (60–90 cm, for home furnishings, handicrafts and blended textiles), and Grade C (30–60 cm, for ropes, cables and biocomposites).',
+    a: 'We supply three grades: Grade A for fine textiles and banana silk, Grade B for home furnishings, handicrafts and blended textiles, and Grade C for ropes, cordage and biocomposites. All grades are supplied in the same fiber lengths — standard 36 inches (~914 mm), with lengths up to 60 inches (~1,524 mm) available.',
   },
   {
     q: 'Can I get a sample before ordering?',
@@ -48,8 +48,8 @@ const faqs = [
 const stats = [
   { value: '100%',   label: 'Biodegradable' },
   { value: '500+',   label: 'MPa Tensile Strength' },
-  { value: '3–6 mo', label: 'Decomposition Time' },
-  { value: '120 cm', label: 'Max Fiber Length' },
+  { value: '60–65%', label: 'Cellulose Content' },
+  { value: '60 in',  label: 'Max Fiber Length' },
 ]
 
 const features = [
@@ -58,13 +58,13 @@ const features = [
   { num: '03', title: 'Safe & Non-Toxic',   desc: 'Naturally fire-resistant. Free from hazardous chemicals or synthetic coatings.' },
   { num: '04', title: 'Zero-Waste Process', desc: 'Harvested from banana pseudostems — turning agricultural by-products into premium material.' },
   { num: '05', title: 'Global Reach',       desc: 'Supplied to textile mills, paper manufacturers, and export buyers worldwide.' },
-  { num: '06', title: 'Multiple Grades',    desc: 'Grade A, B, and C with fiber lengths 30–120 cm to suit every application.' },
+  { num: '06', title: 'Multiple Grades',    desc: 'Grade A, B and C to suit every application - all supplied in the same fiber lengths.' },
 ]
 
 const grades = [
-  { grade: 'Grade A', accent: '#39962c', img: IMG.gradeA, length: '90–120 cm', use: 'Textile · Fashion · Paper',  desc: 'Premium long-staple fiber. Ideal for fine textiles, "Banana Silk", and high-end paper production.' },
-  { grade: 'Grade B', accent: '#8dc63f', img: IMG.gradeB, length: '60–90 cm',  use: 'Handicrafts · Furnishings', desc: 'Mid-grade fiber for home furnishings, handicrafts, and industrial blended products.' },
-  { grade: 'Grade C', accent: '#37593b', img: IMG.gradeC, length: '30–60 cm',  use: 'Industrial · Marine',       desc: 'Coarser fiber for rope making, marine applications, and biocomposite reinforcements.' },
+  { grade: 'Grade A', accent: '#39962c', img: IMG.gradeA, length: '36–60 in', use: 'Textile · Fashion · Paper',  desc: 'Premium-grade fiber. Ideal for fine textiles, "Banana Silk", and high-end paper production.' },
+  { grade: 'Grade B', accent: '#8dc63f', img: IMG.gradeB, length: '36–60 in',  use: 'Handicrafts · Furnishings', desc: 'Mid-grade fiber for home furnishings, handicrafts, and industrial blended products.' },
+  { grade: 'Grade C', accent: '#37593b', img: IMG.gradeC, length: '36–60 in',  use: 'Industrial · Marine',       desc: 'Coarser fiber for rope making, marine applications, and biocomposite reinforcements.' },
 ]
 
 const applications = [

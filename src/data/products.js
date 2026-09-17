@@ -21,9 +21,13 @@ export const TDS = {
 export const DATA_SOURCE_NOTE =
   'Values shown are typical/reference properties for banana pseudo-stem fiber, compiled from published textile-fiber research. They represent expected ranges for this fiber type, not batch-specific lab results. Batch-specific Certificates of Analysis (COA) can be issued once a shipment or sample lot has been tested — in-house or via a third-party lab (SGS, Intertek, Bureau Veritas, or a local textile testing institute) — and we recommend this for first orders or contract-critical specifications.'
 
+/** Fiber length is the same across all grades - it is not a grading criterion. */
+export const FIBER_LENGTH       = 'Standard 36 in (~914 mm), up to 60 in (~1,524 mm)'
+export const FIBER_LENGTH_SHORT = '36-60 in'
+
 export const PHYSICAL_PROPERTIES = [
   ['Fiber diameter', '80 – 250 µm'],
-  ['Fiber length (extracted strand)', '36 inches (~914 mm)'],
+  ['Fiber length (extracted strand)', 'Standard 36 in (~914 mm); up to 60 in (~1,524 mm)'],
   ['Linear density / fineness', '6.8 – 66.3 tex'],
   ['Density', '1.2 – 1.35 g/cm³'],
   ['Moisture content', '10 – 13%'],
@@ -71,8 +75,8 @@ export const STORAGE_HANDLING = [
   'Natural fiber — avoid prolonged exposure to high humidity to prevent mold',
 ]
 
-/** Commercial grades. Lengths are EcoFiber BD sorting grades; technical
- *  properties above apply to all grades. */
+/** Commercial grades. All grades share the same fiber length range
+ *  (see FIBER_LENGTH); the technical properties above apply to all of them. */
 export const PRODUCTS = [
   {
     id: 1,
@@ -80,10 +84,9 @@ export const PRODUCTS = [
     grade: 'Grade A',
     accent: '#39962c',
     img: '/Images/Banana_fiber_Grade A.jpg',
-    fiber_length_cm: '90–120',
     moisture_content_percent: '10–13',
     description:
-      'Premium long-staple banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production. Mechanically extracted from the banana pseudo-stem, then washed and sun-dried to preserve its natural silky sheen and strength.',
+      'Premium-grade banana fiber ideal for fine textiles, "Banana Silk" fabrics, and high-end paper production. Mechanically extracted from the banana pseudo-stem, then washed and sun-dried to preserve its natural silky sheen and strength.',
     applications: [
       'Fine Textiles & "Banana Silk"',
       'Sarees & Blended Garments',
@@ -98,7 +101,6 @@ export const PRODUCTS = [
     grade: 'Grade B',
     accent: '#8dc63f',
     img: '/Images/Banana_fiber_Grade B.jpeg',
-    fiber_length_cm: '60–90',
     moisture_content_percent: '10–13',
     description:
       'Mid-grade fiber for home furnishings, handicrafts, blended textiles, and general manufacturing. An excellent balance of strength and workability.',
@@ -116,7 +118,6 @@ export const PRODUCTS = [
     grade: 'Grade C',
     accent: '#37593b',
     img: '/Images/Banana_fiber_Grade C.jpeg',
-    fiber_length_cm: '30–60',
     description:
       'Coarser industrial-grade fiber best suited for ropes, cordage, paper pulp, and biocomposite reinforcement.',
     moisture_content_percent: '10–13',

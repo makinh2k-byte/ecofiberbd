@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 import { useSEO } from '../hooks/useSEO'
 import {
-  PRODUCTS, TDS, DATA_SOURCE_NOTE,
+  PRODUCTS, TDS, DATA_SOURCE_NOTE, FIBER_LENGTH_SHORT,
   PHYSICAL_PROPERTIES, MECHANICAL_PROPERTIES, CHEMICAL_COMPOSITION,
   AVAILABLE_FORMS, QUALITY_STATEMENT, STORAGE_HANDLING,
 } from '../data/products'
@@ -31,7 +31,7 @@ function ProductCard({ p, index }) {
         <p style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.125rem', flex: 1 }}>{p.description}</p>
         <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1rem', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {[
-            ['Fiber Length', `${p.fiber_length_cm} cm`],
+            ['Fiber Length', FIBER_LENGTH_SHORT],
             ['Moisture',     `${p.moisture_content_percent}%`],
             ['Order Volume', 'Quoted per enquiry'],
           ].map(([l, v]) => (
