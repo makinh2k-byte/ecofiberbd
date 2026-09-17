@@ -5,19 +5,19 @@ import AdminLayout from '../components/AdminLayout'
 const INITIAL_PRODUCTS = [
   {
     id: 1, name: 'Grade A Premium Banana Fiber', grade: 'Grade A',
-    fiber_length: '36-60 in', moisture_content_percent: '10–13',
+    fiber_length: '36–60 in (91–152 cm)', moisture_content_percent: '10–13',
     moq_kg: 100, stock_kg: 2000,
     description: 'Premium long-staple banana fiber ideal for fine textiles.', is_active: true,
   },
   {
     id: 2, name: 'Grade B Standard Banana Fiber', grade: 'Grade B',
-    fiber_length: '36-60 in', moisture_content_percent: '10–13',
+    fiber_length: '36–60 in (91–152 cm)', moisture_content_percent: '10–13',
     moq_kg: 150, stock_kg: 3500,
     description: 'Mid-grade fiber for home furnishings and handicrafts.', is_active: true,
   },
   {
     id: 3, name: 'Grade C Industrial Banana Fiber', grade: 'Grade C',
-    fiber_length: '36-60 in', moisture_content_percent: '10–13',
+    fiber_length: '36–60 in (91–152 cm)', moisture_content_percent: '10–13',
     moq_kg: 200, stock_kg: 5000,
     description: 'Industrial-grade fiber for marine and composite applications.', is_active: true,
   },
@@ -158,7 +158,7 @@ export default function AdminProducts() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Fiber Length</label>
                   <input value={form.fiber_length} onChange={e => setForm({ ...form, fiber_length: e.target.value })}
-                    placeholder="e.g. 36-60 in"
+                    placeholder="e.g. 36–60 in (91–152 cm)"
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#39962c]" />
                 </div>
                 <div>

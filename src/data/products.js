@@ -22,12 +22,12 @@ export const DATA_SOURCE_NOTE =
   'Values shown are typical/reference properties for banana pseudo-stem fiber, compiled from published textile-fiber research. They represent expected ranges for this fiber type, not batch-specific lab results. Batch-specific Certificates of Analysis (COA) can be issued once a shipment or sample lot has been tested — in-house or via a third-party lab (SGS, Intertek, Bureau Veritas, or a local textile testing institute) — and we recommend this for first orders or contract-critical specifications.'
 
 /** Fiber length is the same across all grades - it is not a grading criterion. */
-export const FIBER_LENGTH       = 'Standard 36 in (~914 mm), up to 60 in (~1,524 mm)'
-export const FIBER_LENGTH_SHORT = '36-60 in'
+export const FIBER_LENGTH       = 'Standard 36 in (91 cm), up to 60 in (152 cm)'
+export const FIBER_LENGTH_SHORT = '36–60 in (91–152 cm)'
 
 export const PHYSICAL_PROPERTIES = [
   ['Fiber diameter', '80 – 250 µm'],
-  ['Fiber length (extracted strand)', 'Standard 36 in (~914 mm); up to 60 in (~1,524 mm)'],
+  ['Fiber length (extracted strand)', 'Standard 36 in (91 cm); up to 60 in (152 cm)'],
   ['Linear density / fineness', '6.8 – 66.3 tex'],
   ['Density', '1.2 – 1.35 g/cm³'],
   ['Moisture content', '10 – 13%'],

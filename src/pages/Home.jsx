@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: 'What are the grades of banana fiber you supply?',
-    a: 'We supply three grades: Grade A for fine textiles and banana silk, Grade B for home furnishings, handicrafts and blended textiles, and Grade C for ropes, cordage and biocomposites. All grades are supplied in the same fiber lengths — standard 36 inches (~914 mm), with lengths up to 60 inches (~1,524 mm) available.',
+    a: 'We supply three grades: Grade A for fine textiles and banana silk, Grade B for home furnishings, handicrafts and blended textiles, and Grade C for ropes, cordage and biocomposites. All grades are supplied in the same fiber lengths — standard 36 inches (91 cm), with lengths up to 60 inches (152 cm) available.',
   },
   {
     q: 'Can I get a sample before ordering?',
@@ -49,7 +49,7 @@ const stats = [
   { value: '100%',   label: 'Biodegradable' },
   { value: '500+',   label: 'MPa Tensile Strength' },
   { value: '60–65%', label: 'Cellulose Content' },
-  { value: '60 in',  label: 'Max Fiber Length' },
+  { value: '60 in',  label: 'Max Fiber Length (152 cm)' },
 ]
 
 const features = [
@@ -62,9 +62,9 @@ const features = [
 ]
 
 const grades = [
-  { grade: 'Grade A', accent: '#39962c', img: IMG.gradeA, length: '36–60 in', use: 'Textile · Fashion · Paper',  desc: 'Premium-grade fiber. Ideal for fine textiles, "Banana Silk", and high-end paper production.' },
-  { grade: 'Grade B', accent: '#8dc63f', img: IMG.gradeB, length: '36–60 in',  use: 'Handicrafts · Furnishings', desc: 'Mid-grade fiber for home furnishings, handicrafts, and industrial blended products.' },
-  { grade: 'Grade C', accent: '#37593b', img: IMG.gradeC, length: '36–60 in',  use: 'Industrial · Marine',       desc: 'Coarser fiber for rope making, marine applications, and biocomposite reinforcements.' },
+  { grade: 'Grade A', accent: '#39962c', img: IMG.gradeA, length: '36–60 in', lengthCm: '91–152 cm', use: 'Textile · Fashion · Paper',  desc: 'Premium-grade fiber. Ideal for fine textiles, "Banana Silk", and high-end paper production.' },
+  { grade: 'Grade B', accent: '#8dc63f', img: IMG.gradeB, length: '36–60 in', lengthCm: '91–152 cm',  use: 'Handicrafts · Furnishings', desc: 'Mid-grade fiber for home furnishings, handicrafts, and industrial blended products.' },
+  { grade: 'Grade C', accent: '#37593b', img: IMG.gradeC, length: '36–60 in', lengthCm: '91–152 cm',  use: 'Industrial · Marine',       desc: 'Coarser fiber for rope making, marine applications, and biocomposite reinforcements.' },
 ]
 
 const applications = [
@@ -107,7 +107,10 @@ function GradeCard({ g, index }) {
         <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Fiber Length</span>
-            <span style={{ fontWeight: 700, color: '#1f2937', fontSize: '0.9375rem' }}>{g.length}</span>
+            <span style={{ textAlign: 'right', lineHeight: 1.35 }}>
+              <span style={{ display: 'block', fontWeight: 700, color: '#1f2937', fontSize: '0.9375rem', whiteSpace: 'nowrap' }}>{g.length}</span>
+              <span style={{ display: 'block', color: '#9ca3af', fontSize: '0.8125rem', whiteSpace: 'nowrap' }}>{g.lengthCm}</span>
+            </span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Best For</span>
