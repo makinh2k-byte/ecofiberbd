@@ -85,7 +85,7 @@ export default function Terms() {
 
           <h2 style={h2}>Contact us</h2>
           <p style={p}>
-            Questions about these Terms? Contact us at <a href="mailto:info@ecofiberbd.com" style={{ color: '#39962c', fontWeight: 600 }}>info@ecofiberbd.com</a> or +8801672268121. EcoFiber BD, Flat: D-2, House: 9, Road: 13 (New), Dhanmondi, Dhaka-1209, Bangladesh.
+            Questions about these Terms? Contact us at <a href="mailto:info@ecofiberbd.com" style={{ color: '#39962c', fontWeight: 600 }}>info@ecofiberbd.com</a> or +8801672268121. EcoFiber BD, Level 7, House 10 (Icon Heights), Road 8, Block J, Baridhara, Dhaka 1212, Bangladesh.
           </p>
         </div>
       </section>

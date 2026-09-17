@@ -93,7 +93,7 @@ export default function Contact() {
               <p style={{ color: '#9ca3af', fontSize: '0.9375rem', marginBottom: '2.5rem', lineHeight: 1.7 }}>We respond to all inquiries within 24 hours.</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
                 {[
-                  { icon: MapPin, label: 'Address', value: 'Flat: D-2, House: 9, Road: 13 (New), Dhanmondi, Dhaka-1209, Bangladesh', href: null },
+                  { icon: MapPin, label: 'Address', value: 'Level 7, House 10 (Icon Heights), Road 8, Block J, Baridhara, Dhaka 1212, Bangladesh', href: null },
                   { icon: Mail,   label: 'Email',   value: 'info@ecofiberbd.com', href: 'mailto:info@ecofiberbd.com' },
                   { icon: Phone,  label: 'Phone',   value: '+8801672268121',       href: 'tel:+8801672268121' },
                 ].map(item => (

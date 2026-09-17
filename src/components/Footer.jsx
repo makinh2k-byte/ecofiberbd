@@ -103,7 +103,7 @@ export default function Footer() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                 <MapPin size={17} color="#8dc63f" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ color: 'rgba(220,252,231,0.7)', fontSize: '0.9375rem', lineHeight: 1.65 }}>
-                  Flat: D-2, House: 9, Road: 13 (New),<br />Dhanmondi, Dhaka-1209, Bangladesh
+                  Level 7, House 10 (Icon Heights), Road 8,<br />Block J, Baridhara, Dhaka 1212, Bangladesh
                 </span>
               </div>
             </div>
