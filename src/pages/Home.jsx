@@ -174,10 +174,10 @@ export default function Home() {
         <div className="hero-row" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '76rem', margin: '0 auto', padding: 'clamp(5rem, 9.5vh, 10rem) 1.5rem clamp(0.75rem, 2.5vh, 2.5rem)', display: 'flex' }}>
           <div className="hero-rise hero-panel" style={{ width: '100%', maxWidth: '36rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', padding: 0 }}>
 
-          <h1 style={{ fontSize: 'clamp(1.875rem, min(7.5vw, 8vh), calc(4.5rem + 3px))', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 'clamp(0.625rem, 1.8vh, 1.75rem)', textAlign: 'right', color: '#fff' }}>
+          <h1 style={{ fontSize: 'clamp(1.875rem, min(7.5vw, 8vh), calc(4.5rem + 3px))', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 'clamp(0.625rem, 1.8vh, 1.75rem)', textAlign: 'right', color: '#fff', position: 'relative', top: '-20px' }}>
             Transforming Waste<br />
             into{' '}
-            <span style={{ background: 'linear-gradient(90deg,#8dc63f,#c0f060)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', textShadow: 'none' }}>
+            <span className="grad-green">
               Sustainable
             </span>
             <br />Solutions
