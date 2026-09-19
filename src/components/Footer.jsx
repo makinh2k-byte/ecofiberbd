@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div style={{ maxWidth: '20rem' }}>
-            <img src={logoDark} alt="EcoFiber BD" style={{ height: '44px', width: 'auto', marginBottom: '1.25rem' }} />
+            <img src={logoDark} alt="EcoFiber BD" style={{ height: '88px', width: 'auto', marginBottom: '1.25rem' }} />
             <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '0.9375rem', lineHeight: 1.85, marginBottom: '1.75rem' }}>
               A banana fiber supplier &amp; exporter in Dhaka, Bangladesh — transforming banana-plant waste into premium, 100% biodegradable raw fiber.
             </p>

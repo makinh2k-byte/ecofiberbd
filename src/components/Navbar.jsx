@@ -41,6 +41,9 @@ export default function Navbar() {
   const [dropdown, setDropdown]             = useState(false)  // desktop Products panel
   const [mobileProducts, setMobileProducts] = useState(false)
   const [scrolled, setScrolled]             = useState(false)
+  const [isMobile, setIsMobile]             = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
+  )
   const location                            = useLocation()
   const isHome                              = location.pathname === '/'
   const dropdownRef                         = useRef(null)
@@ -49,6 +52,13 @@ export default function Navbar() {
     const fn = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', fn)
     return () => window.removeEventListener('scroll', fn)
+  }, [])
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    const fn = e => setIsMobile(e.matches)
+    mq.addEventListener('change', fn)
+    return () => mq.removeEventListener('change', fn)
   }, [])
 
   // close menus on route change
@@ -64,7 +74,7 @@ export default function Navbar() {
     return () => { document.removeEventListener('mousedown', onClick); document.removeEventListener('keydown', onKey) }
   }, [dropdown])
 
-  const onDark = isHome && !scrolled && !open
+  const onDark = isMobile ? (!scrolled && !open) : (isHome && !scrolled && !open)
   const logo   = onDark ? logoDark : logoLight
 
   /** Shared capsule shell for each group in the bar. */
@@ -73,7 +83,7 @@ export default function Navbar() {
     padding: '0.3rem',
     borderRadius: '9999px',
     transition: 'background 0.4s, box-shadow 0.4s, border-color 0.4s',
-    ...(onDark
+    ...(isMobile ? {} : onDark
       ? {
           background: 'rgba(10,26,12,0.48)',
           backdropFilter: 'blur(22px) saturate(165%)',
@@ -125,17 +135,17 @@ export default function Navbar() {
   return (
     <nav className="fixed left-0 right-0 z-50"
       style={{ top: 0, paddingTop: '1rem', paddingBottom: '0.5rem', paddingLeft: '1.25rem', paddingRight: '1.25rem', pointerEvents: 'none' }}>
-      <div style={{ maxWidth: '76rem', margin: '0 auto', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem', pointerEvents: 'auto' }}>
+      <div style={{ maxWidth: '76rem', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', pointerEvents: 'auto' }}>
 
-        {/* ── Left capsule: logo + links ───────────────────────── */}
-        <div ref={dropdownRef} style={{ position: 'relative' }}>
-          <div style={{ ...capsule, display: 'flex' }}>
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', padding: '0 0.5rem 0 0.75rem', flexShrink: 0 }}
-              className="transition-transform duration-300 hover:scale-105">
-              <img src={logo} alt="EcoFiber BD" style={{ height: '2.5rem', width: 'auto', display: 'block' }} />
-            </Link>
+        {/* ── Left: free-standing logo + links capsule ─────────── */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0, height: '3.25rem' }}
+            className="transition-transform duration-300 hover:scale-105">
+            <img src={logo} alt="EcoFiber BD" style={{ height: '6rem', width: 'auto', display: 'block' }} />
+          </Link>
 
-            <div className="nav-desktop" style={{ alignItems: 'center', gap: '0.125rem' }}>
+          <div ref={dropdownRef} style={{ position: 'relative' }}>
+            <div className="nav-desktop nav-capsule" style={capsule}>
               {links.map(l => {
                 const active = l.dropdown ? inProducts : location.pathname === l.to
                 if (l.dropdown) {
@@ -160,7 +170,6 @@ export default function Navbar() {
                 )
               })}
             </div>
-          </div>
 
           {/* Products dropdown panel */}
           {dropdown && (
@@ -198,10 +207,11 @@ export default function Navbar() {
               </Link>
             </div>
           )}
+          </div>
         </div>
 
         {/* ── Right capsule: quote CTA + WhatsApp ──────────────── */}
-        <div className="nav-desktop" style={{ ...capsule, gap: '0.3rem', flexShrink: 0 }}>
+        <div className="nav-desktop nav-capsule" style={{ ...capsule, gap: '0.3rem', flexShrink: 0 }}>
           <Link to="/quote"
             className="transition-all duration-300 hover:-translate-y-0.5"
             style={{
@@ -225,7 +235,7 @@ export default function Navbar() {
         </div>
 
         {/* ── Mobile: menu toggle capsule ──────────────────────── */}
-        <div className="nav-mobile" style={{ ...capsule, flexShrink: 0 }}>
+        <div className="nav-mobile nav-capsule" style={{ ...capsule, flexShrink: 0 }}>
           <button onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}
             className="transition-all duration-300"
             style={{
@@ -234,7 +244,7 @@ export default function Navbar() {
               background: open ? '#39962c' : 'transparent',
               color: open ? '#fff' : (onDark ? '#fff' : '#374151'),
             }}>
-            {open ? <X size={22} /> : <Menu size={22} />}
+            <span className="nav-bare" style={{ display: 'inline-flex' }}>{open ? <X size={22} /> : <Menu size={22} />}</span>
           </button>
         </div>
       </div>
