@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin } from 'lucide-react'
-import logoDark from '../assets/logo-dark.svg'
+import logoFooter from '../assets/logo-footer.png'
 
 const PATTERN = '/ecofiber background Pattern.svg'
 
@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div style={{ maxWidth: '20rem' }}>
-            <img src={logoDark} alt="EcoFiber BD" style={{ height: '88px', width: 'auto', marginBottom: '1.25rem' }} />
+            <img src={logoFooter} alt="EcoFiber BD" style={{ width: '100%', maxWidth: '280px', height: 'auto', display: 'block', marginBottom: '1.25rem' }} />
             <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '0.9375rem', lineHeight: 1.85, marginBottom: '1.75rem' }}>
               A banana fiber supplier &amp; exporter in Dhaka, Bangladesh — transforming banana-plant waste into premium, 100% biodegradable raw fiber.
             </p>

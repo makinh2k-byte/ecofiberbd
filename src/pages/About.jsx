@@ -69,7 +69,7 @@ export default function About() {
       <Navbar />
 
       {/* Hero */}
-      <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '6rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
+      <section className="leaf-anim" style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '8rem', paddingBottom: '4rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }}>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(calc(2.75rem + 3px), 7vw, calc(4rem + 3px))', textAlign: 'center', marginBottom: '1.5rem', color: '#fff' }}>About EcoFiber BD</h1>
@@ -80,7 +80,7 @@ export default function About() {
       </section>
 
       {/* Who we are */}
-      <section style={{ background: '#fff', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#fff', paddingTop: '4.5rem', paddingBottom: '4.5rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div ref={introTextRef} className="reveal-left">
@@ -112,7 +112,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section style={{ background: '#f7f5f0', paddingTop: '6rem', paddingBottom: '6rem' }}>
+      <section style={{ background: '#f7f5f0', paddingTop: '4rem', paddingBottom: '4rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div ref={missionRef} className="reveal" style={{ background: '#fff', borderRadius: '1.25rem', padding: '2.75rem', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
@@ -132,7 +132,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section style={{ background: '#fff', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#fff', paddingTop: '4.5rem', paddingBottom: '4.5rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={valuesHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>What We Stand For</span>
@@ -145,7 +145,7 @@ export default function About() {
       </section>
 
       {/* Stats band */}
-      <section className="leaf-anim" style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section className="leaf-anim" style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '4rem', paddingBottom: '4rem' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.85) 0%,rgba(57,150,44,0.82) 100%)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.5rem' }}>
@@ -157,7 +157,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: '#f7f5f0', paddingTop: '6rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#f7f5f0', paddingTop: '4rem', paddingBottom: '4.5rem' }}>
         <div ref={ctaRef} className="reveal" style={{ maxWidth: '46rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.2, textAlign: 'center' }}>Let's work together</h2>
           <p style={{ fontSize: '1.0625rem', color: '#6b7280', marginBottom: '2.5rem', lineHeight: 1.9, maxWidth: '34rem', margin: '0 auto 2.5rem', textAlign: 'center' }}>

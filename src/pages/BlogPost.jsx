@@ -63,7 +63,7 @@ export default function BlogPost() {
       <Navbar />
 
       {/* Hero */}
-      <section style={{ position: 'relative', color: '#fff', overflow: 'hidden', paddingTop: '9rem', paddingBottom: '4rem' }}>
+      <section style={{ position: 'relative', color: '#fff', overflow: 'hidden', paddingTop: '7.5rem', paddingBottom: '3rem' }}>
         <div className="absolute inset-0">
           <img src={article.cover} alt={article.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg,rgba(11,26,13,0.92) 0%,rgba(57,150,44,0.78) 100%)' }} />

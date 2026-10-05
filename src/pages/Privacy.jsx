@@ -21,7 +21,7 @@ export default function Privacy() {
     <div style={{ minHeight: '100vh', overflowX: 'hidden', background: '#f7f5f0' }}>
       <Navbar />
 
-      <section style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '10rem', paddingBottom: '5rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)' }}>
+      <section style={{ position: 'relative', color: '#fff', textAlign: 'center', overflow: 'hidden', paddingTop: '8rem', paddingBottom: '3.5rem', background: 'linear-gradient(160deg,#1a3820 0%,#2d5533 55%,#39962c 100%)' }}>
         <div className="absolute inset-0 leaf-anim" style={{ backgroundImage: `url(${PATTERN})`, backgroundSize: '420px 420px', backgroundRepeat: 'repeat' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg,rgba(8,20,9,0.86) 0%,rgba(20,50,24,0.80) 55%,rgba(40,110,30,0.72) 100%)' }} />
         <div className="hero-rise" style={{ position: 'relative', zIndex: 10, maxWidth: '44rem', margin: '0 auto', padding: '0 2rem' }}>
@@ -30,7 +30,7 @@ export default function Privacy() {
         </div>
       </section>
 
-      <section style={{ background: '#fff', paddingTop: '4rem', paddingBottom: '6rem' }}>
+      <section style={{ background: '#fff', paddingTop: '3rem', paddingBottom: '4rem' }}>
         <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 2rem' }}>
           <p style={p}>
             EcoFiber BD (“we”, “us”, “our”) operates the website <strong>ecofiberbd.com</strong>. This Privacy Policy explains what information we collect when you visit our site or contact us about our banana fiber products, how we use it, and the choices you have. By using our website you agree to the practices described below.

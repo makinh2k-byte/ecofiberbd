@@ -214,8 +214,9 @@ export default function Home() {
       </section>
 
       {/* ══════════ STATS ══════════ */}
-      <section style={{ background: 'linear-gradient(135deg,#0d2010 0%,#1a3820 55%,#143218 100%)', padding: '4.5rem 0' }}>
-        <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '0 2rem' }}>
+      <section className="leaf-anim" style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', padding: '4.5rem 0', position: 'relative' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg,rgba(13,32,16,0.85) 0%,rgba(26,56,32,0.83) 55%,rgba(46,85,53,0.80) 100%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
           <div className="grid-md-4" style={{ display: 'grid', gap: '1.5rem' }}>
             {stats.map((s, i) => <StatCard key={i} s={s} index={i} />)}
           </div>
@@ -223,7 +224,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ ABOUT ══════════ */}
-      <section style={{ background: '#fff', paddingTop: '8rem', paddingBottom: '8rem' }}>
+      <section style={{ background: '#fff', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'center' }}>
 
@@ -270,7 +271,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ FEATURES ══════════ */}
-      <section className="leaf-anim" style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
+      <section className="leaf-anim" style={{ background: 'linear-gradient(160deg,#0d2010 0%,#1a3820 55%,#2e5535 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg,rgba(13,32,16,0.85) 0%,rgba(26,56,32,0.83) 55%,rgba(46,85,53,0.80) 100%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
           <div ref={featHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -284,7 +285,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ GRADES ══════════ */}
-      <section style={{ background: '#f7f5f0', paddingTop: '8rem', paddingBottom: '8rem' }}>
+      <section style={{ background: '#f7f5f0', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={gradeHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Our Products</span>
@@ -306,7 +307,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ APPLICATIONS ══════════ */}
-      <section style={{ background: '#fff', paddingTop: '8rem', paddingBottom: '8rem' }}>
+      <section style={{ background: '#fff', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={appHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>Use Cases</span>
@@ -319,7 +320,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ FAQ ══════════ */}
-      <section style={{ background: '#f7f5f0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#f7f5f0', paddingTop: '4.5rem', paddingBottom: '4.5rem' }}>
         <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 2rem' }}>
           <div ref={faqHeadRef} className="reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span style={{ color: '#39962c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.75rem' }}>FAQ</span>
@@ -337,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ CTA ══════════ */}
-      <section className="leaf-anim" style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
+      <section className="leaf-anim" style={{ background: 'linear-gradient(135deg,#1a3820 0%,#39962c 100%)', backgroundImage: 'url(/ecofiber-background-Pattern.png)', backgroundSize: '420px 420px', backgroundRepeat: 'repeat', paddingTop: '5rem', paddingBottom: '5rem', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(26,56,32,0.85) 0%,rgba(57,150,44,0.82) 100%)', pointerEvents: 'none' }} />
         <div ref={ctaRef} className="reveal" style={{ maxWidth: '52rem', margin: '0 auto', padding: '0 2rem', textAlign: 'center', position: 'relative', zIndex: 10 }}>
           <h2 style={{ fontSize: 'clamp(calc(2rem + 3px), 4vw, calc(2.85rem + 3px))', color: '#fff', marginBottom: '1.75rem', lineHeight: 1.15, textAlign: 'center' }}>

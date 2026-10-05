@@ -89,7 +89,7 @@ export default function ProductDetail() {
       <Navbar />
 
       {/* Hero */}
-      <section style={{ position: 'relative', color: '#fff', overflow: 'hidden', paddingTop: '9rem', paddingBottom: '5rem' }}>
+      <section style={{ position: 'relative', color: '#fff', overflow: 'hidden', paddingTop: '7.5rem', paddingBottom: '3.5rem' }}>
         <div className="absolute inset-0">
           <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, rgba(11,26,13,0.92) 0%, ${product.accent}bb 100%)` }} />
@@ -112,7 +112,7 @@ export default function ProductDetail() {
         </svg>
       </div>
 
-      <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 8rem' }}>
+      <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 5rem' }}>
         <div className="grid-md-2" style={{ display: 'grid', gap: '4rem', marginBottom: '5rem' }}>
 
           {/* Left — image + tags */}
