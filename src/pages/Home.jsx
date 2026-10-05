@@ -77,6 +77,17 @@ const applications = [
 
 /* ── Sub-components ──────────────────────────────────────── */
 
+function StatCard({ s, index }) {
+  const ref = useReveal(index)
+  return (
+    <div ref={ref} className="reveal transition-all duration-500 hover:-translate-y-1"
+      style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '1.25rem', padding: '2rem 1.25rem', textAlign: 'center' }}>
+      <div style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 700, color: '#fff', marginBottom: '0.5rem', lineHeight: 1.1 }}>{s.value}</div>
+      <div style={{ fontSize: '0.8125rem', color: 'rgba(187,247,208,0.7)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', lineHeight: 1.4 }}>{s.label}</div>
+    </div>
+  )
+}
+
 function FeatureCard({ f, index }) {
   const ref = useReveal(index)
   return (
@@ -200,15 +211,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="hero-stats" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '60rem', margin: '0 auto', padding: '0 1.5rem clamp(0.75rem, 3vh, 3.5rem)' }}>
-          <div className="grid-md-4" style={{ display: 'grid', gap: '1.125rem' }}>
-            {stats.map((s, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.09)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '1.125rem', padding: 'clamp(0.6rem, 1.6vh, 1.75rem) 0.875rem', textAlign: 'center' }}>
-                <div style={{ fontSize: 'clamp(1.125rem, min(3.5vw, 3vh), 2rem)', fontWeight: 700, color: '#fff', marginBottom: '0.25rem' }}>{s.value}</div>
-                <div style={{ fontSize: 'clamp(0.625rem, 1.4vh, 0.75rem)', color: 'rgba(187,247,208,0.65)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', lineHeight: 1.3 }}>{s.label}</div>
-              </div>
-            ))}
+      </section>
+
+      {/* ══════════ STATS ══════════ */}
+      <section style={{ background: 'linear-gradient(135deg,#0d2010 0%,#1a3820 55%,#143218 100%)', padding: '4.5rem 0' }}>
+        <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '0 2rem' }}>
+          <div className="grid-md-4" style={{ display: 'grid', gap: '1.5rem' }}>
+            {stats.map((s, i) => <StatCard key={i} s={s} index={i} />)}
           </div>
         </div>
       </section>

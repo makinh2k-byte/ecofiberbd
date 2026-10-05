@@ -173,13 +173,6 @@ h1, h2, h3, h4, h5, h6, .slopes {
   .grid-md-4 { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* On a narrow AND short screen the hero stat tiles wrap to two rows (~200px)
-   and are the only thing pushing the hero past one screen, so drop them there.
-   The same figures appear further down the page and on the products page. */
-@media (max-width: 767px) and (max-height: 740px) {
-  .hero-stats { display: none; }
-}
-
 /* ── Hero layout ─────────────────────────────────
    Content sits in a right-hand column so the photograph stays visible on the
    left; on small screens it centres and spans the width instead. */
