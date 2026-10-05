@@ -48,11 +48,11 @@ export default function Footer() {
 
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '1200px', margin: '0 auto', padding: '5rem 2rem 2rem' }}>
         {/* Columns */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem', marginBottom: '4rem' }}>
+        <div className="footer-grid" style={{ display: 'grid', gap: '3rem', marginBottom: '4rem' }}>
 
           {/* Brand */}
           <div style={{ maxWidth: '20rem' }}>
-            <img src={logoFooter} alt="EcoFiber BD" style={{ width: '100%', maxWidth: '280px', height: 'auto', display: 'block', marginBottom: '1.25rem' }} />
+            <img src={logoFooter} alt="EcoFiber BD" style={{ width: '100%', maxWidth: '180px', height: 'auto', display: 'block', marginBottom: '1.25rem' }} />
             <p style={{ color: 'rgba(220,252,231,0.65)', fontSize: '0.9375rem', lineHeight: 1.85, marginBottom: '1.75rem' }}>
               A banana fiber supplier &amp; exporter in Dhaka, Bangladesh — transforming banana-plant waste into premium, 100% biodegradable raw fiber.
             </p>
@@ -85,16 +85,16 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div style={{ maxWidth: '18rem' }}>
+          <div style={{ maxWidth: '22rem' }}>
             <h4 style={headingStyle}>Get in Touch</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.125rem' }}>
-              <a href="tel:+8801672268121" style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', ...linkStyle }}
+              <a href="tel:+8801672268121" style={{ ...linkStyle, display: 'flex', alignItems: 'center', gap: '0.75rem' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#8dc63f')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(220,252,231,0.7)')}>
                 <Phone size={17} color="#8dc63f" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span>+88 01672268121</span>
               </a>
-              <a href="mailto:info@ecofiberbd.com" style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', ...linkStyle }}
+              <a href="mailto:info@ecofiberbd.com" style={{ ...linkStyle, display: 'flex', alignItems: 'center', gap: '0.75rem' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#8dc63f')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(220,252,231,0.7)')}>
                 <Mail size={17} color="#8dc63f" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -102,7 +102,7 @@ export default function Footer() {
               </a>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                 <MapPin size={17} color="#8dc63f" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ color: 'rgba(220,252,231,0.7)', fontSize: '0.9375rem', lineHeight: 1.65 }}>
+                <span style={{ color: 'rgba(220,252,231,0.7)', fontSize: 'clamp(0.8125rem, 3.6vw, 0.875rem)', lineHeight: 1.7 }}>
                   Level 7, House 10 (Icon Heights), Road 8,<br />Block J, Baridhara, Dhaka 1212, Bangladesh
                 </span>
               </div>

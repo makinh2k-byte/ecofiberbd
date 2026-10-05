@@ -83,7 +83,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '0 2rem 5rem' }}>
+      <div style={{ maxWidth: '76rem', margin: '0 auto', padding: '4rem 2rem 5rem' }}>
         <div className="grid-md-3" style={{ display: 'grid', gap: '2.5rem' }}>
 
           {/* Sidebar */}

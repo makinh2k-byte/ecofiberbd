@@ -183,9 +183,9 @@ export default function Home() {
 
         {/* Hero content */}
         <div className="hero-row" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '76rem', margin: '0 auto', padding: 'clamp(5rem, 9.5vh, 10rem) 1.5rem clamp(0.75rem, 2.5vh, 2.5rem)', display: 'flex' }}>
-          <div className="hero-rise hero-panel" style={{ width: '100%', maxWidth: '36rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', padding: 0 }}>
+          <div className="hero-rise hero-panel" style={{ width: '100%', maxWidth: '36rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', padding: 0, gap: 'clamp(1rem, 4vh, 3rem)', position: 'relative', top: '-20px' }}>
 
-          <h1 style={{ fontSize: 'clamp(1.875rem, min(7.5vw, 8vh), calc(4.5rem + 3px))', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 'clamp(0.625rem, 1.8vh, 1.75rem)', textAlign: 'right', color: '#fff', position: 'relative', top: '-20px' }}>
+          <h1 style={{ fontSize: 'clamp(1.875rem, min(7.5vw, 8vh), calc(4.5rem + 3px))', lineHeight: 1.05, letterSpacing: '-0.02em', textAlign: 'right', color: '#fff' }}>
             Transforming Waste<br />
             into{' '}
             <span className="grad-green">
@@ -194,7 +194,7 @@ export default function Home() {
             <br />Solutions
           </h1>
 
-          <p style={{ fontSize: 'clamp(0.875rem, min(2vw, 2.1vh), 1.25rem)', color: 'rgba(233,253,238,0.94)', maxWidth: '34rem', marginBottom: 'clamp(0.75rem, 2vh, 3rem)', lineHeight: 1.62, fontWeight: 300, textAlign: 'justify', textAlignLast: 'right', hyphens: 'auto' }}>
+          <p style={{ fontSize: 'clamp(0.875rem, min(2vw, 2.1vh), 1.25rem)', color: 'rgba(233,253,238,0.94)', maxWidth: '34rem', lineHeight: 1.62, fontWeight: 300, textAlign: 'justify', textAlignLast: 'right', hyphens: 'auto' }}>
             Source premium <strong style={{ fontWeight: 600, color: 'rgba(255,255,255,0.92)' }}>raw banana fiber</strong> from Bangladesh's trusted supplier and exporter. 100% biodegradable, high tensile strength and a silky sheen — the sustainable, eco-friendly alternative to synthetic fibers. Every order quoted individually.
           </p>
 
@@ -237,33 +237,39 @@ export default function Home() {
               <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '1.25rem' }}>
                 Our <strong style={{ color: '#374151' }}>Premium Raw Banana Fiber</strong> is a high-grade natural lignocellulosic fiber extracted from the pseudostems of the banana plant (<em>Musa species</em>). Known for exceptional durability and natural luster, it's a superior sustainable alternative to synthetic fibers and traditional coarse fibers like jute.
               </p>
-              <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: '3rem' }}>
+              <p style={{ color: '#6b7280', fontSize: '1.0625rem', lineHeight: 1.95, marginBottom: 0 }}>
                 Harvested from agricultural by-products — a zero-waste solution supporting Bangladesh's circular economy while empowering local banana farmers.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.75rem 2.5rem', marginBottom: '3rem' }}>
-                {[
-                  { label: '100% Natural',  sub: 'No chemicals or coatings' },
-                  { label: '500–900 MPa',   sub: 'Tensile strength' },
-                  { label: 'Silky Texture', sub: 'Natural sheen & luster' },
-                  { label: 'Compostable',   sub: '100% biodegradable' },
-                ].map((c, i) => (
-                  <div key={i} style={{ borderLeft: '4px solid #39962c', paddingLeft: '1.25rem' }}>
-                    <div style={{ fontWeight: 700, color: '#111827', fontSize: '1.0625rem' }}>{c.label}</div>
-                    <div style={{ fontSize: '0.875rem', color: '#9ca3af', marginTop: '0.25rem', lineHeight: 1.5 }}>{c.sub}</div>
-                  </div>
-                ))}
-              </div>
-
-              <Link to="/contact" className="inline-flex items-center gap-2.5 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
-                style={{ background: '#39962c', boxShadow: '0 4px 20px rgba(57,150,44,0.3)', color: '#fff', padding: '1.125rem 2.25rem', borderRadius: '9999px', textDecoration: 'none', fontSize: '1rem' }}>
-                Get in Touch <ArrowRight size={17} />
-              </Link>
             </div>
 
             <div ref={aboutImgRef} className="reveal-right" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div style={{ borderRadius: '1.75rem', overflow: 'hidden', boxShadow: '0 32px 64px -12px rgba(0,0,0,0.25)', aspectRatio: '4/5', width: '100%', height: '100%' }}>
+              <div style={{ position: 'relative', borderRadius: '1.75rem', overflow: 'hidden', boxShadow: '0 32px 64px -12px rgba(0,0,0,0.25)', aspectRatio: '4/3', width: '100%', height: '100%' }}>
                 <img src={IMG.about} alt="Premium raw banana fiber supplied by EcoFiber BD, Bangladesh" className="w-full h-full object-cover img-zoom" />
+
+                {/* scrim so the facts below stay readable over the photograph */}
+                <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(to top, rgba(8,20,9,0.94) 0%, rgba(8,20,9,0.82) 42%, rgba(8,20,9,0.30) 70%, rgba(8,20,9,0) 92%)' }} />
+
+                <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 'clamp(0.875rem, 2.2vw, 1.5rem)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(0.625rem, 1.4vw, 0.875rem) clamp(0.75rem, 2vw, 1.25rem)', marginBottom: 'clamp(0.875rem, 2vw, 1.125rem)' }}>
+                    {[
+                      { label: '100% Natural',  sub: 'No chemicals or coatings' },
+                      { label: '500–900 MPa',   sub: 'Tensile strength' },
+                      { label: 'Silky Texture', sub: 'Natural sheen & luster' },
+                      { label: 'Compostable',   sub: '100% biodegradable' },
+                    ].map((c, i) => (
+                      <div key={i} style={{ borderLeft: '3px solid #8dc63f', paddingLeft: 'clamp(0.625rem, 1.5vw, 1rem)' }}>
+                        <div style={{ fontWeight: 700, color: '#fff', fontSize: 'clamp(0.875rem, 1.4vw, 1rem)', lineHeight: 1.2 }}>{c.label}</div>
+                        <div style={{ fontSize: 'clamp(0.6875rem, 1vw, 0.8125rem)', color: 'rgba(220,252,231,0.72)', marginTop: '0.125rem', lineHeight: 1.4 }}>{c.sub}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link to="/contact" className="inline-flex items-center gap-2.5 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                    style={{ background: '#39962c', boxShadow: '0 4px 20px rgba(57,150,44,0.35)', color: '#fff', padding: 'clamp(0.625rem, 1.5vw, 0.875rem) clamp(1.125rem, 2.5vw, 1.75rem)', borderRadius: '9999px', textDecoration: 'none', fontSize: 'clamp(0.8125rem, 1.3vw, 0.9375rem)' }}>
+                    Get in Touch <ArrowRight size={17} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
