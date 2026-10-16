@@ -112,6 +112,8 @@ async function run() {
     const page = await browser.newPage()
     try {
       await page.setViewport({ width: 1280, height: 900 })
+      // tells the analytics snippet in index.html this is a build, not a visit
+      await page.evaluateOnNewDocument(() => { window.__PRERENDER__ = true })
       await page.goto(base + route, { waitUntil: 'networkidle0', timeout: 45000 })
       // wait for React to mount real content
       await page.waitForFunction(

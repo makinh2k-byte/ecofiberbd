@@ -142,6 +142,14 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
 
+    // Canonical host is the apex. This only fires for paths the [assets] layer
+    // does not answer first (e.g. /api/*); HTML pages are served straight from
+    // assets, and rely on their canonical tag instead.
+    if (url.hostname.startsWith('www.')) {
+      url.hostname = url.hostname.slice(4)
+      return Response.redirect(url.toString(), 301)
+    }
+
     if (request.method === 'OPTIONS') {
       return handleCORS()
     }

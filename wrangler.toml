@@ -3,6 +3,16 @@ main = "src/index.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
+# www had no route at all, so it answered 522 and Google's tag checker - which
+# tests www.ecofiberbd.com - saw an error page instead of the site. Routing www
+# here makes it serve the site. Note that static assets are answered by the
+# [assets] layer before the Worker runs, so the www->apex redirect in
+# src/index.js only fires for non-asset paths; HTML pages instead rely on their
+# canonical tag, which points at the apex.
+routes = [
+  { pattern = "www.ecofiberbd.com/*", zone_name = "ecofiberbd.com" }
+]
+
 [assets]
 directory = "./dist"
 binding = "ASSETS"

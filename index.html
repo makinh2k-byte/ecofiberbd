@@ -10,9 +10,11 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      // `npm run build` drives every route through headless Chrome to prerender
-      // it, which would otherwise log a pageview per route on each deploy.
-      if (!navigator.webdriver) {
+      // Skipped only for this project's own prerender pass (it sets the flag
+      // below), so builds don't log a pageview per route. Deliberately NOT
+      // keyed on navigator.webdriver - that would also mute Google's own tag
+      // checker and other headless verifiers.
+      if (!window.__PRERENDER__) {
         gtag('js', new Date());
         gtag('config', 'G-EMQYP1993Z');
       }
