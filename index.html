@@ -5,6 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EMQYP1993Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // `npm run build` drives every route through headless Chrome to prerender
+      // it, which would otherwise log a pageview per route on each deploy.
+      if (!navigator.webdriver) {
+        gtag('js', new Date());
+        gtag('config', 'G-EMQYP1993Z');
+      }
+    </script>
+
     <!-- Primary Meta Tags -->
     <title>Banana Fiber Bangladesh | Raw Banana Fiber Supplier & Exporter — EcoFiber BD</title>
     <meta name="description" content="EcoFiber BD is a leading banana fiber supplier and exporter in Bangladesh. Premium raw banana fiber — 100% biodegradable, high-tensile (500–900 MPa), silky sheen. Grade A, B & C. Request a quote or sample today." />
