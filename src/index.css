@@ -230,3 +230,8 @@ h1, h2, h3, h4, h5, h6, .slopes {
 @media (min-width: 1200px) {
   .footer-grid { grid-template-columns: 1fr 0.8fr 0.9fr 1.35fr; }
 }
+
+/* Company-profile card stacks on small screens */
+@media (max-width: 639px) {
+  .profile-card { flex-direction: column; align-items: flex-start !important; gap: 1.25rem !important; }
+}

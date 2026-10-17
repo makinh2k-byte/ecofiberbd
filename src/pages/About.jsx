@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Leaf, Award, Globe, Recycle, Users, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Leaf, Award, Globe, Recycle, Users, ShieldCheck, FileText, Download } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
@@ -152,6 +152,28 @@ export default function About() {
             {stats.map((s, i) => (
               <StatCard key={i} s={s} index={i} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company profile download */}
+      <section style={{ background: '#fff', paddingTop: '4rem', paddingBottom: '4rem' }}>
+        <div style={{ maxWidth: '56rem', margin: '0 auto', padding: '0 2rem' }}>
+          <div className="profile-card" style={{ display: 'flex', alignItems: 'center', gap: '2rem', background: 'linear-gradient(135deg,#0d2010 0%,#1a3820 60%,#143218 100%)', borderRadius: '1.5rem', padding: 'clamp(1.75rem, 4vw, 2.75rem)', boxShadow: '0 20px 40px rgba(0,0,0,0.18)' }}>
+            <div style={{ flexShrink: 0, width: '4.5rem', height: '4.5rem', borderRadius: '1.125rem', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(141,198,63,0.16)', border: '1px solid rgba(141,198,63,0.3)' }}>
+              <FileText size={30} color="#8dc63f" />
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#fff', marginBottom: '0.625rem', lineHeight: 1.25 }}>Company Profile 2026</h2>
+              <p style={{ color: 'rgba(220,252,231,0.72)', fontSize: '0.9375rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                Our full company profile — business snapshot, the fiber grades, technical data, applications, our handicraft line and export readiness. 11 pages, PDF (9 MB).
+              </p>
+              <a href="/EcoFiberBD-Company-Profile.pdf" download
+                className="inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                style={{ background: '#39962c', color: '#fff', padding: '0.9375rem 1.75rem', borderRadius: '9999px', textDecoration: 'none', fontSize: '1rem' }}>
+                <Download size={18} /> Download Profile
+              </a>
+            </div>
           </div>
         </div>
       </section>
