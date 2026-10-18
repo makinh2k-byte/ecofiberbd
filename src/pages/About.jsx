@@ -1,11 +1,66 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Leaf, Award, Globe, Recycle, Users, ShieldCheck, FileText, Download } from 'lucide-react'
+import { ArrowRight, Leaf, Award, Globe, Recycle, Users, ShieldCheck, FileText, BookOpen, X } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useReveal } from '../hooks/useReveal'
 import { useSEO } from '../hooks/useSEO'
 
 const PATTERN = '/ecofiber-background-Pattern.png'
+
+/* The company profile is published as page renders rather than a PDF, so there
+   is no document file for visitors to download. */
+const PROFILE_PAGES = 11
+const PROFILE_PAGE_RATIO = '1300 / 1841'
+const profilePage = n => `/profile/page-${String(n).padStart(2, '0')}.jpg`
+
+function ProfileViewer({ onClose }) {
+  // close on Escape, and stop the page behind from scrolling
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = prev }
+  }, [onClose])
+
+  return (
+    <div role="dialog" aria-modal="true" aria-label="EcoFiber BD company profile"
+      onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 100, overflowY: 'auto',
+        background: 'rgba(6,16,7,0.92)', backdropFilter: 'blur(6px)',
+        WebkitBackdropFilter: 'blur(6px)', padding: 'clamp(3.5rem, 8vw, 5rem) 1rem 3rem',
+      }}>
+      <button onClick={onClose} aria-label="Close profile"
+        style={{
+          position: 'fixed', top: '1rem', right: '1rem', zIndex: 101,
+          display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+          padding: '0.625rem 1.125rem', borderRadius: '9999px', border: '1px solid rgba(255,255,255,0.25)',
+          background: 'rgba(10,26,12,0.85)', color: '#fff', cursor: 'pointer',
+          fontFamily: 'inherit', fontSize: '0.9375rem', fontWeight: 600,
+        }}>
+        <X size={18} /> Close
+      </button>
+
+      <div onClick={e => e.stopPropagation()}
+        style={{ maxWidth: '56rem', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        {Array.from({ length: PROFILE_PAGES }, (_, i) => (
+          <img key={i} src={profilePage(i + 1)} alt={`Company profile page ${i + 1} of ${PROFILE_PAGES}`}
+            loading={i === 0 ? 'eager' : 'lazy'} draggable={false}
+            style={{
+              width: '100%', aspectRatio: PROFILE_PAGE_RATIO, display: 'block',
+              borderRadius: '0.5rem', background: '#0e1f10',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.35)',
+            }} />
+        ))}
+        <p style={{ textAlign: 'center', color: 'rgba(220,252,231,0.6)', fontSize: '0.875rem', padding: '0.5rem 0 1rem' }}>
+          End of profile — {PROFILE_PAGES} pages. Questions? <Link to="/contact" style={{ color: '#8dc63f', fontWeight: 600 }}>Get in touch</Link>.
+        </p>
+      </div>
+    </div>
+  )
+}
 
 const values = [
   { icon: Recycle,     title: 'Zero-Waste Sourcing', desc: 'Our fiber comes from banana pseudostems — an agricultural by-product that would otherwise be discarded. No extra land, water or fertilizer required.' },
@@ -63,6 +118,7 @@ export default function About() {
   const visionRef    = useReveal(1)
   const valuesHeadRef = useReveal(0)
   const ctaRef       = useReveal(0)
+  const [profileOpen, setProfileOpen] = useState(false)
 
   return (
     <div style={{ minHeight: '100vh', overflowX: 'hidden', background: '#f7f5f0' }}>
@@ -166,13 +222,13 @@ export default function About() {
             <div style={{ flex: 1, minWidth: 0 }}>
               <h2 style={{ fontSize: 'calc(1.5rem + 3px)', color: '#fff', marginBottom: '0.625rem', lineHeight: 1.25 }}>Company Profile 2026</h2>
               <p style={{ color: 'rgba(220,252,231,0.72)', fontSize: '0.9375rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Our full company profile — business snapshot, the fiber grades, technical data, applications, our handicraft line and export readiness. 11 pages, PDF (9 MB).
+                Our full company profile — business snapshot, the fiber grades, technical data, applications, our handicraft line and export readiness. 11 pages, read here on the site.
               </p>
-              <a href="/EcoFiberBD-Company-Profile.pdf" download
+              <button type="button" onClick={() => setProfileOpen(true)}
                 className="inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
-                style={{ background: '#39962c', color: '#fff', padding: '0.9375rem 1.75rem', borderRadius: '9999px', textDecoration: 'none', fontSize: '1rem' }}>
-                <Download size={18} /> Download Profile
-              </a>
+                style={{ background: '#39962c', color: '#fff', padding: '0.9375rem 1.75rem', borderRadius: '9999px', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem' }}>
+                <BookOpen size={18} /> View Profile
+              </button>
             </div>
           </div>
         </div>
@@ -199,6 +255,8 @@ export default function About() {
       </section>
 
       <Footer />
+
+      {profileOpen && <ProfileViewer onClose={() => setProfileOpen(false)} />}
     </div>
   )
 }
