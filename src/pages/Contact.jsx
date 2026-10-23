@@ -10,6 +10,9 @@ const PRODUCTS  = ['Grade A Premium Banana Fiber', 'Grade B Standard Banana Fibe
 const COUNTRIES = ['Bangladesh','India','China','Japan','South Korea','Germany','United Kingdom','United States','Australia','Canada','France','Netherlands','Italy','Spain','Other']
 const WHATSAPP_NUMBER = '8801672268121'
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20EcoFiber%20BD%2C%20I%20would%20like%20to%20inquire%20about%20your%20banana%20fiber%20products.`
+const MAPS_URL = 'https://maps.app.goo.gl/URA5xgHZW4Jq9pZAA'
+// keyless embed of the same pin; no API key and no cookies until it loads
+const MAPS_EMBED_URL = 'https://www.google.com/maps?q=23.801543,90.4240491&z=17&hl=en&output=embed'
 
 const inputStyle = {
   width: '100%',
@@ -93,7 +96,7 @@ export default function Contact() {
               <p style={{ color: '#9ca3af', fontSize: '0.9375rem', marginBottom: '2.5rem', lineHeight: 1.7 }}>We respond to all inquiries within 24 hours.</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
                 {[
-                  { icon: MapPin, label: 'Address', value: 'Level 7, House 10 (Icon Heights), Road 8, Block J, Baridhara, Dhaka 1212, Bangladesh', href: null },
+                  { icon: MapPin, label: 'Address', value: 'Level 7, House 10 (Icon Heights), Road 8, Block J, Baridhara, Dhaka 1212, Bangladesh', href: MAPS_URL, external: true },
                   { icon: Mail,   label: 'Email',   value: 'info@ecofiberbd.com', href: 'mailto:info@ecofiberbd.com' },
                   { icon: Phone,  label: 'Phone',   value: '+8801672268121',       href: 'tel:+8801672268121' },
                 ].map(item => (
@@ -104,13 +107,30 @@ export default function Contact() {
                     <div>
                       <div style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.375rem' }}>{item.label}</div>
                       {item.href
-                        ? <a href={item.href} style={{ fontWeight: 600, color: '#1f2937', fontSize: '0.9375rem', textDecoration: 'none' }}>{item.value}</a>
+                        ? <a href={item.href}
+                            {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                            style={{ fontWeight: 600, color: '#1f2937', fontSize: '0.9375rem', textDecoration: 'none' }}>{item.value}</a>
                         : <div style={{ fontWeight: 600, color: '#1f2937', fontSize: '0.9375rem' }}>{item.value}</div>
                       }
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div style={{ background: '#fff', borderRadius: '1.25rem', overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #f3f4f6' }}>
+              <iframe
+                title="EcoFiber BD office location on Google Maps"
+                src={MAPS_EMBED_URL}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                style={{ display: 'block', width: '100%', height: '14rem', border: 0 }}
+              />
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.875rem 1.25rem', fontSize: '0.875rem', fontWeight: 600, color: '#39962c', textDecoration: 'none', borderTop: '1px solid #f3f4f6' }}>
+                <MapPin size={16} /> Open in Google Maps
+              </a>
             </div>
 
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"

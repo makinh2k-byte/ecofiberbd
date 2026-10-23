@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin } from 'lucide-react'
+
+const MAPS_URL = 'https://maps.app.goo.gl/URA5xgHZW4Jq9pZAA'
 import logoFooter from '../assets/logo-footer.png'
 
 const PATTERN = '/ecofiber background Pattern.svg'
@@ -98,12 +100,15 @@ export default function Footer() {
                 <Mail size={17} color="#8dc63f" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span>info@ecofiberbd.com</span>
               </a>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.querySelector('span').style.color = '#8dc63f')}
+                onMouseLeave={e => (e.currentTarget.querySelector('span').style.color = 'rgba(220,252,231,0.7)')}>
                 <MapPin size={17} color="#8dc63f" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ color: 'rgba(220,252,231,0.7)', fontSize: 'clamp(0.8125rem, 3.6vw, 0.875rem)', lineHeight: 1.7 }}>
+                <span style={{ color: 'rgba(220,252,231,0.7)', fontSize: 'clamp(0.8125rem, 3.6vw, 0.875rem)', lineHeight: 1.7, transition: 'color 0.2s' }}>
                   Level 7, House 10 (Icon Heights), Road 8,<br />Block J, Baridhara, Dhaka 1212, Bangladesh
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>
